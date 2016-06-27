@@ -1,8 +1,7 @@
-# LikeMinded
+# Simpatico
 
-[Heroku link][heroku] **Note:** This should be a link to your production site
-
-[heroku]: http://www.herokuapp.com
+[Heroku link][heroku]
+[heroku]: http://simpatico.herokuapp.com
 
 ## Minimum Viable Product
 
