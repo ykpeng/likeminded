@@ -14,48 +14,48 @@ what you'll need to do. -->
 
 ## Note Cycles
 
-### Users API Request Actions
+### Profiles API Request Actions
 
-* `fetchAllUsers`
-  0. invoked from `UsersIndex` `didMount` and `Navbar` browse matches button `onClick`
-  0. `GET /api/users` is called.
-  0. `receiveAllUsers` is set as the callback.
+* `fetchAllProfiles`
+  0. invoked from `ProfilesIndex` `didMount` and `Navbar` browse matches button `onClick`
+  0. `GET /api/profiles` is called.
+  0. `receiveAllProfiles` is set as the callback.
 
-* `fetchSingleUser`
-  0. invoked from `UserIndexItem` `onClick`
-  0. `GET /api/users/:id` is called.
-  0. `receiveSingleUser` is set as the callback.
+* `fetchSingleProfile`
+  0. invoked from `ProfileIndexItem` `onClick`
+  0. `GET /api/profiles/:id` is called.
+  0. `receiveSingleProfile` is set as the callback.
 
-* `updateUser`
+* `updateProfile`
   0. invoked from `ProfileForm` `onSubmit` and `PersonalityTest` `onSubmit`
-  0. `PATCH /api/users/:id` is called.
-  0. `receiveSingleUser` is set as the callback.
+  0. `PATCH /api/profiles/:id` is called.
+  0. `receiveSingleProfile` is set as the callback.
 
-* `destroyUser` (Bonus)
+* `destroyProfile` (Bonus)
   0. invoked from delete account button `onClick`
-  0. `DELETE /api/users/:id` is called.
-  0. `removeUser` is set as the callback.
+  0. `DELETE /api/profiles/:id` is called.
+  0. `removeProfile` is set as the callback.
 
-### Users API Response Actions
+### Profiles API Response Actions
 
-* `receiveAllUsers`
+* `receiveAllProfiles`
   0. invoked from an API callback.
-  0. `User` store updates `_users` and emits change.
+  0. `Profile` store updates `_profiles` and emits change.
 
-* `receiveSingleUser`
+* `receiveSingleProfile`
   0. invoked from an API callback.
-  0. `User` store updates `_users[id]` and emits change.
+  0. `Profile` store updates `_profiles[id]` and emits change.
 
-* `removeUser` (Bonus)
+* `removeProfile` (Bonus)
   0. invoked from an API callback.
-  0. `User` store removes `_users[id]` and emits change.
+  0. `Profile` store removes `_profiles[id]` and emits change.
 
 ### Store Listeners
 
-* `UsersIndex` component listens to `User` store.
-* `ProfileDetail` component listens to `User` store.
-* `PersonalityChart` component listens to `User` store.
-* `ProfileDescription` component listens to `User` store.
+* `ProfilesIndex` component listens to `Profile` store.
+* `ProfileDetail` component listens to `Profile` store.
+* `PersonalityChart` component listens to `Profile` store.
+* `ProfileDescription` component listens to `Profile` store.
 
 ## Conversations Cycles
 

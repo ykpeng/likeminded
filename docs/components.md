@@ -8,16 +8,16 @@ _**exactly**_ match the nesting of your routes.)
 
 * **App**
   * **LoginPage** (if logged out)
-  * Header (if logged in)
+  * Navbar (if logged in)
     * Filter
   * **ProfilesIndex** (IndexRoute)
     * ProfileIndexItem
-  * **Profile**
+  * **Profile**  
     * ProfileDetail
     * PersonalityChart
-    * ProfileDescription
-    * ProfileForm
-    * PersonalityTest
+    * **ProfileDescription**
+    * **ProfileForm**
+    * **PersonalityTest**
   * **ConversationsIndex**
     * ConversationIndexItem
     * **MessagesIndex**
@@ -28,9 +28,10 @@ _**exactly**_ match the nesting of your routes.)
 ## Routes
 
 * **component:** `App` **path:** `/`
-  * **component:** `LoginPage` **path:** `/`
+  * **component:** `LoginPage` **path:** `IndexRoute`
   * **component:** `ProfilesIndex` **path:** `profiles`
   * **component:** `Profile` **path:**  `profiles/:profileId`
+    * **component:** `ProfileDescription` **path** `IndexRoute`
     * **component:** `ProfileForm` **path:** `profiles/:profileId/edit`
     * **component:** `PersonalityTest` **path:** `profiles/:profileId/questions`
   * **component:** `ConversationsIndex` **path:** `conversations`
