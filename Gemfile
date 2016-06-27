@@ -44,7 +44,7 @@ group :development do
   gem 'pg'
 end
 
-group: production do
+group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
 end
