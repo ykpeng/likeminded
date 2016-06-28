@@ -9,32 +9,46 @@ email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 saved_user_id   | integer   | foreign_key (references users), indexed
-
-## profile_details
-column name     | data type | details
-----------------|-----------|-----------------------
 country         | string    | not null
 zipcode         | integer   | not null
 birthday        | date      | not null
-looking_for     | string    | not null, limited to: ["friend", "collaborator", "mentor", "mentee"]
 img_url         | string    |
 
+## looking_fors
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+type            | string    | not null, limited to: ["friend", "collaborator", "mentor", "mentee"]
+
+## looking_for_joins
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary
+looking_for_id  | integer   | not null, foreign key
+user_id         | integer   | not null, foreign key
 
 ## profile_sections
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-user_id         | integer   | not null, foreign_key, unique
+user_id         | integer   | not null, foreign_key, unique [section, user_id]
 section         | string    | not null, limit to: ["self summary", "doing with life", "good at", "favorites", "friday night", "message if"]
 content         | text      |
+
+## dimensions
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+content         | string    | not null, unique
 
 ## questions
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 content         | string    | not null
+dimension_id    | integer   | not null, foreign key
 
-## choices
+## answer_choices
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -45,8 +59,8 @@ content         | string    | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-question_id     | integer   | not null, foreign key
-choice_id       | integer   | not null, foreign key
+answer_choice_id| integer   | not null, foreign key
+user_id         | integer   | not null, foreign key
 
 ## conversations
 column name | data type | details

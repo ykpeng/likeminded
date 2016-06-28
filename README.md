@@ -42,31 +42,32 @@ Simpatico is a web application inspired by OKCupid that will be build using Ruby
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (1 day, W1 Tu 6pm)
+### Phase 1: Backend setup and Front End User Authentication (2 days, W1 W 6pm)
 
 **Objective:** Functioning rails project with Authentication
 
 - [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
-
-### Phase 2: Profile Model, API, and basic APIUtil (1.5 days, W1 Th 12pm)
-
-**Objective:** Profiles can be read and updated through the API.
-
-- [ ] create `Profile` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for profiles (`ProfilesController`)
-- [ ] jBuilder views for profiles
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
+- [ ] create `User` model
+- [ ] authentication
+- [ ] user signup/signin pages
+- [ ] jBuilder views for Users
+- [ ] hosted on Heroku
 
-### Phase 3: Flux Architecture and Router (1.5 days, W1 F 6pm)
+### Phase 2: ProfileSections, LookingFor/LookingForJoins Models, CRUD API for Profile Sections (1 days, W1 Thu 6pm)
 
-**Objective:** Profiles can be created, read, and edited wth the user interface. Users can see sorted matches.
+**Objective:** Profiles can be read and updated through the API.
+
+- [ ] create `ProfileSections`, `LookingFor`, and `LookingForJoins` models
+- [ ] write `User` model method to filter matches based on `LookingFor`
+- [ ] seed the database with a small amount of test data
+- [ ] CRUD API for `ProfileSections` (`ProfilesSectionsController`)
+
+### Phase 3: Flux Architecture and Router (1.5 days, W2 M 12pm)
+
+**Objective:** Profiles can be created, read, and edited wth the user interface.
 
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
@@ -75,45 +76,38 @@ Simpatico is a web application inspired by OKCupid that will be build using Ruby
   - [ ] `ProfileIndexItem`
   - [ ] `ProfileForm`
   - [ ] `ProfileDescription`
-  - [ ] `PersonalityTest`
-- [ ] write matching algorithm.
 
-### Phase 4: Start Styling (0.5 days, W2 M 12pm)
+### Phase 4: Start Styling (0.5 days, W2 M 6pm)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
 - [ ] create a basic style guide
 - [ ] position elements on the page
 - [ ] add basic colors & styles
+- [ ] build and style `Navbar`
 
-### Phase 5: Conversations (1 day, W2 Tu 12pm)
+### Phase 5: PersonalityTest (1.5 day, W2 Thu 12pm)
+**Objective:** Implement personality test
+
+- [ ] create `Dimensions`, `Questions`, `AnswerChoices`, and `Answers` Models
+- [ ] create `Answers` controller
+- seed database with Questions and AnswerChoices
+- [ ] write `User` model methods for calculating % matches and showing sorted users
+
+### Phase 6: Conversations (1.5 day, W2 F 6pm)
 
 **Objective:** Users can view conversations they're a part of.
 
-- [ ] create `Conversation` model
+- [ ] create `Conversation` and `Message` models
 - build out API, Flux loop, and components for:
   - [ ] `ConversationsIndex`
   - [ ] `ConversationIndexItem`
   - [ ] Users can only view conversations they're a part of
-- Use CSS to style new views
-
-
-### Phase 6: Messages (1 days, W2 Th 12pm)
-
-**Objective:** A conversation has many messages.
-
-- [ ] create `Message` model
 - build out API, Flux loop, and components for:
   - [ ] `MessagesIndex`
   - [ ] `MessageIndexItems`
+  - [ ] `MessageForm`
 - [ ] Style new elements
-
-### Phase 7: Allow Bookmarking of Other Users (0.5 days, W2 Th 6pm)
-
-**objective:** Users can bookmark other users they like.
-
-- [ ] Users can see only those they've bookmarked.
-- [ ] Style the new elements.
 
 ### Phase 8: Styling Cleanup and Seeding (1 day, W2 F 6pm)
 
@@ -124,6 +118,8 @@ Simpatico is a web application inspired by OKCupid that will be build using Ruby
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
+- [ ] Filter by location
+- [ ] Allow bookmarking of other users
 - [ ] Add more user fields (gender, education, languages, smoking/drugs, offspring, pets, etc.)
 - [ ] Filter by new fields
 - [ ] Pagination / infinite scroll for ProfilesIndex

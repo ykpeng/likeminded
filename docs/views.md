@@ -3,16 +3,16 @@
 ## App / LoginPage
 ![login-page]
 
-## App / ProfilesIndex / ProfileIndexItem
+## App / UsersIndex / UserIndexItem
 ![profiles]
 
-## App / Profile / ProfileDescription
+## App / User / UserDescription
 ![profile]
 
-## App / Profile / PersonalityTest
+## App / User / PersonalityTest
 ![personality-test]
 
-## App / Profile / ProfileForm
+## App / User / UserForm
 ![profile-form]
 
 ## App / ConversationsIndex / ConversationIndexItems

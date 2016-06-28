@@ -6,28 +6,27 @@
 
 - `GET /` - loads React web app
 
+## JSON API
+
 ### Users
 
-- `GET /users/new`
-- `POST /users`
+- `POST /api/users`
+- `GET /api/users`
+  - Profiles index/filter
+  - accepts pagination params (if I get there)
+- `GET /api/users/:id`
+- `PATCH /api/users/:id`
+- `DELETE /api/users/:id`
 
 ### Session
 
-- `GET /session/new`
-- `POST /session`
-- `DELETE /session`
+- `POST /api/session`
+- `DELETE /api/session`
 
-## JSON API
+### Personality Test Answers
 
-### Profiles
-
-- `GET /api/profiles`
-  - Profiles index/filter
-  - accepts pagination params (if I get there)
-- `GET /api/profiles/:id`
-- `PATCH /api/profiles/:id`
-- `DELETE /api/profiles/:id`
-- `GET /api/profiles/:id/questions`
+- `PATCH /api/answers`
+- `POST /api/answers`
 
 ### Conversations
 

@@ -10,30 +10,29 @@ _**exactly**_ match the nesting of your routes.)
   * **LoginPage** (if logged out)
   * Navbar (if logged in)
     * Filter
-  * **ProfilesIndex** (IndexRoute)
-    * ProfileIndexItem
-  * **Profile**  
-    * ProfileDetail
+  * **UsersIndex** (IndexRoute)
+    * UserIndexItem
+  * **User**  
+    * UserDetail
     * PersonalityChart
-    * **ProfileDescription**
-    * **ProfileForm**
-    * **PersonalityTest**
+    * **UserDescription**
+    * **UserForm**
+  * **PersonalityTest**
   * **ConversationsIndex**
     * ConversationIndexItem
-    * **MessagesIndex**
-      * MessageIndexItem
-      * MessageForm
+  * **MessagesIndex**
+    * MessageIndexItem
+    * MessageForm
 
 
 ## Routes
 
 * **component:** `App` **path:** `/`
   * **component:** `LoginPage` **path:** `IndexRoute`
-  * **component:** `ProfilesIndex` **path:** `profiles`
-  * **component:** `Profile` **path:**  `profiles/:profileId`
-    * **component:** `ProfileDescription` **path** `IndexRoute`
-    * **component:** `ProfileForm` **path:** `profiles/:profileId/edit`
-    * **component:** `PersonalityTest` **path:** `profiles/:profileId/questions`
+  * **component:** `UsersIndex` **path:** `users`
+  * **component:** `User` **path:**  `users/:userId`
+    * **component:** `UserDescription` **path** `IndexRoute`
+    * **component:** `UserForm` **path:** `users/:userId/edit`
+  * **component:** `PersonalityTest` **path:** `answers`
   * **component:** `ConversationsIndex` **path:** `conversations`
-    * **component:** `ConversationIndexItems` **path:** `conversations/:conversationId`
-    * **component:** `MessagesIndex` **path:** `conversations/:conversationId/messages`
+  * **component:** `MessagesIndex` **path:** `conversations/:conversationId`
