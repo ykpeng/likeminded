@@ -8,6 +8,8 @@ _**exactly**_ match the nesting of your routes.)
 
 * **App**
   * **LoginPage** (if logged out)
+    * LoginForm
+    * SignupForm
   * Navbar (if logged in)
     * Filter
   * **UsersIndex** (IndexRoute)

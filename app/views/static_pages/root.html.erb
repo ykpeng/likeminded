@@ -1,3 +1,10 @@
+<script type="text/javascript">
+  <% if logged_in? %>
+    <% user = { username: current_user.username, id: current_user.id } %>
+    window.currentUser = <%= user.to_json.html_safe %>
+  <% end %>
+</script>
+
 <div id="content">
   Hello World
 </div>
