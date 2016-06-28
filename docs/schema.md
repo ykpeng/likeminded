@@ -8,8 +8,8 @@ username        | string    | not null, indexed, unique
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
-saved_user_id   | integer   | foreign_key (references users), indexed
-country         | string    | not null
+<!-- saved_user_id   | integer   | foreign_key (references users), indexed -->
+<!-- country         | string    | not null -->
 zipcode         | integer   | not null
 birthday        | date      | not null
 img_url         | string    |
