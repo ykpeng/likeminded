@@ -42,42 +42,36 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days, W1 W 6pm)
+### Phase 1: Backend setup, Flux Architecture and Router, Front End User Authentication (1 days, W1 T 6pm)
 
 **Objective:** Functioning rails project with Authentication
 
 - [ ] create new project
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
+- [ ] create `User` model, controller
 - [ ] jBuilder views for Users
+- [ ] authentication
+- [ ] setup React Router
+- [ ] `LoginPage` component
+    - [ ] `SignupForm` component
+    - [ ] `LoginForm` component
+- [ ] `UserIndex`, `UserIndexItem`, `UserShow` components
 - [ ] hosted on Heroku
 
-### Phase 2: ProfileSections, LookingFor/LookingForJoins Models, CRUD API for Profile Sections (1 days, W1 Thu 6pm)
-
-**Objective:** Profiles can be read and updated through the API.
-
-- [ ] create `ProfileSections`, `LookingFor`, and `LookingForJoins` models
-- [ ] write `User` model method to filter matches based on `LookingFor`
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for `ProfileSections` (`ProfilesSectionsController`)
-
-### Phase 3: Flux Architecture and Router (1.5 days, W2 M 12pm)
+### Phase 2: ProfileSections, LookingFor/LookingForJoins Models, CRUD API for Profile Sections (2 days, W1 Thu 6pm)
 
 **Objective:** Profiles can be created, read, and edited wth the user interface.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [ ] create `ProfileSections`, `LookingFor`, and `LookingForJoins` models
+  - [ ] create `ProfilesSectionsController`
 - implement each profile component, building out the flux loop as needed.
-  - [ ] `ProfilesIndex`
-  - [ ] `ProfileIndexItem`
+  - [ ] CRUD API for `ProfileSections`
   - [ ] `ProfileForm`
   - [ ] `ProfileDescription`
+- implement image upload
+- [ ] write `User` model method to filter matches based on `LookingFor`; Users shouldn't see themselves as matches
+- [ ] seed the database with a small amount of test data
 
-### Phase 4: Start Styling (0.5 days, W2 M 6pm)
+### Phase 3: Start Styling (1 days, W1 F 6pm)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
@@ -86,7 +80,8 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - [ ] add basic colors & styles
 - [ ] build and style `Navbar`
 
-### Phase 5: PersonalityTest (1.5 day, W2 Thu 12pm)
+### Phase 4: PersonalityTest (2 days, W2 Tu 6pm)
+
 **Objective:** Implement personality test
 
 - [ ] create `Dimensions`, `Questions`, `AnswerChoices`, and `Answers` Models
@@ -94,7 +89,7 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - seed database with Questions and AnswerChoices
 - [ ] write `User` model methods for calculating % matches and showing sorted users
 
-### Phase 6: Conversations (1.5 day, W2 F 6pm)
+### Phase 5: Conversations (2 days, W2 Thu 6pm)
 
 **Objective:** Users can view conversations they're a part of.
 
@@ -118,7 +113,7 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
-- [ ] Filter by location
+- [ ] Filter by location, age range
 - [ ] Allow bookmarking of other users
 - [ ] Add more user fields (gender, education, languages, smoking/drugs, offspring, pets, etc.)
 - [ ] Filter by new fields

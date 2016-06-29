@@ -12,6 +12,8 @@ const SessionActions = require('./actions/session_actions');
 const SessionStore = require('./stores/session_store');
 const LoginPage = require('./components/login_page');
 const App = require('./components/app');
+const UserIndex = require('./components/user_index');
+const UserShow = require('./components/user_show');
 
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){
@@ -22,7 +24,7 @@ const _ensureLoggedIn = function(nextState, replace){
 const router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
-      <IndexRoute component={UserIndex}/>
+      <Route path='/users' component={UserIndex}/>
       <Route path='/users/:userId' component={UserShow}/>
     </Route>
     <Route path="/login" component={LoginPage}/>

@@ -6,11 +6,11 @@
 associated routes, so the nesting of your bolded components must
 _**exactly**_ match the nesting of your routes.)
 
-* **App**
-  * **LoginPage** (if logged out)
-    * LoginForm
-    * SignupForm
-  * Navbar (if logged in)
+* **LoginPage** (if logged out)
+  * LoginForm
+  * SignupForm
+* **App** (if logged in)
+  * Navbar
     * Filter
   * **UsersIndex** (IndexRoute)
     * UserIndexItem
