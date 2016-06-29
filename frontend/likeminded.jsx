@@ -5,6 +5,7 @@ const ReactRouter = require('react-router');
 const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
+const IndexRedirect = ReactRouter.IndexRedirect;
 const hashHistory = ReactRouter.hashHistory;
 
 const SessionApiUtil = require('./util/session_api_util');
@@ -15,6 +16,7 @@ const App = require('./components/app');
 const UserIndex = require('./components/user_index');
 const UserShow = require('./components/user_show');
 
+
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){
     replace("/login");
@@ -24,8 +26,8 @@ const _ensureLoggedIn = function(nextState, replace){
 const router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
-      <Route path='/users' component={UserIndex}/>
-      <Route path='/users/:userId' component={UserShow}/>
+      <IndexRoute component={UserIndex} onEnter={_ensureLoggedIn}/>
+      <Route path='/users/:userId' component={UserShow} onEnter={_ensureLoggedIn}/>
     </Route>
     <Route path="/login" component={LoginPage}/>
   </Router>

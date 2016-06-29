@@ -73,35 +73,43 @@ const SignupForm = React.createClass({
 
   render(){
     return(
-      <div>
+      <div className="signup-form">
       { this.fieldErrors("base") }
         <form onSubmit={this._handleSubmit}>
-          <label>Email</label>
-          { this.fieldErrors("email") }
-          <input type="text" onChange={this._handleEmail}/>
-          <br/>
 
-          <label>Username</label>
-          { this.fieldErrors("username") }
-          <input type="text" onChange={this._handleUsername}/>
-          <br/>
+          <div className="input">
+            <label>Email</label>
+            { this.fieldErrors("email") }
+            <input type="email" onChange={this._handleEmail}/>
+          </div>
 
-          <label>Password</label>
-          { this.fieldErrors("password") }
-          <input type="password" onChange={this._handlePassword}/>
-          <br/>
+          <div className="input">
+            <label>Username</label>
+            { this.fieldErrors("username") }
+            <input type="text" onChange={this._handleUsername}/>
+          </div>
 
-          <label>Birthday</label>
-          { this.fieldErrors("birthday") }
-          <input type="date" onChange={this._handleBirthday}/>
-          <br/>
+          <div className="input">
+            <label>Password</label>
+            { this.fieldErrors("password") }
+            <input type="password" onChange={this._handlePassword}/>
+          </div>
 
-          <label>Zipcode</label>
-          { this.fieldErrors("zipcode") }
-          <input type="text" onChange={this._handleZipcode}/>
-          <br/>
+          <div className="input">
+            <label>Birthday</label>
+            { this.fieldErrors("birthday") }
+            <input type="date" onChange={this._handleBirthday}/>
+          </div>
 
-          <input type="submit" value="Sign Up"/>
+          <div className="input">
+            <label>Zipcode</label>
+            { this.fieldErrors("zipcode") }
+            <input type="text" onChange={this._handleZipcode}/>
+          </div>
+
+          <div className="submit">
+            <input type="submit" value="Sign Up"/>
+          </div>
         </form>
       </div>
     )

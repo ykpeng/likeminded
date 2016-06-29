@@ -6,7 +6,7 @@ const LoginPage = React.createClass({
 
   render(){
     return(
-      <div>
+      <div className="login-section">
         <LoginForm />
         <SignupForm />
       </div>

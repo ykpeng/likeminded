@@ -32,7 +32,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign_key, unique [section, user_id]
-section         | string    | not null, limit to: ["self summary", "doing with life", "good at", "favorites", "friday night", "message if"]
+section         | string    | not null, limit to: ["self summary", "doing with life", "good at", "favorites", "thinking about", "friday night", "message if"]
 content         | text      |
 
 ## dimensions
