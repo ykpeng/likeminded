@@ -46,29 +46,30 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
-- [ ] create `User` model, controller
-- [ ] jBuilder views for Users
-- [ ] authentication
-- [ ] setup React Router
-- [ ] `LoginPage` component
-    - [ ] `SignupForm` component
-    - [ ] `LoginForm` component
-- [ ] `UserIndex`, `UserIndexItem`, `UserShow` components
-- [ ] hosted on Heroku
+- [x] create new project
+- [x] create `User` model, controller
+- [x] jBuilder views for Users
+- [x] authentication
+- [x] setup React Router
+- [x] `LoginPage` component
+    - [x] `SignupForm` component
+    - [x] `LoginForm` component
+- [x] `UserIndex`, `UserIndexItem`, `UserShow` components
+- [x] began styling login page
+- [x] hosted on Heroku
 
 ### Phase 2: ProfileSections, LookingFor/LookingForJoins Models, CRUD API for Profile Sections (2 days, W1 Thu 6pm)
 
 **Objective:** Profiles can be created, read, and edited wth the user interface.
 
-- [ ] create `ProfileSections`, `LookingFor`, and `LookingForJoins` models
-  - [ ] create `ProfilesSectionsController`
+- [x] create `ProfileSections` model and controller
 - implement each profile component, building out the flux loop as needed.
-  - [ ] CRUD API for `ProfileSectionIndex`
-    - [ ] `ProfileSectionIndexItem`
-    - [ ] `ProfileSectionForm`
-- implement image upload
-- [ ] write `User` model method to filter matches based on `LookingFor`; Users shouldn't see themselves as matches
+  - [x] CRUD API for `ProfileSectionIndex`
+    - [x] `ProfileSectionIndexItem`
+    - [x] `ProfileSectionForm`
+      - [x] Users can only edit their own page
+- [x] write `User` model method to filter matches based on `LookingFor`; Users shouldn't see themselves as matches
+- [ ] implement image upload
 - [ ] seed the database with a small amount of test data
 
 ### Phase 3: Start Styling (1 days, W1 F 6pm)
