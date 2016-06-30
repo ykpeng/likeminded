@@ -26,6 +26,7 @@ const UserShow = React.createClass({
   },
 
   render(){
+
     if(this.state.user === undefined) { return <div></div>; }
     return (
       <div>
@@ -33,6 +34,7 @@ const UserShow = React.createClass({
         <h1>{this.state.user.username}</h1>
         <p>{this.state.user.birthday}</p>
         <p>{this.state.user.zipcode}</p>
+  
         <ProfileSectionIndex profileSections={this.state.user.profile_sections}/>
       </div>
     )

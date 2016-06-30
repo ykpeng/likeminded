@@ -1,4 +1,4 @@
-json.extract! @user, :id, :username, :zipcode, :birthday, :img_url
+json.extract! @user, :id, :username, :zipcode, :birthday, :looking_for, :img_url
 
 json.profile_sections @user.profile_sections do |profile_section|
   json.id profile_section.id

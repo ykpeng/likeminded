@@ -1,13 +1,17 @@
 class User < ActiveRecord::Base
-  validates :username, :password_digest, :session_token, presence: true
+  validates :username, :password_digest, :session_token, :looking_for, presence: true
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validates :looking_for, inclusion: { in: ["Friendship", "Collaboration"] }
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
   attr_reader :password
 
   has_many :profile_sections
+
+  # has_many :looking_for_joins, dependent: :destroy, inverse_of: :user
+  # has_many :looking_fors, through: :looking_for_joins
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
@@ -17,6 +21,10 @@ class User < ActiveRecord::Base
     else
       nil
     end
+  end
+
+  def filter_by_looking_for(looking_for_value)
+    User.where(looking_for: looking_for_value).where.not(id: self.id)
   end
 
   def password=(password)

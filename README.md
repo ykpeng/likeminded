@@ -64,9 +64,9 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - [ ] create `ProfileSections`, `LookingFor`, and `LookingForJoins` models
   - [ ] create `ProfilesSectionsController`
 - implement each profile component, building out the flux loop as needed.
-  - [ ] CRUD API for `ProfileSections`
-  - [ ] `ProfileForm`
-  - [ ] `ProfileDescription`
+  - [ ] CRUD API for `ProfileSectionIndex`
+    - [ ] `ProfileSectionIndexItem`
+    - [ ] `ProfileSectionForm`
 - implement image upload
 - [ ] write `User` model method to filter matches based on `LookingFor`; Users shouldn't see themselves as matches
 - [ ] seed the database with a small amount of test data

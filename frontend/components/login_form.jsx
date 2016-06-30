@@ -22,12 +22,6 @@ const LoginForm = React.createClass({
 
   _handleSubmit(e){
     e.preventDefault();
-
-    // const formData = {
-		// 	username: this.state.username,
-		// 	password: this.state.password
-		// };
-
     SessionActions.login(this.state);
   },
 

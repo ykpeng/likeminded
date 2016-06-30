@@ -9,7 +9,12 @@ const SignupForm = React.createClass({
   },
 
   getInitialState(){
-    return { username: "", password: "", email: "", zipcode: "", birthday: "" };
+    return { username: "",
+             password: "",
+             email: "",
+             zipcode: "",
+             birthday: "",
+             looking_for: "Friendship" };
   },
 
   _handleUsername(e){
@@ -32,16 +37,13 @@ const SignupForm = React.createClass({
     this.setState({ birthday: e.target.value });
   },
 
+  _handleLookingFor(e) {
+    this.setState({ looking_for: e.target.value });
+  },
+
   _handleSubmit(e){
     e.preventDefault();
-
-    const formData = {
-			username: this.state.username,
-			password: this.state.password
-		};
-
     SessionActions.signup(this.state);
-    // SessionActions.login(formData);
   },
 
   componentDidMount(){
@@ -84,15 +86,15 @@ const SignupForm = React.createClass({
           </div>
 
           <div className="input">
-            <label>Username</label>
-            { this.fieldErrors("username") }
-            <input type="text" onChange={this._handleUsername}/>
-          </div>
-
-          <div className="input">
             <label>Password</label>
             { this.fieldErrors("password") }
             <input type="password" onChange={this._handlePassword}/>
+          </div>
+
+          <div className="input">
+            <label>Username</label>
+            { this.fieldErrors("username") }
+            <input type="text" onChange={this._handleUsername}/>
           </div>
 
           <div className="input">
@@ -105,6 +107,15 @@ const SignupForm = React.createClass({
             <label>Zipcode</label>
             { this.fieldErrors("zipcode") }
             <input type="text" onChange={this._handleZipcode}/>
+          </div>
+
+          <div className="input">
+
+              <select>
+                <option value="Friendship">Friendship</option>
+                <option value="Collaboration">Collaboration</option>
+              </select>
+
           </div>
 
           <div className="submit">

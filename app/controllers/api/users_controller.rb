@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
   SECTIONS = ["self summary", "doing with life", "good at", "favorites", "thinking about", "friday night", "message if"]
 
   def index
-    @users = User.all
+    @users = current_user.filter_by_looking_for(current_user.looking_for)
     render 'api/users/index'
   end
 
@@ -43,6 +43,6 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :email, :birthday, :zipcode)
+    params.require(:user).permit(:username, :password, :email, :birthday, :zipcode, :looking_for)
   end
 end

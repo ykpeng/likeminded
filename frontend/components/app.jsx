@@ -5,12 +5,16 @@ const SessionActions = require('../actions/session_actions');
 
 const App = React.createClass({
   componentDidMount() {
-    SessionStore.addListener(this.forceUpdate.bind(this));
+    this.sessionListener = SessionStore.addListener(this.forceUpdate.bind(this));
   },
 
   _handleLogOut(e){
     e.preventDefault();
     SessionActions.logout();
+  },
+
+  componentWillUnmount() {
+    this.sessionListener.remove();
   },
 
   greeting() {
