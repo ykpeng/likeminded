@@ -27,9 +27,9 @@ const router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={UserIndex} onEnter={_ensureLoggedIn}/>
+      <Route path="/login" component={LoginPage}/>
       <Route path='/users/:userId' component={UserShow} onEnter={_ensureLoggedIn}/>
     </Route>
-    <Route path="/login" component={LoginPage}/>
   </Router>
 );
 

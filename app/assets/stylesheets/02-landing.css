@@ -1,0 +1,107 @@
+.content {
+  position: relative;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.content-main {
+  float: left;
+  width: 62%;
+  min-height: 200px;
+  margin: 0 20px 0 0;
+}
+
+.content-sidebar {
+  background: white;
+  font-size: 12px;
+  font-weight: 800;
+  float: left;
+  width: 250px;
+  padding: 50px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.signup-form label {
+  display: block;
+}
+
+.content-main h1 {
+  font-size: 80px;
+  letter-spacing: 0.05em;
+}
+
+.content-main h2 {
+  font-size: 30px;
+}
+
+.signup-form input, textarea, select {
+  width: 200px;
+  margin:0;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.submit input{
+  font-weight: 800px;
+  background: #EE3440;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #EE3440;
+  letter-spacing: 0.1em;
+}
+
+.submit input:hover{
+  background: #ca2637;
+  border: 1px solid #ca2637;
+}
+
+.signup-form input {
+  margin: 0 0 10px 0;
+}
+
+.signup-form select {
+  margin: 0 0 10px 0;
+}
+
+.signup-form label {
+  margin: 0 0 5px 0;
+}
+
+input[type="date"],
+input[type="password"],
+input[type="email"],
+input[type="text"], {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-size: 14px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+input[type="date"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-radius: 5px;
+  border: solid 1px #333;
+  box-shadow: 0 0 2px 1px #333;
+}
+
+input[type="date"],
+input[type="password"],
+input[type="email"],
+input[type="text"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px #333;
+  transition: box-shadow 0.3s, border 0.3s;
+}

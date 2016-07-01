@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  # def age
+  #
+  # end
+
   def filter_by_looking_for(looking_for_value)
     User.where(looking_for: looking_for_value).where.not(id: self.id)
   end

@@ -1,0 +1,135 @@
+/*header when collapsed {
+  height: 43px;
+  background: black
+}
+*/
+.header {
+  // font-size: 16px;
+  // font-weight: 400;
+  color: #333;
+  background: #fff;
+  border-bottom: #F1F1F1 1px solid;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.header-nav {
+  margin: 0 auto;
+  width: 98%;
+  height: 112px;
+}
+
+.header-list1 {
+  float: left;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.header-list2 {
+  // margin-top: 50px 0 0 0;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.header-list1 > li {
+  float: left;
+}
+.header-list2 > li {
+  float: left;
+}
+
+.login-form{
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  // font-weight: 800;
+  margin-right: 25px;
+}
+
+.login-form div {
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+.label {
+  padding: 5px 0;
+}
+
+.logo {
+  // margin: 25px 0px 25px 10px;
+  height: 45px;
+  width: 45px;
+  background-image: url('LikeMinded-logo.png');
+  background-size: cover;
+}
+
+.logo-large {
+  margin: 25px;
+  height: 200px;
+  width: 200px;
+  background-image: url('LikeMinded-logo.png');
+  background-size: cover;
+}
+
+.login-form input[type="submit"] {
+  font-weight: 800px;
+  background: #EE3440;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 1px solid #EE3440;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.login-form input[type="submit"]:hover{
+  background: #ca2637;
+  border: 1px solid #ca2637;
+}
+
+// button {
+//   font-weight: 800px;
+//   background: #EE3440;
+//   color: white;
+//   padding: 5px 20px;
+//   border-radius: 5px;
+//   border: 1px solid #EE3440;
+//   letter-spacing: 0.1em;
+//   text-align: center;
+// }
+
+.icon:hover {
+  background: #ca2637;
+  color: white;
+  border: 2px solid #ca2637;
+}
+
+.icon {
+  padding: 10px;
+  background: transparent;
+  color: #333;
+  font-weight: 800;
+  font-size: 18px;
+  border: 2px solid #333;
+  border-radius: 5px;
+}
+
+.login-form input, textarea, select {
+  margin:0;
+}
+
+.header-list2 li {
+  padding: 5px;
+}

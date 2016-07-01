@@ -1,11 +1,13 @@
 const React = require('react');
+const Link = require('react-router').Link;
 const UserStore = require('../stores/user_store');
 const UserActions = require('../actions/user_actions');
 const ProfileSectionIndex = require('./profile_section_index');
 
 const UserShow = React.createClass({
   getInitialState(){
-    return ({ user: UserStore.find(parseInt(this.props.params.userId)) });
+    const potentialUser = UserStore.find(parseInt(this.props.params.userId));
+    return ({ user: potentialUser ? potentialUser : {} });
   },
 
   componentWillReceiveProps(newProps) {
@@ -18,7 +20,8 @@ const UserShow = React.createClass({
   },
 
   handleChange(){
-    this.setState({ user: UserStore.find(parseInt(this.props.params.userId)) });
+    const potentialUser = UserStore.find(parseInt(this.props.params.userId));
+    this.setState({ user: potentialUser ? potentialUser : {} });
   },
 
   componentWillUnmount(){
@@ -26,16 +29,33 @@ const UserShow = React.createClass({
   },
 
   render(){
-
-    if(this.state.user === undefined) { return <div></div>; }
+    if(this.state.user.profile_sections === undefined) { return <div></div>; }
     return (
-      <div>
-        <img src={this.state.user.img_url} alt={this.state.user.username} />
-        <h1>{this.state.user.username}</h1>
-        <p>{this.state.user.birthday}</p>
-        <p>{this.state.user.zipcode}</p>
-  
-        <ProfileSectionIndex profileSections={this.state.user.profile_sections}/>
+      <div className="content">
+
+        <section className="user-topbar">
+
+          <section className="user-photo">
+            <img src={this.state.user.img_url} alt={this.state.user.username} />
+          </section>
+
+          <section className="user-summary">
+            <h3>{this.state.user.username}</h3>
+            <p>{this.state.user.birthday}</p>
+            <p>{this.state.user.zipcode}</p>
+          </section>
+
+          <section className="chart">
+          </section>
+
+        </section>
+
+        <section className="user-nav">
+        </section>
+
+        <section className="user-main">
+          <ProfileSectionIndex profileSections={this.state.user.profile_sections}/>
+        </section>
       </div>
     )
   }

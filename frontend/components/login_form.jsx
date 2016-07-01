@@ -55,22 +55,28 @@ const LoginForm = React.createClass({
 
   render(){
     return(
-      <div className="login-form">
+      <div className="login-form group">
       { this.fieldErrors("base") }
-        <form onSubmit={this._handleSubmit}>
-          <div className="input">
+        <form onSubmit={this._handleSubmit} className="form">
+          <div className="label">
             <label>Username</label>
+          </div>
+          <div>
             { this.fieldErrors("username") }
             <input type="text" onChange={this._handleUsername}/>
           </div>
-          <div className="input">
+          <div className="label">
             <label>Password</label>
+          </div>
+          <div>
             { this.fieldErrors("password") }
             <input type="password" onChange={this._handlePassword}/>
           </div>
-          <div className="submit">
-            <input type="submit" value="Log In"/>
-            <input type="submit" value="Demo User"/>
+          <div>
+            <input type="submit" value="LOG IN"/>
+          </div>
+          <div>
+            <input type="submit" value="DEMO USER"/>
           </div>
         </form>
       </div>

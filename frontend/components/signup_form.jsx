@@ -110,7 +110,7 @@ const SignupForm = React.createClass({
           </div>
 
           <div className="input">
-
+            <label>I am looking for</label>
               <select>
                 <option value="Friendship">Friendship</option>
                 <option value="Collaboration">Collaboration</option>
@@ -119,7 +119,7 @@ const SignupForm = React.createClass({
           </div>
 
           <div className="submit">
-            <input type="submit" value="Sign Up"/>
+            <input type="submit" value="SIGN UP"/>
           </div>
         </form>
       </div>

@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
   SECTIONS = ["self summary", "doing with life", "good at", "favorites", "thinking about", "friday night", "message if"]
 
   def index
-    @users = current_user.filter_by_looking_for(current_user.looking_for)
+    @users = User.all
     render 'api/users/index'
   end
 

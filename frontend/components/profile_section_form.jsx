@@ -24,7 +24,7 @@ const ProfileSectionForm = React.createClass({
 
   render(){
     return(
-      <div>
+      <div className="profile-section-form">
         <form onSubmit={this.handleSubmit}>
           <textarea onChange={this.handleInput} value={this.state.content} />
           <input type="submit" value="Save"/>

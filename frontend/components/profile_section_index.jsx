@@ -12,7 +12,6 @@ const SECTION_MAPPING = {
 }
 
 const ProfileSectionIndex = React.createClass({
-
   render(){
     const profileSections =
       this.props.profileSections.map( profileSection => {

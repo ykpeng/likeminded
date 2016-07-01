@@ -13,14 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-.header {
-  height: 112px;
-  background: white;
-}
-
-/*header when collapsed {
-  height: 43px;
-  background: black
-}
-*/

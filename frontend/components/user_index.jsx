@@ -23,14 +23,15 @@ const UserIndex = React.createClass({
 
   render(){
     return (
-      <ul>
-        <p>Your Matches</p>
-        {
-          this.state.users.map((user)=>{
-            return <UserIndexItem user={user} key={user.id}/>
-          })
-        }
-      </ul>
+      <div className="content">
+        <ul className="user-index group">
+          {
+            this.state.users.map((user)=>{
+              return <UserIndexItem user={user} key={user.id} />
+            })
+          }
+        </ul>
+      </div>
     )
   }
 })

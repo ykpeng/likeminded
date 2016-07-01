@@ -1,3 +1,3 @@
 json.array! @users do |user|
-  json.extract! user, :id, :username, :birthday, :zipcode, :img_url
+  json.extract! user, :id, :username, :birthday, :zipcode, :img_url, :looking_for
 end

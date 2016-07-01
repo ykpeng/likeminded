@@ -16,19 +16,18 @@ const ProfileSectionIndexItem = React.createClass({
   },
 
   render(){
-    let content = (<div>
+    let content = (<li>
                     <p>{this.props.profileSection.content}</p>
-                  </div>);
+                  </li>);
     if (SessionStore.currentUser().id === this.props.profileSection.user_id) {
-      content = (<div>
-        <button onClick={this.handleClick}>Edit</button>
+      content = (<li>
+        <button onClick={this.handleClick} className="edit-icon"><i className="fa fa-pencil" aria-hidden="true"></i></button>
         <p>{this.props.profileSection.content}</p>
-        </div>);
+        </li>);
+      if (this.state.editing) {
+        content = <ProfileSectionForm closeForm={this.closeForm} profileSection={this.props.profileSection}/>;
+      };
     }
-    if (this.state.editing && SessionStore.currentUser() === this.props.profileSection.user_id) {
-      content = <ProfileSectionForm closeForm={this.closeForm} profileSection={this.props.profileSection}/>;
-    };
-
     return(
       content
     )
