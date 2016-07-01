@@ -58,7 +58,7 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - [x] began styling login page
 - [x] hosted on Heroku
 
-### Phase 2: ProfileSections, LookingFor/LookingForJoins Models, CRUD API for Profile Sections (2 days, W1 Thu 6pm)
+### Phase 2: ProfileSections, LookingFor/LookingForJoins Models, CRUD API for Profile Sections (1 days, W1 W 6pm)
 
 **Objective:** Profiles can be created, read, and edited wth the user interface.
 
@@ -69,19 +69,20 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
     - [x] `ProfileSectionForm`
       - [x] Users can only edit their own page
 - [x] write `User` model method to filter matches based on `LookingFor`; Users shouldn't see themselves as matches
-- [ ] implement image upload
-- [ ] seed the database with a small amount of test data
 
-### Phase 3: Start Styling (1 days, W1 F 6pm)
+### Phase 3: Start Styling (1 days, W1 Thu 6pm)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
-- [ ] build and style `Navbar`
+- [x] decided on color palette
+- [x] position elements on the page
+- [x] add basic colors & styles to existing pages
+- [x] build and style `Navbar`
+- [ ] implement image upload
+- [ ] seed the database with a small amount of test data
 
-### Phase 4: PersonalityTest (2 days, W2 Tu 6pm)
+
+### Phase 4: PersonalityTest (2 days, W2 M 6pm)
 
 **Objective:** Implement personality test
 
@@ -90,7 +91,7 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - seed database with Questions and AnswerChoices
 - [ ] write `User` model methods for calculating % matches and showing sorted users
 
-### Phase 5: Conversations (2 days, W2 Thu 6pm)
+### Phase 5: Conversations (2 days, W2 W 6pm)
 
 **Objective:** Users can view conversations they're a part of.
 
@@ -105,13 +106,14 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
   - [ ] `MessageForm`
 - [ ] Style new elements
 
-### Phase 8: Styling Cleanup and Seeding (1 day, W2 F 6pm)
+### Phase 8: Styling Cleanup and Seeding (1 day, W2 Thu 6pm)
 
 **objective:** Make the site feel more cohesive and awesome.
 
 - [ ] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
 - [ ] Add modals, transitions, and other styling flourishes.
+  - [ ] Navbar transition
 
 ### Bonus Features (TBD)
 - [ ] Filter by location, age range

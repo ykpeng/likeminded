@@ -51,7 +51,7 @@ const App = React.createClass({
             <nav className="header-nav">
               <ul className="header-list1 group">
                 <li><Link to="/"><figure className="logo"></figure></Link></li>
-                <li><Link to="/">Browse Matches</Link></li>
+                <li><Link to="/">BROWSE MATCHES</Link></li>
               </ul>
 
               <ul className="header-list2 group">
