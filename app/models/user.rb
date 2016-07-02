@@ -7,8 +7,12 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token_uniqueness
 
   attr_reader :password
-
+  attr_reader :dim_scores
+  
   has_many :profile_sections
+  has_many :answers
+  has_many :questions, through: :answers
+  has_many :dimensions, through: :questions
 
   # has_many :looking_for_joins, dependent: :destroy, inverse_of: :user
   # has_many :looking_fors, through: :looking_for_joins
@@ -23,12 +27,21 @@ class User < ActiveRecord::Base
     end
   end
 
-  # def age
-  #
-  # end
-
   def filter_by_looking_for(looking_for_value)
     User.where(looking_for: looking_for_value).where.not(id: self.id)
+  end
+
+  def cal_all_dim_scores
+    @dim_scores = (0...6).map { |i| calc_dim_score(i) }
+  end
+
+  def calc_dim_score(dim_id)
+    answers = Dimension.find(dim_id).questions.answers.where(user_id: self.id)
+    score = 0
+    answers.each do |answer|
+      score += answer.answer_choice
+    end
+    score
   end
 
   def password=(password)

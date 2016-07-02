@@ -27,17 +27,7 @@ const App = React.createClass({
       return (
         <div>
           <header className="header">
-            <nav className="header-nav">
-              <ul className="header-list1 group">
-                <li><Link to="/"><figure className="logo"></figure></Link></li>
-              </ul>
-
-              <ul className="header-list2 group">
-                <li>
-                  <LoginForm />
-                </li>
-              </ul>
-            </nav>
+            <LoginForm />
           </header>
 
           {this.props.children}
@@ -48,35 +38,32 @@ const App = React.createClass({
       return (
         <div>
           <header className="header">
-            <nav className="header-nav">
-              <ul className="header-list1 group">
-                <li><Link to="/"><figure className="logo"></figure></Link></li>
-                <li><Link to="/">BROWSE MATCHES</Link></li>
-              </ul>
+            <ul className="header-list1">
+              <li className="icon"><i className="fa fa-sliders" aria-hidden="true"></i></li>
+              <li><Link to="/">Browse Matches</Link></li>
+              <li><Link to="/test">Personality Test</Link></li>
+            </ul>
 
-              <ul className="header-list2 group">
-                <li>
-                  <Link to={`api/users/${currentUser.id}`}>
-                    <img src={currentUser.img_url} alt={currentUser.username}/>
-                  </Link>
-                </li>
+            <ul className="header-list2">
+              <li className="user-icon">
 
-                <li >
-                  <Link to="/" className="icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i>
-                  </Link>
-                </li>
+              </li>
 
-                <li >
-                  <Link to="/" className="icon"><i className="fa fa-envelope-o" aria-hidden="true"></i>
-                  </Link>
-                </li>
+              <li >
+                <Link to="/" className="icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i>
+                </Link>
+              </li>
 
-                <li>
-                  <button onClick={ this._handleLogOut } className="icon"><i className="fa fa-sign-out" aria-hidden="true"></i>
-                  </button>
-                </li>
-              </ul>
-            </nav>
+              <li >
+                <Link to="/" className="icon"><i className="fa fa-envelope-o" aria-hidden="true"></i>
+                </Link>
+              </li>
+
+              <li>
+                <button onClick={ this._handleLogOut } className="icon"><i className="fa fa-sign-out" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
           </header>
 
           {this.props.children}

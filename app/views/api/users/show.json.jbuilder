@@ -1,4 +1,4 @@
-json.extract! @user, :id, :username, :zipcode, :birthday, :looking_for, :img_url
+json.extract! @user, :id, :username, :zipcode, :birthday, :looking_for, :img_url, :dim_scores
 
 json.profile_sections do
   json.array! (@user.profile_sections.order(:id)) do |profile_section|

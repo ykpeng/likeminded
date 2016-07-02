@@ -4,52 +4,47 @@
 
 .user-index {
   width: 100%;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
+
 .user-index-item {
   width: 267px;
-  height: 316.328px;
-  float:left;
-  background: white;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 20px 12px;
+  // height: 316.328px;
   text-align: center;
+  padding: 5px;
 }
 
 .user-index-item h3 {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 800;
 }
 
-.user-topbar {
-  background: white;
-  padding: 50px;
-  border-radius: 5px;
-  border: 1px solid white;
-}
+// .user-sidebar {
+//   flex-grow: 1;
+// }
+//
+// .user-main {
+//   flex-grow: 2;
+// }
 
-.user-nav {
-  background: #484848;
-  height: 50px;
-}
-
-.user-main {
-  background: white;
-  padding: 50px;
-  border-radius: 5px;
-  border: 1px solid white;
+.user-sidebar {
+  display: flex;
+  flex-direction: column;
+  // padding: 10px;
 }
 
 .edit-icon {
-  padding: 10px;
   background: transparent;
   color: #EE3440;
   font-weight: 800;
-  font-size: 18px;
-  // border: 2px solid #333;
-  // border-radius: 5px;
+  font-size: 16px;
+}
+
+.edit-icon:hover {
+  color: #ca2637;
 }
 
 .profile-section-form input[type="submit"] {
@@ -57,7 +52,7 @@
   background: #EE3440;
   color: white;
   padding: 5px 20px;
-  border-radius: 5px;
+  border-radius: 0.25rem;
   border: 1px solid #EE3440;
   letter-spacing: 0.1em;
   text-align: center;
@@ -65,6 +60,7 @@
 
 .profile-section-form input[type="submit"]:hover{
   background: #ca2637;
+  border-radius: 0.25rem;
   border: 1px solid #ca2637;
 }
 
@@ -72,15 +68,37 @@
   font-size: 28px;
   color: black;
 }
+
+.user-main {
+  font-size: 14px;
+}
 .user-main h4 {
   color: black;
-  margin-top: 50px;
+  font-size: 14px;
+  // margin-bottom: 50px;
+  // padding: 10px;
 }
+
 .user-index-item h3 {
   letter-spacing: 0.1em;
   color: black;
 }
 
+.user-photo {
+  height: auto;
+  width: 250px;
+}
 // .edit-icon {
 //   float: left;
 // }
+.user-main {
+  padding: 0 0 0 20px;
+}
+
+.user-photo {
+  padding: 0 20px 0 0;
+}
+
+.user-summary {
+  padding: 20px 20px 0 0;
+}

@@ -19,6 +19,11 @@ class Api::UsersController < ApplicationController
         ProfileSection.create!({ user_id: @user.id, section: section, content: ""})
       end
 
+      @questions = Question.all
+      @questions.each do |question|
+        Answer.create!({ user_id: @user.id, question_id: question.id, answer_choice: 0 })
+      end
+      
       login!(@user)
       render 'api/users/show'
     else

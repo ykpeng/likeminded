@@ -1,40 +1,45 @@
-/*header when collapsed {
-  height: 43px;
-  background: black
-}
-*/
 .header {
-  // font-size: 16px;
-  // font-weight: 400;
-  color: #333;
-  background: #fff;
-  border-bottom: #F1F1F1 1px solid;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  position: fixed;
+  line-height: 24px;
+  z-index: 498;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 34px;
+  padding-right: 34px;
+  background-color: #FFFFFF;
+  // display: none;
+  left: 0px;
+  top: 0px;
+  // -webkit-transform: translateZ(0);
+  // -webkit-backface-visibility: hidden;
+  // -moz-transform: translateZ(0);
+  // -moz-backface-visibility: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  box-shadow: 1px 0 0 1px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
 }
 
-.header-nav {
+.login-form {
   margin: 0 auto;
-  width: 98%;
-  height: 112px;
+  width: 500px;
 }
 
 .header-list1 {
-  float: left;
-  font-size: 14px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 100%;
+  justify-content: space-between;;
+  width: 220px;
 }
 
 .header-list2 {
-  // margin-top: 50px 0 0 0;
-  float: right;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  width: 120px;
 }
 
 .form {
@@ -44,43 +49,18 @@
   height: 100%;
 }
 
-.header-list1 > li {
-  float: left;
-}
-.header-list2 > li {
-  float: left;
+.user-icon {
+  height: 25px;
+  width: 25px;
 }
 
-.login-form{
-  letter-spacing: 0.1em;
-  font-size: 12px;
-  // font-weight: 800;
-  margin-right: 25px;
-}
-
-.login-form div {
-  float: left;
-  margin: 0 5px 0 0;
+.user-icon img {
+  width: 100%;
+  height: auto;
 }
 
 .label {
   padding: 5px 0;
-}
-
-.logo {
-  // margin: 25px 0px 25px 10px;
-  height: 45px;
-  width: 45px;
-  background-image: url('LikeMinded-logo.png');
-  background-size: cover;
-}
-
-.logo-large {
-  margin: 25px;
-  height: 200px;
-  width: 200px;
-  background-image: url('LikeMinded-logo.png');
-  background-size: cover;
 }
 
 .login-form input[type="submit"] {
@@ -99,37 +79,16 @@
   border: 1px solid #ca2637;
 }
 
-// button {
-//   font-weight: 800px;
-//   background: #EE3440;
-//   color: white;
-//   padding: 5px 20px;
-//   border-radius: 5px;
-//   border: 1px solid #EE3440;
-//   letter-spacing: 0.1em;
-//   text-align: center;
-// }
-
 .icon:hover {
-  background: #ca2637;
-  color: white;
-  border: 2px solid #ca2637;
+  color: #ca2637;
 }
 
 .icon {
-  padding: 10px;
   background: transparent;
   color: #333;
-  font-weight: 800;
-  font-size: 18px;
-  border: 2px solid #333;
-  border-radius: 5px;
+  font-size: 16px;
 }
 
 .login-form input, textarea, select {
   margin:0;
-}
-
-.header-list2 li {
-  padding: 5px;
 }

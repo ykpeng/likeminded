@@ -6,13 +6,12 @@ const LoginPage = React.createClass({
 
   render(){
     return(
-      <main className="content group">
-        <section className="content-main">
+      <main className="content">
+        <section className="signup-section">
           <figure className="logo-large"></figure>
           <h1>LikeMinded</h1>
-          <h2>Discover people who think the way you do</h2>
-        </section>
-        <section className="content-sidebar">
+          <h2>Discover people</h2>
+          <h2>who think the way you do</h2>
           <SignupForm />
         </section>
       </main>

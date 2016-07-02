@@ -14,7 +14,7 @@ zipcode         | integer   | not null
 birthday        | date      | not null
 img_url         | string    |
 
-## looking_fors
+<!-- ## looking_fors
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -25,7 +25,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary
 looking_for_id  | integer   | not null, foreign key
-user_id         | integer   | not null, foreign key
+user_id         | integer   | not null, foreign key -->
 
 ## profile_sections
 column name     | data type | details
@@ -39,7 +39,7 @@ content         | text      |
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-content         | string    | not null, unique
+name            | string    | not null, unique, limit to: [Artistic, Investigate, Social, Enterprising, Realistic, Conventional]
 
 ## questions
 column name     | data type | details
@@ -48,18 +48,19 @@ id              | integer   | not null, primary key
 content         | string    | not null
 dimension_id    | integer   | not null, foreign key
 
-## answer_choices
+<!-- ## answer_choices
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 question_id     | integer   | not null, foreign key
-content         | string    | not null
+content         | string    | not null -->
 
 ## answers
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-answer_choice_id| integer   | not null, foreign key
+question_id     | integer   | not null, foreign key
+answer_choice   | integer   | not null, limit to: [1, 2, 3, 4, 5]
 user_id         | integer   | not null, foreign key
 
 ## conversations

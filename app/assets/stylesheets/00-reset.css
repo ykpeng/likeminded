@@ -20,7 +20,7 @@ a {
 }
 
 body {
-  background: #EFEFEF;
+  /*background: #EFEFEF;*/
   color: #333;
 }
 
@@ -46,6 +46,10 @@ button {
   */
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+textarea {
+  display: block;
 }
 
 button,

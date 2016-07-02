@@ -24,7 +24,7 @@ const UserIndex = React.createClass({
   render(){
     return (
       <div className="content">
-        <ul className="user-index group">
+        <ul className="user-index">
           {
             this.state.users.map((user)=>{
               return <UserIndexItem user={user} key={user.id} />

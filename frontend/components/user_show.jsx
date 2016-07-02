@@ -3,6 +3,7 @@ const Link = require('react-router').Link;
 const UserStore = require('../stores/user_store');
 const UserActions = require('../actions/user_actions');
 const ProfileSectionIndex = require('./profile_section_index');
+const SessionStore = require('../stores/session_store');
 
 const UserShow = React.createClass({
   getInitialState(){
@@ -33,7 +34,7 @@ const UserShow = React.createClass({
     return (
       <div className="content">
 
-        <section className="user-topbar">
+        <section className="user-sidebar">
 
           <section className="user-photo">
             <img src={this.state.user.img_url} alt={this.state.user.username} />
@@ -48,9 +49,6 @@ const UserShow = React.createClass({
           <section className="chart">
           </section>
 
-        </section>
-
-        <section className="user-nav">
         </section>
 
         <section className="user-main">
