@@ -1,14 +1,15 @@
 class User < ActiveRecord::Base
-  validates :username, :password_digest, :session_token, :looking_for, presence: true
+  validates :username, :password_digest, :session_token, :looking_for, :email, :zipcode, :birthday, presence: true
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validates :zipcode, length: { is: 5 }, numericality: { only_integer: true }
   validates :looking_for, inclusion: { in: ["Friendship", "Collaboration"] }
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
   attr_reader :password
-  attr_reader :dim_scores
-  
+  # attr_reader :dim_scores
+
   has_many :profile_sections
   has_many :answers
   has_many :questions, through: :answers
@@ -27,16 +28,28 @@ class User < ActiveRecord::Base
     end
   end
 
-  def filter_by_looking_for(looking_for_value)
-    User.where(looking_for: looking_for_value).where.not(id: self.id)
+  def filter_by_looking_for
+    User.where(looking_for: self.looking_for).where.not(id: self.id)
   end
 
-  def cal_all_dim_scores
-    @dim_scores = (0...6).map { |i| calc_dim_score(i) }
+  def match_percentage(other_user)
+    (1 - distance(other_user)/ 240.00) * 100
+  end
+
+  def distance(other_user)
+    distance = 0
+    6.times do |i|
+      distance += (self.dim_scores[i] - other_user.dim_scores[i]).abs
+    end
+    distance
+  end
+
+  def dim_scores
+    @dim_scores = (1..6).map { |i| calc_dim_score(i) }
   end
 
   def calc_dim_score(dim_id)
-    answers = Dimension.find(dim_id).questions.answers.where(user_id: self.id)
+    answers = Dimension.find(dim_id).answers.where(user_id: self.id)
     score = 0
     answers.each do |answer|
       score += answer.answer_choice

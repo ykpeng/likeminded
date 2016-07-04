@@ -17,11 +17,15 @@
   padding: 5px;
 }
 
-.user-index-item h3 {
-  font-size: 28px;
-  font-weight: 800;
+.user-index-item {
+  font-size: 14px;
+  font-weight: 400;
 }
 
+.user-index-item h3 {
+  font-size: 24px;
+  font-weight: 800;
+}
 // .user-sidebar {
 //   flex-grow: 1;
 // }
@@ -34,6 +38,12 @@
   display: flex;
   flex-direction: column;
   // padding: 10px;
+  font-size: 14px;
+}
+
+.chart h4{
+  font-size: 18px;
+  font-weight: 800;
 }
 
 .edit-icon {

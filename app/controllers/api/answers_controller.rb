@@ -1,7 +1,6 @@
 class Api::AnswersController < ApplicationController
   def index
-    @user = current_user
-    @answers = @user.answers
+    @answers = current_user.answers
     render 'api/answers/index'
   end
 
@@ -13,7 +12,6 @@ class Api::AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
     @answer.user_id = current_user.id
-    @user = current_user
     if @answer.save
       render 'api/answers/show'
     else

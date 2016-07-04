@@ -29,10 +29,10 @@ const LoginForm = React.createClass({
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this))
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
-    // ErrorActions.clearErrors();
   },
 
   componentWillUnmount(){
+    setTimeout(ErrorActions.clearErrors, 0);
     this.sessionListener.remove();
     this.errorListener.remove();
   },

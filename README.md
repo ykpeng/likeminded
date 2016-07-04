@@ -78,17 +78,17 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - [x] position elements on the page
 - [x] add basic colors & styles to existing pages
 - [x] build and style `Navbar`
-- [ ] implement image upload
-- [ ] seed the database with a small amount of test data
+- [x] seed the database with a small amount of test data
 
 
 ### Phase 4: PersonalityTest (2 days, W2 M 6pm)
 
 **Objective:** Implement personality test
 
-- [ ] create `Dimensions`, `Questions`, `AnswerChoices`, and `Answers` Models
-- [ ] create `Answers` controller
+- [x] create `Dimensions`, `Questions`, and `Answers` Models
+- [x] create `Questions` and `Answers` controllers
 - seed database with Questions and AnswerChoices
+- [x] build flux loop for questions and answers
 - [ ] write `User` model methods for calculating % matches and showing sorted users
 
 ### Phase 5: Conversations (2 days, W2 W 6pm)
@@ -116,6 +116,7 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
   - [ ] Navbar transition
 
 ### Bonus Features (TBD)
+- [ ] implement image upload
 - [ ] Filter by location, age range
 - [ ] Allow bookmarking of other users
 - [ ] Add more user fields (gender, education, languages, smoking/drugs, offspring, pets, etc.)

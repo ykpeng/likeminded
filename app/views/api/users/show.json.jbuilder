@@ -7,7 +7,7 @@ json.profile_sections do
 end
 
 json.answers do
-  json.array! (@user.answers.order(:updated_at)) do |answer|
+  json.array! (@user.answers) do |answer|
     json.extract! answer, :id, :question_id, :user_id, :created_at, :updated_at
   end
 end

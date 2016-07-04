@@ -2,7 +2,9 @@ class Api::UsersController < ApplicationController
   SECTIONS = ["self summary", "doing with life", "good at", "favorites", "thinking about", "friday night", "message if"]
 
   def index
-    @users = User.all
+    @users = current_user.filter_by_looking_for
+    # @users = @users.sort_by { |user| current_user.distance(user) }
+
     render 'api/users/index'
   end
 

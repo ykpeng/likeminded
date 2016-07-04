@@ -61,7 +61,7 @@ elijah = User.create!({
   password: "password",
   email: "elijahallen@gmail.com",
   zipcode: 10001,
-  birthday: Date.new(1931, 12, 1),
+  birthday: Date.new(1991, 12, 1),
   looking_for: "Friendship",
   img_url: "http://res.cloudinary.com/ddm1q6utc/image/upload/v1467486125/photo-1431225188438-8504262c0b0b_k0umkc.jpg"
   })
@@ -102,311 +102,313 @@ end
 
 #Section 1
 Question.create!({
-  dimension_id: 0,
+  dimension_id: 1,
   content: "Build kitchen cabinets"
   })
 
 Question.create!({
-  dimension_id: 0,
+  dimension_id: 1,
   content: "Lay brick or tile"
   })
 
 Question.create!({
-  dimension_id: 1,
+  dimension_id: 2,
   content: "Develop a new medicine"
   })
 
 Question.create!({
-  dimension_id: 1,
+  dimension_id: 2,
   content: "Study ways to reduce water pollution"
   })
 
 Question.create!({
-  dimension_id: 2,
+  dimension_id: 3,
   content: "Write books or plays"
   })
 
 Question.create!({
-  dimension_id: 2,
+  dimension_id: 3,
   content: "Play a musical instrument"
   })
 
 Question.create!({
-  dimension_id: 3,
+  dimension_id: 4,
   content: "Teach an individual an exercise routine"
   })
 
 Question.create!({
-  dimension_id: 3,
+  dimension_id: 4,
   content: "Help people with personal or emotional problems"
   })
 
 Question.create!({
-  dimension_id: 4,
+  dimension_id: 5,
   content: "Buy and sell stocks and bonds"
   })
 
 Question.create!({
-  dimension_id: 4,
+  dimension_id: 5,
   content: "Manage a retail store"
   })
 
 Question.create!({
-  dimension_id: 5,
+  dimension_id: 6,
   content: "Develop a spreadsheet using computer software"
   })
 
 Question.create!({
-  dimension_id: 5,
+  dimension_id: 6,
   content: "Proofread records or forms"
-  })
-
-#Section 2
-Question.create!({
-  dimension_id: 0,
-  content: "Repair household appliances"
-  })
-
-Question.create!({
-  dimension_id: 0,
-  content: "Raise fish in a fish hatchery"
-  })
-
-Question.create!({
-  dimension_id: 1,
-  content: "Conduct chemical experiments"
-  })
-
-Question.create!({
-  dimension_id: 1,
-  content: "Study the movement of planets"
-  })
-
-Question.create!({
-  dimension_id: 2,
-  content: "Compose or arrange music"
-  })
-
-Question.create!({
-  dimension_id: 2,
-  content: "Draw pictures"
-  })
-
-Question.create!({
-  dimension_id: 3,
-  content: "Give career guidance to people"
-  })
-
-Question.create!({
-  dimension_id: 3,
-  content: "perform rehabilitation therapy"
-  })
-
-Question.create!({
-  dimension_id: 4,
-  content: "Operate a beauty salon or barber shop"
-  })
-
-Question.create!({
-  dimension_id: 4,
-  content: "Manage a department within a large company"
-  })
-
-Question.create!({
-  dimension_id: 5,
-  content: "Install software across computers on a large network"
-  })
-
-Question.create!({
-  dimension_id: 5,
-  content: "Operate a calculator"
   })
 
 #Section 3
 Question.create!({
-  dimension_id: 0,
-  content: "Assemble electronic parts"
-  })
-
-Question.create!({
-  dimension_id: 0,
-  content: "Drive a truck to deliver packages to offices and homes"
+  dimension_id: 1,
+  content: "Repair household appliances"
   })
 
 Question.create!({
   dimension_id: 1,
-  content: "Examine blood samples using a microscope"
-  })
-
-Question.create!({
-  dimension_id: 1,
-  content: "Investigate the cause of a fire"
+  content: "Raise fish in a fish hatchery"
   })
 
 Question.create!({
   dimension_id: 2,
-  content: "Create special effects for movies"
+  content: "Conduct chemical experiments"
   })
 
 Question.create!({
   dimension_id: 2,
-  content: "Paint sets for plays"
+  content: "Study the movement of planets"
   })
 
 Question.create!({
   dimension_id: 3,
-  content: "Do volunteer work at a non-profit organization"
+  content: "Compose or arrange music"
   })
 
 Question.create!({
   dimension_id: 3,
-  content: "Teach children how to play sports"
+  content: "Draw pictures"
   })
 
 Question.create!({
   dimension_id: 4,
-  content: "Start your own business"
+  content: "Give career guidance to people"
   })
 
 Question.create!({
   dimension_id: 4,
-  content: "Negotiate business contracts"
+  content: "perform rehabilitation therapy"
   })
 
 Question.create!({
   dimension_id: 5,
-  content: "Keep shipping and receiving records"
+  content: "Operate a beauty salon or barber shop"
   })
 
 Question.create!({
   dimension_id: 5,
-  content: "Calculate the wages of employees"
+  content: "Manage a department within a large company"
+  })
+
+Question.create!({
+  dimension_id: 6,
+  content: "Install software across computers on a large network"
+  })
+
+Question.create!({
+  dimension_id: 6,
+  content: "Operate a calculator"
   })
 
 #Section 4
 Question.create!({
-  dimension_id: 0,
-  content: "Test the quality of parts before shipment"
-  })
-
-Question.create!({
-  dimension_id: 0,
-  content: "Repair and install locks"
+  dimension_id: 1,
+  content: "Assemble electronic parts"
   })
 
 Question.create!({
   dimension_id: 1,
-  content: "Develop a way to better predict the weather"
-  })
-
-Question.create!({
-  dimension_id: 1,
-  content: "Work in a biology lab"
+  content: "Drive a truck to deliver packages to offices and homes"
   })
 
 Question.create!({
   dimension_id: 2,
-  content: "Write scripts for movies or television shows"
+  content: "Examine blood samples using a microscope"
   })
 
 Question.create!({
   dimension_id: 2,
-  content: "Perform jazz or tap dance"
+  content: "Investigate the cause of a fire"
   })
 
 Question.create!({
   dimension_id: 3,
-  content: "Teach sign language to people with hearing disabilities"
+  content: "Create special effects for movies"
   })
 
 Question.create!({
   dimension_id: 3,
-  content: "Help conduct a group therapy session"
+  content: "Paint sets for plays"
   })
 
 Question.create!({
   dimension_id: 4,
-  content: "Represent a client in a lawsuit"
+  content: "Do volunteer work at a non-profit organization"
   })
 
 Question.create!({
   dimension_id: 4,
-  content: "Market a new line of clothing"
+  content: "Teach children how to play sports"
   })
 
 Question.create!({
   dimension_id: 5,
-  content: "Inventory supplies using a hand-held computer"
+  content: "Start your own business"
   })
 
 Question.create!({
   dimension_id: 5,
-  content: "Record rent payments"
+  content: "Negotiate business contracts"
+  })
+
+Question.create!({
+  dimension_id: 6,
+  content: "Keep shipping and receiving records"
+  })
+
+Question.create!({
+  dimension_id: 6,
+  content: "Calculate the wages of employees"
   })
 
 #Section 5
 Question.create!({
-  dimension_id: 0,
+  dimension_id: 1,
+  content: "Test the quality of parts before shipment"
+  })
+
+Question.create!({
+  dimension_id: 1,
+  content: "Repair and install locks"
+  })
+
+Question.create!({
+  dimension_id: 2,
+  content: "Develop a way to better predict the weather"
+  })
+
+Question.create!({
+  dimension_id: 2,
+  content: "Work in a biology lab"
+  })
+
+Question.create!({
+  dimension_id: 3,
+  content: "Write scripts for movies or television shows"
+  })
+
+Question.create!({
+  dimension_id: 3,
+  content: "Perform jazz or tap dance"
+  })
+
+Question.create!({
+  dimension_id: 4,
+  content: "Teach sign language to people with hearing disabilities"
+  })
+
+Question.create!({
+  dimension_id: 4,
+  content: "Help conduct a group therapy session"
+  })
+
+Question.create!({
+  dimension_id: 5,
+  content: "Represent a client in a lawsuit"
+  })
+
+Question.create!({
+  dimension_id: 5,
+  content: "Market a new line of clothing"
+  })
+
+Question.create!({
+  dimension_id: 6,
+  content: "Inventory supplies using a hand-held computer"
+  })
+
+Question.create!({
+  dimension_id: 6,
+  content: "Record rent payments"
+  })
+
+#Section 6
+Question.create!({
+  dimension_id: 1,
   content: "Set up and operate machines to make products"
   })
 
 Question.create!({
-  dimension_id: 0,
+  dimension_id: 1,
   content: "Put out forest fires"
   })
 
 Question.create!({
-  dimension_id: 1,
+  dimension_id: 2,
   content: "Invent a replacement for sugar"
   })
 
 Question.create!({
-  dimension_id: 1,
+  dimension_id: 2,
   content: "Do laboratory tests to identity diseases"
   })
 
 Question.create!({
-  dimension_id: 2,
+  dimension_id: 3,
   content: "Sing in a band"
   })
 
 Question.create!({
-  dimension_id: 2,
+  dimension_id: 3,
   content: "Edit movies"
   })
 
 Question.create!({
-  dimension_id: 3,
+  dimension_id: 4,
   content: "Take care of children at a day-care center"
   })
 
 Question.create!({
-  dimension_id: 3,
+  dimension_id: 4,
   content: "Teach a high-school class"
   })
 
 Question.create!({
-  dimension_id: 4,
+  dimension_id: 5,
   content: "Sell merchandise at a department store"
   })
 
 Question.create!({
-  dimension_id: 4,
+  dimension_id: 5,
   content: "Manage a clothing store"
   })
 
 Question.create!({
-  dimension_id: 5,
+  dimension_id: 6,
   content: "Keep inventory records"
   })
 
 Question.create!({
-  dimension_id: 5,
+  dimension_id: 6,
   content: "Stamp, sort, and distribute mail for an organization"
   })
 
-# User.all.each do |user|
-#   Question.all.each do |question|
-#     Answer.create!({ user_id: user.id, question_id: question.id, answer_choice: 0 })
-#   end
-# end
+i = 1
+User.all.each do |user|
+  Question.all.each do |question|
+    Answer.create!({ user_id: user.id, question_id: question.id, answer_choice: i })
+  end
+  i = (i + 1) % 6
+end

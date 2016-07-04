@@ -14,7 +14,10 @@ const UserIndex = React.createClass({
   },
 
   handleChange(){
-    this.setState({ users: UserStore.all() });
+    let sortedUsers = UserStore.all().sort((a, b)=>{
+      return b.match_percentage - a.match_percentage;
+    })
+    this.setState({ users: sortedUsers });
   },
 
   componentWillUnmount(){
@@ -22,6 +25,7 @@ const UserIndex = React.createClass({
   },
 
   render(){
+
     return (
       <div className="content">
         <ul className="user-index">

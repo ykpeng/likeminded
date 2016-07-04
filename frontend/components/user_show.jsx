@@ -5,6 +5,15 @@ const UserActions = require('../actions/user_actions');
 const ProfileSectionIndex = require('./profile_section_index');
 const SessionStore = require('../stores/session_store');
 
+const DIM_MAPPING = {
+  0: "Realistic",
+  1: "Investigative",
+  2: "Artistic",
+  3: "Social",
+  4: "Enterprising",
+  5: "Conventional"
+};
+
 const UserShow = React.createClass({
   getInitialState(){
     const potentialUser = UserStore.find(parseInt(this.props.params.userId));
@@ -42,11 +51,18 @@ const UserShow = React.createClass({
 
           <section className="user-summary">
             <h3>{this.state.user.username}</h3>
-            <p>{this.state.user.birthday}</p>
-            <p>{this.state.user.zipcode}</p>
+            <p>Birthday: {this.state.user.birthday}</p>
+            <p>Zipcode: {this.state.user.zipcode}</p>
+            <p>Looking for: {this.state.user.looking_for}</p>
           </section>
 
           <section className="chart">
+            <h4>Personality Profile</h4>
+            <ul>
+              {this.state.user.dim_scores.map((dim_score, i)=>{
+                return <li key={i}>{DIM_MAPPING[i]}:{dim_score}</li>
+              })}
+            </ul>
           </section>
 
         </section>
