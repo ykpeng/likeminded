@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :profile_sections, only: [:update]
     resources :questions, only: [:index]
-    resources :answers, only: [:create, :update]
+    resources :answers, only: [:index, :create, :update]
   end
 end

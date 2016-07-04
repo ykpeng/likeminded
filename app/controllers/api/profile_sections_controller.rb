@@ -1,7 +1,8 @@
 class Api::ProfileSectionsController < ApplicationController
-  #
+
   # def create
   #   @profile_section = ProfileSection.new(profile_section_params)
+  #   @profile_section.user_id = current_user.id
   #   if @profile_section.save
   #     render 'api/users/show'
   #   else

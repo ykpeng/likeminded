@@ -2,6 +2,7 @@ const React = require('react');
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
+const ErrorActions = require('../actions/error_actions');
 
 const SignupForm = React.createClass({
   contextTypes: {
@@ -49,6 +50,7 @@ const SignupForm = React.createClass({
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this))
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
+    // ErrorActions.clearErrors();
   },
 
   componentWillUnmount(){
@@ -100,15 +102,15 @@ const SignupForm = React.createClass({
           </div>
 
           <div className="input">
-            <label>Birthday</label>
+            <label htmlFor="birthday">Birthday</label>
             { this.fieldErrors("birthday") }
-            <input type="date" onChange={this._handleBirthday}/>
+            <input type="date" onChange={this._handleBirthday} id="birthday"/>
           </div>
 
           <div className="input">
             <label>I am looking for</label>
               <select>
-                <option value="Friendship">Friendship</option>
+                <option value="Friendship" id="looking_for">Friendship</option>
                 <option value="Collaboration">Collaboration</option>
               </select>
 

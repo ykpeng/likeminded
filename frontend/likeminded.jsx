@@ -29,7 +29,7 @@ const router = (
       <IndexRoute component={UserIndex} onEnter={_ensureLoggedIn}/>
       <Route path="/login" component={LoginPage}/>
       <Route path='/users/:userId' component={UserShow} onEnter={_ensureLoggedIn}/>
-      <Route path="/test" component={QuestionIndex} onEnter={_ensureLoggedIn}/>
+      <Route path="/users/:userId/test" component={QuestionIndex} onEnter={_ensureLoggedIn}/>
     </Route>
   </Router>
 );

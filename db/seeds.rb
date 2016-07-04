@@ -405,8 +405,8 @@ Question.create!({
   content: "Stamp, sort, and distribute mail for an organization"
   })
 
-User.all.each do |user|
-  Question.all.each do |question|
-    Answer.create!({ user_id: user.id, question_id: question.id, answer_choice: 0 })
-  end
-end
+# User.all.each do |user|
+#   Question.all.each do |question|
+#     Answer.create!({ user_id: user.id, question_id: question.id, answer_choice: 0 })
+#   end
+# end

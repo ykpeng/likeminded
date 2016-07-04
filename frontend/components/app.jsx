@@ -41,7 +41,7 @@ const App = React.createClass({
             <ul className="header-list1">
               <li className="icon"><i className="fa fa-sliders" aria-hidden="true"></i></li>
               <li><Link to="/">Browse Matches</Link></li>
-              <li><Link to="/test">Personality Test</Link></li>
+              <li><Link to={`/users/${currentUser.id}/test`}>Personality Test</Link></li>
             </ul>
 
             <ul className="header-list2">

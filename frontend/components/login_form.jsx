@@ -2,6 +2,7 @@ const React = require('react');
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
+const ErrorActions = require('../actions/error_actions');
 
 const LoginForm = React.createClass({
   contextTypes: {
@@ -28,6 +29,7 @@ const LoginForm = React.createClass({
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this))
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
+    // ErrorActions.clearErrors();
   },
 
   componentWillUnmount(){

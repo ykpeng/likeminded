@@ -1,13 +1,39 @@
 const UserActions = require('./user_actions');
 const AnswerApiUtil = require('../util/answer_api_util');
+const Dispatcher = require('../dispatcher/dispatcher');
+const AnswerConstants = require('../constants/answer_constants');
 
 const AnswerActions = {
-  // createAnswer(answer){
-  //   AnswerApiUtil.createAnswer(answer, UserActions.receiveSingleUser);
-  // },
+  fetchAnswers() {
+    console.log("inside answer action fetch answers");
+    AnswerApiUtil.fetchAnswers(this.receiveAnswers);
+  },
 
-  updateAnswer(answer){
-    AnswerApiUtil.updateAnswer(answer, UserActions.receiveSingleUser);
+  fetchSingleAnswer(id) {
+    AnswerApiUtil.fetchSingleAnswer(id, this.receiveSingleAnswer);
+  },
+
+  createAnswer(answer) {
+    AnswerApiUtil.createAnswer(answer, this.receiveSingleAnswer);
+  },
+
+  updateAnswer(answer) {
+    AnswerApiUtil.updateAnswer(answer, this.receiveSingleAnswer);
+  },
+
+  receiveAnswers(answers) {
+    // console.log(answers);
+    Dispatcher.dispatch({
+      actionType: AnswerConstants.ANSWERS_RECEIVED,
+      answers: answers
+    });
+  },
+
+  receiveSingleAnswer(answer) {
+    Dispatcher.dispatch({
+      actionType: AnswerConstants.ANSWER_RECEIVED,
+      answer: answer
+    });
   }
 }
 

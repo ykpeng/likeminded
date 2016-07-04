@@ -5,3 +5,9 @@ json.profile_sections do
     json.extract! profile_section, :id, :user_id, :section, :content
   end
 end
+
+json.answers do
+  json.array! (@user.answers.order(:updated_at)) do |answer|
+    json.extract! answer, :id, :question_id, :user_id, :created_at, :updated_at
+  end
+end

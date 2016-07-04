@@ -2,6 +2,7 @@ const React = require('react');
 
 const TestResult = React.createClass({
   handleClick(){
+    console.log("inside retake click");
     this.props.resetCurrIdx();
   },
   render(){
