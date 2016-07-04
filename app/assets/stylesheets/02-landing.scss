@@ -1,23 +1,31 @@
 .content {
-  margin-top: 75px;
+  margin-top: 50px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  // background: gray;
 }
 
 .signup-section {
-  width: 500px;
+  width: 250px;
   text-align: center;
+  // background: yellow;
 }
 
 .signup-form{
-  margin-top: 20px;
+  width: 100%;
+  margin-top: 15px;
   text-align: center;
   font-size: 12px;
+  // background: blue;
 }
 
 .signup-form label {
+  display: block;
+}
+
+.signup-form input {
   display: block;
 }
 
@@ -31,44 +39,18 @@
 .signup-section h2 {
   font-size: 12px;
   font-weight: 400px;
+  // margin-bottom: 20px;
   /*letter-spacing: 0.05em;*/
 }
 
-.signup-form input, textarea, select {
-  width: 200px;
-  margin:0;
 
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.submit input{
-  font-weight: 800px;
-  background: #EE3440;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 0.25rem;
-  border: 1px solid #EE3440;
-  letter-spacing: 0.1em;
-}
-
-.submit input:hover{
-  background: #ca2637;
-  border: 1px solid #ca2637;
-}
-
-.signup-form input {
-  margin: 0 0 10px 0;
-}
-
-.signup-form select {
-  margin: 0 0 10px 0;
-}
-
-.signup-form label {
-  margin: 0 0 5px 0;
-}
+// .signup-form select {
+//   margin: 0 0 10px 0;
+// }
+//
+// .signup-form label {
+//   margin: 0 0 5px 0;
+// }
 
 .logo-large {
   /*margin-top: 75px;*/
@@ -80,35 +62,43 @@
   background-size: cover;
 }
 
-input[type="date"],
-input[type="password"],
-input[type="email"],
-input[type="text"], {
+.signup-form input, .signup-form select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
   display: block;
-  margin: 0;
+  margin: 0 0 10px 0;
   width: 100%;
   font-size: 14px;
   appearance: none;
   box-shadow: none;
   border-radius: 0.25rem;
+  padding: 5px;
+  border-radius: 0.25rem;
+  border: solid 1px #333;
+  transition: box-shadow 0.3s, border 0.3s;
 }
 
-input[type="date"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="text"]:focus {
+.signup-form input:focus, .signup-form select:focus {
   outline: none;
   border-radius: 0.25rem;
   border: solid 1px #333;
   box-shadow: 0 0 2px 1px #333;
 }
 
-input[type="date"],
-input[type="password"],
-input[type="email"],
-input[type="text"] {
-  padding: 5px;
+.signup-form .submit input{
+  font-weight: 800px;
+  background: #EE3440;
+  color: white;
+  padding: 10px 20px;
   border-radius: 0.25rem;
-  border: solid 1px #333;
-  transition: box-shadow 0.3s, border 0.3s;
+  border: 1px solid #EE3440;
+  letter-spacing: 0.1em;
+  width: 100%;
+}
+
+.signup-form .submit input:hover{
+  background: #ca2637;
+  border: 1px solid #ca2637;
 }

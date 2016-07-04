@@ -60,18 +60,18 @@ const LoginForm = React.createClass({
       <div className="login-form">
       { this.fieldErrors("base") }
         <form onSubmit={this._handleSubmit} className="form">
-          <div>
+          <div className="form-section">
             { this.fieldErrors("username") }
             <input type="text" placeholder="Username" id="username" onChange={this._handleUsername}/>
           </div>
-          <div>
+          <div className="form-section">
             { this.fieldErrors("password") }
             <input type="password" placeholder="Password" onChange={this._handlePassword}/>
           </div>
-          <div>
+          <div className="submit form-section">
             <input type="submit" value="LOG IN"/>
           </div>
-          <div>
+          <div className="submit form-section">
             <input type="submit" value="DEMO USER"/>
           </div>
         </form>

@@ -40,6 +40,7 @@ const SignupForm = React.createClass({
 
   _handleLookingFor(e) {
     this.setState({ looking_for: e.target.value });
+    // console.log(this.state.looking_for);
   },
 
   _handleSubmit(e){
@@ -77,6 +78,8 @@ const SignupForm = React.createClass({
   },
 
   render(){
+    console.log(this.state.looking_for);
+
     return(
       <div className="signup-form">
       { this.fieldErrors("base") }
@@ -110,8 +113,8 @@ const SignupForm = React.createClass({
 
           <div className="input">
             <label>I am looking for</label>
-              <select>
-                <option value="Friendship" id="looking_for">Friendship</option>
+              <select value={this.state.looking_for} onChange={this._handleLookingFor}>
+                <option value="Friendship">Friendship</option>
                 <option value="Collaboration">Collaboration</option>
               </select>
 
