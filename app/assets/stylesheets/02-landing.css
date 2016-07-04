@@ -38,9 +38,9 @@
   width: 200px;
   margin:0;
 
-  -webkit-box-sizing: border-box;
+  /*-webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  box-sizing: border-box;*/
 }
 
 .submit input{
@@ -76,7 +76,7 @@
   margin-right: auto;
   height: 100px;
   width: 100px;
-  background-image: url('LikeMinded-logo.png');
+  background-image: image_url('LikeMinded-logo.png');
   background-size: cover;
 }
 
