@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   end
 
   def match_percentage(other_user)
-    (1 - distance(other_user)/ 240.00) * 100
+    ((1 - distance(other_user)/ 240.00) * 100).to_i
   end
 
   def distance(other_user)
