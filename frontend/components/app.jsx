@@ -46,7 +46,7 @@ const App = React.createClass({
 
             <ul className="header-list2">
               <li>
-                <Link to={`/users/${currentUser.id}`} className="user-icon"><img src={currentUser.img_url} alt={currentUser.username}/>
+                <Link to={`/users/${currentUser.id}`}><div className="user-icon"><img src={currentUser.img_url} alt={currentUser.username}/></div>
                 </Link>
               </li>
 

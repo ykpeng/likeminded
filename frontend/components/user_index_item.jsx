@@ -13,7 +13,8 @@ const UserIndexItem = React.createClass({
   render(){
     return (
       <li className="user-index-item">
-        <img src={this.props.user.img_url} alt={this.props.user.username} onClick={this.handleClick}/>
+        <div className="profile-photo">
+        <img src={this.props.user.img_url} alt={this.props.user.username} onClick={this.handleClick}/></div>
         <h3 onClick={this.handleClick}>{this.props.user.username}</h3>
         <p>Birthday: {this.props.user.birthday}</p>
         <p>Zipcode: {this.props.user.zipcode}</p>

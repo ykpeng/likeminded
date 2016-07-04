@@ -53,13 +53,20 @@
 }
 
 .user-icon {
-  height: 10px;
-  width: 10px;
+  max-height: 30px;
+  max-width: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .user-icon img {
-  width: 100%;
+  max-width: 100%;
+  width: auto;
   height: auto;
+  display: block;
+  -ms-interpolation-mode: bicubic;
 }
 
 .label {
