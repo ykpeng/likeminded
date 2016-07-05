@@ -16,6 +16,17 @@ const ConversationApiUtil = {
         cb(response)
       }
     });
+  },
+  deleteConversation(id, cb) {
+    $.ajax({
+      url: `api/conversations/${id}`,
+      method: "DELETE",
+      data: { id: id },
+      dataType: "json",
+      success(response){
+        cb(response)
+      }
+    });
   }
 };
 

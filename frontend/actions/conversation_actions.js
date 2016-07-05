@@ -20,6 +20,12 @@ const ConversationActions = {
       actionType: ConversationConstants.CONVERSATION_RECEIVED,
       conversation: conversation
     });
+  },
+  deleteConversation(conversation){
+    Dispatcher.dispatch({
+      actionType: ConversationConstants.CONVERSATION_REMOVED,
+      conversation: conversation
+    });
   }
 };
 

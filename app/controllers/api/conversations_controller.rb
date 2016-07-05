@@ -13,4 +13,8 @@ class Api::ConversationsController < ApplicationController
   #   @conversation = Conversation.new
   #   render 'api/conversations/new'
   # end
+  def destroy
+    @conversation = Conversation.find(params[:id])
+    @conversation.destroy! if @conversation
+  end
 end

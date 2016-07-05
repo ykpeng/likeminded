@@ -22,15 +22,16 @@ const ConversationIndex = React.createClass({
   },
 
   render(){
-    console.log("inside conversation index");
     return(
       <div className="content">
-        <h3>Messages</h3>
-        <ul>
-          {this.state.conversations.map((conversation)=>{
-            return <ConversationIndexItem conversation={conversation} key={conversation.id}/>
-          })}
-        </ul>
+        <div className="content-vertical">
+          <h3>Messages</h3>
+          <ul>
+            {this.state.conversations.map((conversation)=>{
+              return <ConversationIndexItem last_message={conversation.last_message} id={conversation.id} key={conversation.id}/>
+            })}
+          </ul>
+        </div>
       </div>
     )
   }

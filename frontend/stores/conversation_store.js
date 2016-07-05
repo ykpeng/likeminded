@@ -17,6 +17,10 @@ const setConversation = function(conversation){
   _conversations[conversation.id] = conversation;
 };
 
+const removeConversation = function(conversation){
+  delete _conversations[conversation.id]
+}
+
 ConversationStore.all = function(){
   const conversations = [];
   for (let id in _conversations) {
@@ -41,6 +45,9 @@ ConversationStore.__onDispatch = function(payload){
       setConversation(payload.conversation);
       this.__emitChange();
       break;
+    case ConversationConstants.CONVERSATION_REMOVED:
+      removeConversation(payload.conversation);
+      this.__emitChange();
   }
 }
 module.exports = ConversationStore;

@@ -1,0 +1,69 @@
+// Place all the styles related to the conversations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.content-vertical{
+  width: 80%;
+}
+
+.conversation {
+  padding: 25px 40px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #EEE #DDD #BBB;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #777;
+}
+
+.conversation h3 {
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.convo-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.convo-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// .convo-right span{
+//   padding: 10px;
+// }
+.convo-photo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.convo-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  -ms-interpolation-mode: bicubic;
+}
+
+.trash-icon {
+  background: transparent;
+  color: #ccc;
+  font-weight: 800;
+  font-size: 28px;
+  margin-left: 10px;
+}
+
+.trash-icon:hover {
+  color: #ca2637;
+}
