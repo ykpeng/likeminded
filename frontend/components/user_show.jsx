@@ -39,6 +39,10 @@ const UserShow = React.createClass({
   },
 
   render(){
+    let url = "http://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png";
+    if (this.state.user.img_url) {
+      url = this.state.user.img_url;
+    }
     if(this.state.user.profile_sections === undefined) { return <div></div>; }
     return (
       <div className="content">
@@ -46,7 +50,7 @@ const UserShow = React.createClass({
         <section className="user-sidebar">
 
           <section className="user-photo">
-            <img src={this.state.user.img_url} alt={this.state.user.username} />
+            <img src={url} alt={this.state.user.username} />
           </section>
 
           <section className="user-summary">

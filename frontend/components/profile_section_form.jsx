@@ -32,7 +32,7 @@ const ProfileSectionForm = React.createClass({
       <div className="profile-section-form">
         <form onSubmit={this.handleSubmit}>
           <textarea onChange={this.handleInput} value={this.state.content} />
-          <input type="submit" value="Save"/>
+          <input type="submit" value="SAVE"/>
         </form>
       </div>
     )

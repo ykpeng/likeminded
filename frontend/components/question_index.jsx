@@ -76,17 +76,18 @@ const QuestionIndex = React.createClass({
     return(
       <div className="content">
         <div className="questions-main">
-          <div className="questions">
-            <p>Read each question carefully and decide how you would fell about doing each type of work.Try not to think about if you have enough education or training to do the work; or how much money you would make doing the work. Just think about if you would like or dislike doing the work</p>
-
+          <div className="questions-instructions">
+            Read each question carefully and decide how you would feel about doing each type of work.Try not to think about if you have enough education or training to do the work, or how much money you would make doing the work. Just think about if you would like or dislike doing the work.
+          </div>
+          <div>
             {(this.state.currIdx === this.state.questions.length) ?
-              <span>You've completed the personality test</span> :
-              <QuestionIndexItem question={this.state.questions[this.state.currIdx]} incrementCurrIdx={this.incrementCurrIdx} /> }
-
+              <h5>You've completed the personality test!</h5> :
+              <QuestionIndexItem question={this.state.questions[this.state.currIdx]} incrementCurrIdx={this.incrementCurrIdx} key={this.state.currIdx}/> }
           </div>
-          <div className="answers">
-            <AnswerIndex answers={this.state.answers}/>
+          <div className="answers-heading">
+            <h4>ANSWERED QUESTIONS</h4>
           </div>
+          <AnswerIndex answers={this.state.answers}/>
         </div>
       </div>
     );

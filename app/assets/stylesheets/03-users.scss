@@ -6,7 +6,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;;
   align-items: flex-start;
 }
 
@@ -14,7 +14,7 @@
   width: 267px;
   // height: 316.328px;
   text-align: center;
-  padding: 5px;
+  // padding: 5px;
 }
 
 .user-index-item {
@@ -26,13 +26,6 @@
   font-size: 24px;
   font-weight: 800;
 }
-// .user-sidebar {
-//   flex-grow: 1;
-// }
-//
-// .user-main {
-//   flex-grow: 2;
-// }
 
 .user-sidebar {
   display: flex;
@@ -42,8 +35,9 @@
 }
 
 .chart h4{
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 16px;
+  color: black;
+  margin: 10px 0;
 }
 
 .edit-icon {
@@ -66,6 +60,7 @@
   border: 1px solid #EE3440;
   letter-spacing: 0.1em;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .profile-section-form input[type="submit"]:hover{
@@ -77,6 +72,7 @@
 .user-summary h3 {
   font-size: 28px;
   color: black;
+  margin-bottom: 10px;
 }
 
 .user-main {
@@ -85,13 +81,40 @@
 .user-main h4 {
   color: black;
   font-size: 14px;
-  // margin-bottom: 50px;
+  // margin-bottom: 20px 0;
   // padding: 10px;
 }
 
+.user-main textarea {
+  font-size: 12px;
+  width: 498px;
+  height: 90px;
+  padding: 9px;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.section-content {
+  margin: 10px 0 20px 0;
+}
+.user-index-item {
+  // padding: 50px;
+  // background: #e8e8e8;
+  color: #777;
+  // border: 1px solid #D8D8D8;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #EEE #DDD #BBB;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
 .user-index-item h3 {
   letter-spacing: 0.1em;
   color: black;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .user-photo {
@@ -111,4 +134,26 @@
 
 .user-summary {
   padding: 20px 20px 0 0;
+}
+
+.user-index-photo {
+  height: 267px;
+  width: 267px;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.user-index-photo img {
+  // max-width: 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  -ms-interpolation-mode: bicubic;
+  cursor: pointer;
+}
+
+.user-index-description {
+  padding: 10px 20px 50px 20px;
 }

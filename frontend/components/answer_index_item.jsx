@@ -22,16 +22,16 @@ const AnswerIndexItem = React.createClass({
   render(){
     // console.log(this.props.answer);
     return(
-      <div>
-        <span>{this.props.answer.question.content}</span>
+      <div className="answer">
+        <h4>{this.props.answer.question.content}</h4>
 
         {(this.state.editing) ?
 
           <AnswerEdit closeForm={this.closeForm} answer={this.props.answer}/> :
 
           <li>
-            <p>{ANSWER_MAPPING[this.props.answer.answer_choice]}</p>
-            <button onClick={this.handleClick}>Edit</button>
+            <p className="answered-answer"><i className="fa fa-check check-icon" aria-hidden="true"></i> {ANSWER_MAPPING[this.props.answer.answer_choice]}</p>
+            <button onClick={this.handleClick}>RE-ANSWER</button>
           </li>}
       </div>
     );

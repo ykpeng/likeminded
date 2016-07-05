@@ -1,0 +1,91 @@
+// Place all the styles related to the answers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.questions-main {
+  font-size: 14px;
+  font-weight: 400;
+  width: 80%;
+}
+
+.questions-main h3 {
+  font-size: 20px;
+}
+
+.questions-main h4{
+  font-size: 16px;
+}
+
+.questions-main h5 {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.questions-main input[type="submit"], .questions-main button {
+  font-weight: 800px;
+  background: #EE3440;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 0.25rem;
+  border: 1px solid #EE3440;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.questions-main input[type="submit"]:hover, .questions-main button:hover {
+  background: #ca2637;
+  border-radius: 0.25rem;
+  border: 1px solid #ca2637;
+}
+
+.questions-instructions {
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #EEE #DDD #BBB;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+.question-form {
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #EEE #DDD #BBB;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
+  margin: 20px 0 50px 0;
+}
+
+.answer-options {
+  margin-top: 15px;
+}
+
+.answer-option {
+  margin-bottom: 10px;
+}
+
+.answer {
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #EEE #DDD #BBB;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
+  margin: 20px 0 0 0;
+}
+
+.check-icon {
+  background: transparent;
+  color: #ca2637;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.answer-index {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.answered-answer {
+  margin: 15px 0 10px 0;
+}

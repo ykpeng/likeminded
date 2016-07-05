@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
   def index
     @users = current_user.filter_by_looking_for
     # @users = @users.sort_by { |user| current_user.distance(user) }
-
+    @users = @users.select { |user| user.answers.length >= 60 }
     render 'api/users/index'
   end
 

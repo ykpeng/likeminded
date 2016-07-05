@@ -8,8 +8,6 @@ const QuestionIndexItem = React.createClass({
   },
 
   handleClick(e){
-    // e.preventDefault();
-    // debugger
     this.setState({ answerChoice: parseInt(e.target.value) });
   },
 
@@ -22,35 +20,24 @@ const QuestionIndexItem = React.createClass({
   },
 
   render(){
-    // if (this.props.currIdx === this.props.questions.length) {
-    //   return (<TestResult resetCurrIdx={this.props.resetCurrIdx}/>);
-    // };
     let answers = ["Strongly Dislike", "Dislike", "Unsure", "Like", "Strongly Like"];
-    // debugger
     let radioButtons = answers.map((answer, idx) => {
-      // debugger
-      console.log(answer, idx);
       if (idx + 1 === this.state.answerChoice) {
-        console.log("checked");
-        return (<div><input type="radio" value={idx + 1} checked="checked" onClick={this.handleClick}/>{answer}<br/></div>);
+        return (<div className="answer-option" key={idx}><input type="radio" value={idx + 1} checked="checked" onClick={this.handleClick}/> {answer}<br/></div>);
       } else {
-        return (<div><input type="radio" value={idx + 1} onClick={this.handleClick}/>{answer}<br/></div>);
+        return (<div className="answer-option" key={idx}><input type="radio" value={idx + 1} onClick={this.handleClick}/> {answer}<br/></div>);
       }
     });
     return(
-      <form onSubmit={this.handleSubmit}>
-        <span>Question {this.props.question.id}/60</span><br/>
-        <span>{this.props.question.content}</span><br/>
-        {radioButtons}
-        <input type="submit" value="Answer"/>
+      <form onSubmit={this.handleSubmit} className="question-form">
+        <p>Question {this.props.question.id}/60: </p><br/>
+        <h4>{this.props.question.content}</h4><br/>
+        <div className="answer_options">
+          {radioButtons}
+        </div>
+        <input type="submit" value="ANSWER"/>
       </form>
     )
   }
 })
 module.exports = QuestionIndexItem;
-
-{/*<input type="radio" value="1" onClick={this.handleClick}/>Strongly Dislike<br/>
-<input type="radio" value="2" onClick={this.handleClick}/>Dislike<br/>
-<input type="radio" value="3" onClick={this.handleClick}/>Unsure<br/>
-<input type="radio" value="4" onClick={this.handleClick}/>Like<br/>
-<input type="radio" value="5" onClick={this.handleClick}/>Strongly Like<br/>*/}
