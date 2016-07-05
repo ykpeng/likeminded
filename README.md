@@ -70,7 +70,7 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
       - [x] Users can only edit their own page
 - [x] write `User` model method to filter matches based on `LookingFor`; Users shouldn't see themselves as matches
 
-### Phase 3: Start Styling (1 days, W1 Thu 6pm)
+### Phase 3: Start Styling (1 day, W1 Thu 6pm)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
@@ -89,9 +89,9 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - [x] create `Questions` and `Answers` controllers
 - seed database with Questions and AnswerChoices
 - [x] build flux loop for questions and answers
-- [ ] write `User` model methods for calculating % matches and showing sorted users
+- [x] write `User` model methods for calculating % matches and showing sorted users
 
-### Phase 5: Conversations (2 days, W2 W 6pm)
+### Phase 5: Conversations (2 days, W2 Tu 6pm)
 
 **Objective:** Users can view conversations they're a part of.
 
@@ -113,7 +113,7 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - [ ] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
 - [ ] Add modals, transitions, and other styling flourishes.
-  - [ ] Navbar transition
+  - [ ] Sidebar transition
 
 ### Bonus Features (TBD)
 - [ ] implement image upload
