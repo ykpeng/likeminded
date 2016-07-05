@@ -78,8 +78,6 @@ const SignupForm = React.createClass({
   },
 
   render(){
-    console.log(this.state.looking_for);
-
     return(
       <div className="signup-form">
       { this.fieldErrors("base") }

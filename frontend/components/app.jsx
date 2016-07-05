@@ -60,7 +60,7 @@ const App = React.createClass({
               </li>
 
               <li >
-                <Link to="/" className="icon"><i className="fa fa-envelope-o" aria-hidden="true"></i>
+                <Link to="/conversations" className="icon"><i className="fa fa-envelope-o" aria-hidden="true"></i>
                 </Link>
               </li>
 

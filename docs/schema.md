@@ -60,7 +60,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 question_id     | integer   | not null, foreign key
-answer_choice   | integer   | not null, limit to: [1, 2, 3, 4, 5]
+answer_choice   | integer   | not null, limit to: [0, 1, 2, 3, 4, 5]
 user_id         | integer   | not null, foreign key
 
 ## conversations

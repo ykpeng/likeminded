@@ -26,6 +26,12 @@ const LoginForm = React.createClass({
     SessionActions.login(this.state);
   },
 
+  _handleDemo(e){
+    e.preventDefault()
+    const formData = { username: "samanthajones", password: "password"}
+    SessionActions.login(formData);
+  },
+
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this))
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
@@ -72,7 +78,7 @@ const LoginForm = React.createClass({
             <input type="submit" value="LOG IN"/>
           </div>
           <div className="submit form-section">
-            <input type="submit" value="DEMO USER"/>
+            <button onClick={this._handleDemo}>DEMO USER</button>
           </div>
         </form>
       </div>

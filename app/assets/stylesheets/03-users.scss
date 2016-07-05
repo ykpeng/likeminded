@@ -1,6 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.content-center {
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
 .user-index {
   width: 100%;
@@ -23,16 +30,29 @@
 }
 
 .user-index-item h3 {
-  font-size: 24px;
+  letter-spacing: 0.1em;
+  color: black;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 20px;
   font-weight: 800;
 }
 
+.user-main {
+  // flex-grow: 2;
+  padding: 50px 50px 50px 0;
+  font-size: 14px;
+}
+
 .user-sidebar {
+  // flex-grow: 1;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   // padding: 10px;
   font-size: 14px;
 }
+
 
 .chart h4{
   font-size: 16px;
@@ -70,14 +90,11 @@
 }
 
 .user-summary h3 {
-  font-size: 28px;
+  font-size: 24px;
   color: black;
   margin-bottom: 10px;
 }
 
-.user-main {
-  font-size: 14px;
-}
 .user-main h4 {
   color: black;
   font-size: 14px;
@@ -110,12 +127,7 @@
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
   margin-bottom: 20px;
 }
-.user-index-item h3 {
-  letter-spacing: 0.1em;
-  color: black;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
+
 
 .user-photo {
   height: auto;
@@ -124,9 +136,6 @@
 // .edit-icon {
 //   float: left;
 // }
-.user-main {
-  padding: 0 0 0 20px;
-}
 
 .user-photo {
   padding: 0 20px 0 0;

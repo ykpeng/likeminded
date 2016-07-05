@@ -15,6 +15,24 @@ class User < ActiveRecord::Base
   has_many :questions, through: :answers
   has_many :dimensions, through: :questions
 
+  has_many :sent_messages,
+  foreign_key: :sender_id,
+  primary_key: :id,
+  class_name: :Message
+
+  has_many :received_messages,
+  foreign_key: :receiver_id,
+  primary_key: :id,
+  class_name: :Message
+
+  has_many :initiated_conversations,
+  through: :sent_messages,
+  source: :conversation
+
+  has_many :received_conversations,
+  through: :received_messages,
+  source: :conversation
+
   # has_many :looking_for_joins, dependent: :destroy, inverse_of: :user
   # has_many :looking_fors, through: :looking_for_joins
 

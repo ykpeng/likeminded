@@ -6,5 +6,8 @@ Rails.application.routes.draw do
     resources :profile_sections, only: [:update]
     resources :questions, only: [:index]
     resources :answers, only: [:index, :create, :update]
+    resources :conversations, only: [:index, :show] do
+      resources :messages, only: [:index, :create]
+    end
   end
 end

@@ -11,7 +11,7 @@ const LoginPage = React.createClass({
           <figure className="logo-large"></figure>
           <h1>LikeMinded</h1>
           <h2>Discover people</h2>
-          <h2>who think the way you do</h2>
+          <h2>who share your interest profile</h2>
           <SignupForm />
         </section>
       </main>

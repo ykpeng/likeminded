@@ -45,8 +45,7 @@ const UserShow = React.createClass({
     }
     if(this.state.user.profile_sections === undefined) { return <div></div>; }
     return (
-      <div className="content">
-
+      <div className="content-center">
         <section className="user-sidebar">
 
           <section className="user-photo">
