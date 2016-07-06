@@ -34,7 +34,7 @@ const MessageForm = React.createClass({
           </div>
         </div>
           <form onSubmit={this.handleSubmit} className="message-right">
-            <textarea onChange={this.handleInput} value={this.state.content}/>
+            <textarea onChange={this.handleInput} value={this.state.content} placeholder="Compose your message"/>
             <input type="submit" value="SEND"/>
           </form>
       </li>

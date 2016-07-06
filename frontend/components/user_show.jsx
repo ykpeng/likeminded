@@ -4,6 +4,9 @@ const UserStore = require('../stores/user_store');
 const UserActions = require('../actions/user_actions');
 const ProfileSectionIndex = require('./profile_section_index');
 const SessionStore = require('../stores/session_store');
+const Modal = require('react-modal');
+const ModalStyle = require('../modal_style');
+const MessageNewForm = require('./message_new_form');
 
 const DIM_MAPPING = {
   0: "Realistic",
@@ -17,7 +20,7 @@ const DIM_MAPPING = {
 const UserShow = React.createClass({
   getInitialState(){
     const potentialUser = UserStore.find(parseInt(this.props.params.userId));
-    return ({ user: potentialUser ? potentialUser : {} });
+    return ({ user: potentialUser ? potentialUser : {}, modalOpen: false});
   },
 
   componentWillReceiveProps(newProps) {
@@ -38,6 +41,14 @@ const UserShow = React.createClass({
     this.storeListener.remove();
   },
 
+  closeModal(){
+    this.setState({ modalOpen: false })
+  },
+
+  openModal(){
+    this.setState({ modalOpen: true })
+  },
+
   render(){
     let url = "http://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png";
     if (this.state.user.img_url) {
@@ -50,6 +61,7 @@ const UserShow = React.createClass({
 
           <section className="user-photo">
             <img src={url} alt={this.state.user.username} />
+            <button onClick={this.openModal}>Message</button>
           </section>
 
           <section className="user-summary">
@@ -73,6 +85,13 @@ const UserShow = React.createClass({
         <section className="user-main">
           <ProfileSectionIndex profileSections={this.state.user.profile_sections}/>
         </section>
+
+        <Modal isOpen={this.state.modalOpen}
+               onRequestClose={this.closeModal}
+               style={ModalStyle}>
+
+          <MessageNewForm user={this.state.user} closeModal={this.closeModal}/>
+        </Modal>
       </div>
     )
   }

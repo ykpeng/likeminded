@@ -18,6 +18,7 @@ const UserShow = require('./components/user_show');
 const QuestionIndex = require('./components/question_index');
 const ConversationIndex = require('./components/conversation_index');
 const MessageIndex = require('./components/message_index');
+const Modal = require('react-modal');
 
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){
@@ -39,6 +40,7 @@ const router = (
 );
 
 document.addEventListener("DOMContentLoaded", () => {
+  Modal.setAppElement(document.body);
   if (window.currentUser) {
     SessionActions.receiveCurrentUser(window.currentUser);
   }
