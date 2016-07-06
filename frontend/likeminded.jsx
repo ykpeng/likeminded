@@ -40,9 +40,9 @@ const router = (
 );
 
 document.addEventListener("DOMContentLoaded", () => {
-  Modal.setAppElement(document.body);
   if (window.currentUser) {
     SessionActions.receiveCurrentUser(window.currentUser);
   }
   ReactDOM.render(router, document.getElementById('content'));
+  Modal.setAppElement(document.body);
 });

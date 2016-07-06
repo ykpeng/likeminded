@@ -13,7 +13,7 @@ const MessageIndexItem = React.createClass({
         </div>
         <div className="message-right">
           <div className="message-content">{this.props.message.content}</div>
-          <div>{this.props.message.created_at}</div>
+          <div className="time-ago">Sent {this.props.message.time_ago} ago</div>
         </div>
       </li>
     );

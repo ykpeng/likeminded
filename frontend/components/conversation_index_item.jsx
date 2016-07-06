@@ -30,7 +30,7 @@ const ConversationIndexItem = React.createClass({
         </div>
 
         <div>
-          <span>{this.props.last_message.created_at}</span>
+          <span>{this.props.last_message.time_ago} ago</span>
           <button className="trash-icon"><i className="fa fa-trash-o" aria-hidden="true"></i></button>
         </div>
       </li>

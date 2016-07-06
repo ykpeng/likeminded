@@ -5,6 +5,11 @@
   width: 80%;
 }
 
+.conversation-index {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .conversation {
   padding: 25px 40px;
   box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;

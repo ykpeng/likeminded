@@ -27,7 +27,7 @@ const ConversationIndex = React.createClass({
       <div className="content">
         <div className="content-vertical">
           <h3>Messages</h3>
-          <ul>
+          <ul className="conversation-index">
             {this.state.conversations.map((conversation)=>{
               return <Link to={`/conversations/${conversation.id}`} key={conversation.id}><ConversationIndexItem last_message={conversation.last_message} id={conversation.id}/></Link>
             })}

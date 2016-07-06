@@ -1,3 +1,8 @@
 json.array! @messages do |message|
-  json.extract! message, :id, :conversation_id, :sender, :receiver, :content, :created_at
+  json.id message.id
+  json.conversation_id message.conversation_id
+  json.sender message.sender
+  json.receiver message.receiver
+  json.content message.content
+  json.time_ago time_ago_in_words(message.created_at)
 end
