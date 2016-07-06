@@ -3,11 +3,6 @@ const ProfileSectionActions = require('../actions/profile_section_actions');
 
 const ProfileSectionForm = React.createClass({
   getInitialState(){
-    // for (var variable in object) {
-    //   if (object.hasOwnProperty(variable)) {
-    //
-    //   }
-    // }
     return { content: this.props.profileSection.content }
   },
 

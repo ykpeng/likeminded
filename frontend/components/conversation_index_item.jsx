@@ -1,16 +1,26 @@
 const React = require('react');
 const SessionStore = require('../stores/session_store');
+const hashHistory = require('react-router').hashHistory;
 
 const ConversationIndexItem = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   handleDelete(e){
     e.preventDefault();
     ConversationActions.deleteConversation(this.props.id)
   },
+
+  // handleClick () {
+  //   this.context.router.push('/conversations/'+ this.props.id);
+  // },
+
   render(){
     let other_user = this.props.last_message.sender;
     if (other_user.id === SessionStore.currentUser().id) {
       other_user = this.props.last_message.receiver;
-    }
+    };
     return(
       <li className="conversation">
         <div className="convo-left">

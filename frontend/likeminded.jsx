@@ -17,6 +17,7 @@ const UserIndex = require('./components/user_index');
 const UserShow = require('./components/user_show');
 const QuestionIndex = require('./components/question_index');
 const ConversationIndex = require('./components/conversation_index');
+const MessageIndex = require('./components/message_index');
 
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){
@@ -32,7 +33,7 @@ const router = (
       <Route path='/users/:userId' component={UserShow} onEnter={_ensureLoggedIn}/>
       <Route path="/test" component={QuestionIndex} onEnter={_ensureLoggedIn}/>
       <Route path='/conversations' component={ConversationIndex}/>
-
+      <Route path='/conversations/:conversationId' component={MessageIndex}/>
     </Route>
   </Router>
 );

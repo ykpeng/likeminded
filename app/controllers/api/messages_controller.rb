@@ -1,21 +1,21 @@
 class Api::MessagesController < ApplicationController
   def index
-    @messages = Message.find(conversation_id: params[:id])
+    @messages = Conversation.find(params[:conversation_id]).messages
     render 'api/messages/index'
   end
 
   def create
     @message = Message.new(message_params)
     @message.sender_id = current_user.id
-    if !params[:id]
+    if !params[:conversation_id]
       @conversation = Conversation.create!
-      @message.converation_id = @conversation.id
+      @message.conversation_id = @conversation.id
     else
-      @message.conversation_id = params[:id]
+      @message.conversation_id = params[:conversation_id]
     end
 
     if @message.save
-      render 'api/messages/index'
+      render 'api/messages/show'
     else
       render json: @message.errors, status: 422
     end

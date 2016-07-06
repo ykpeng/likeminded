@@ -1,7 +1,7 @@
 const MessageApiUtil = {
   fetchMessages(id, cb){
     $.ajax({
-      url: `api/conversations/${id}`,
+      url: `api/conversations/${id}/messages`,
       dataType: "json",
       success(response){
         cb(response);
@@ -10,10 +10,10 @@ const MessageApiUtil = {
   },
   createMessage(formData, cb){
     $.ajax({
-      url: `api/conversations/messages/`,
+      url: `api/conversations/${formData.conversation_id}/messages/`,
       dataType: "json",
       method: "POST",
-      data: { message: formData }
+      data: { message: { receiver_id: formData.receiver_id, content: formData.content} },
       success(response){
         cb(response);
       }

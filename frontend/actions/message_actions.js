@@ -1,4 +1,6 @@
 const MessageApiUtil = require('../util/message_api_util');
+const Dispatcher = require('../dispatcher/dispatcher');
+const MessageConstants = require('../constants/message_constants');
 
 const MessageActions = {
   fetchMessages(id){
