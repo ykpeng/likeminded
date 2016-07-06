@@ -50,23 +50,20 @@ const UserShow = React.createClass({
   },
 
   render(){
-    let url = "http://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png";
-    if (this.state.user.img_url) {
-      url = this.state.user.img_url;
-    }
     if(this.state.user.profile_sections === undefined) { return <div></div>; }
+
     return (
       <div className="content-center">
         <section className="user-sidebar">
 
           <section className="user-photo">
-            <img src={url} alt={this.state.user.username} />
-            <button onClick={this.openModal}>MESSAGE</button>
+            <img src={this.state.user.img_url} alt={this.state.user.username} />
+            {(SessionStore.currentUser().id === this.state.user.id) ? <div></div> : <button onClick={this.openModal}>MESSAGE</button> }
           </section>
 
           <section className="user-summary">
             <h3>{this.state.user.username}</h3>
-            <p>Birthday: {this.state.user.birthday}</p>
+            <p>{this.state.user.age}</p>
             <p>Zipcode: {this.state.user.zipcode}</p>
             <p>Looking for: {this.state.user.looking_for}</p>
           </section>

@@ -10,7 +10,7 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README (**NB**: check out the [sample production README](docs/production_readme.md) -- you'll write this later)
-- [ ] Browse and search other users by location and ‘looking for’
+- [ ] Filter users by ‘looking for’
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
@@ -95,16 +95,17 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 
 **Objective:** Users can view conversations they're a part of.
 
-- [ ] create `Conversation` and `Message` models
+- [x] create `Conversation` and `Message` models
 - build out API, Flux loop, and components for:
-  - [ ] `ConversationsIndex`
-  - [ ] `ConversationIndexItem`
+  - [x] `ConversationsIndex`
+  - [x] `ConversationIndexItem`
   - [ ] Users can only view conversations they're a part of
 - build out API, Flux loop, and components for:
-  - [ ] `MessagesIndex`
-  - [ ] `MessageIndexItems`
-  - [ ] `MessageForm`
-- [ ] Style new elements
+  - [x] `MessagesIndex`
+  - [x] `MessageIndexItems`
+  - [x] `MessageForm`
+  - [x] `MessageNewForm` modal
+- [x] Style new elements
 
 ### Phase 8: Styling Cleanup and Seeding (1 day, W2 Thu 6pm)
 

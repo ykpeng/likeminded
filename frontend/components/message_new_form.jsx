@@ -37,9 +37,6 @@ const MessageNewForm = React.createClass({
     let conversations = ConversationStore.all();
     let conversation_id = conversations[conversations.length - 1].id;
     this.context.router.push(`/conversations/${conversation_id}`);
-  },
-
-  componentWillUnmount(){
     this.listener.remove();
   },
 

@@ -1,4 +1,10 @@
-json.extract! @user, :id, :username, :zipcode, :birthday, :looking_for, :img_url, :dim_scores
+json.id @user.id
+json.username @user.username
+json.age @user.age(@user.birthday)
+json.zipcode @user.zipcode
+json.img_url @user.img_url || "http://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png"
+json.looking_for @user.looking_for
+json.dim_scores @user.dim_scores
 
 json.profile_sections do
   json.array! (@user.profile_sections.order(:id)) do |profile_section|

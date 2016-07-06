@@ -46,6 +46,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def age(dob)
+    now = Date.today
+    now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+  end
+
   def filter_by_looking_for
     User.where(looking_for: self.looking_for).where.not(id: self.id)
   end
