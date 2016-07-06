@@ -2,6 +2,7 @@ const React = require('react');
 const MessageActions = require('../actions/message_actions');
 const SessionStore = require('../stores/session_store');
 const Link = require('react-router').Link;
+const ConversationActions = require('../actions/conversation_actions');
 
 const MessageNewForm = React.createClass({
   getInitialState(){
@@ -14,12 +15,16 @@ const MessageNewForm = React.createClass({
 
   handleSubmit(e){
     e.preventDefault();
-    const formData = {
-      content: this.state.content,
-      receiver_id: this.props.user.id,
-    };
-    MessageActions.createMessage(formData);
+    const message = { content: this.state.content,
+                      receiver_id: this.props.user.id,
+                      sender_id: SessionStore.currentUser().id
+                    }
+
+    ConversationActions.createConversation(
+      { conversation: { messages_attributes: [message] } }
+    );
     this.setState({ content: "" });
+    this.props.closeModal();
   },
 
   render(){
@@ -35,7 +40,7 @@ const MessageNewForm = React.createClass({
               {this.props.user.username}
             </div>
           </div>
-          
+
           <button onClick={this.props.closeModal} className="exit-icon new-message-top-right">
             <i className="fa fa-times" aria-hidden="true"></i>
           </button>

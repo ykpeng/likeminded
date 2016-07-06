@@ -71,7 +71,7 @@
   color: #ca2637;
 }
 
-.profile-section-form input[type="submit"] {
+.profile-section-form input[type="submit"], .user-sidebar button {
   font-weight: 800px;
   background: #EE3440;
   color: white;
@@ -83,7 +83,7 @@
   margin-bottom: 20px;
 }
 
-.profile-section-form input[type="submit"]:hover{
+.profile-section-form input[type="submit"]:hover, .user-sidebar button:hover {
   background: #ca2637;
   border-radius: 0.25rem;
   border: 1px solid #ca2637;
@@ -133,9 +133,10 @@
   height: auto;
   width: 250px;
 }
-// .edit-icon {
-//   float: left;
-// }
+
+.user-photo img {
+  margin-bottom: 15px;
+}
 
 .user-photo {
   padding: 0 20px 0 0;

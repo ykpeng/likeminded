@@ -61,7 +61,7 @@ const UserShow = React.createClass({
 
           <section className="user-photo">
             <img src={url} alt={this.state.user.username} />
-            <button onClick={this.openModal}>Message</button>
+            <button onClick={this.openModal}>MESSAGE</button>
           </section>
 
           <section className="user-summary">

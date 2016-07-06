@@ -4,7 +4,7 @@ const ConversationApiUtil = {
       url: "api/conversations",
       dataType: "json",
       success(response){
-        cb(response)
+        cb(response);
       }
     });
   },
@@ -13,7 +13,7 @@ const ConversationApiUtil = {
       url: `api/conversations/${id}`,
       dataType: "json",
       success(response){
-        cb(response)
+        cb(response);
       }
     });
   },
@@ -24,7 +24,18 @@ const ConversationApiUtil = {
       data: { id: id },
       dataType: "json",
       success(response){
-        cb(response)
+        cb(response);
+      }
+    });
+  },
+  createConversation(conversation, cb) {
+    $.ajax({
+      url: `api/conversations/`,
+      method: "POST",
+      data: conversation,
+      dataType: "json",
+      success(response){
+        cb(response);
       }
     });
   }

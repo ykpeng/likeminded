@@ -3,6 +3,9 @@ const Dispatcher = require('../dispatcher/dispatcher');
 const ConversationConstants = require('../constants/conversation_constants');
 
 const ConversationActions = {
+  createConversation(formData) {
+    ConversationApiUtil.createConversation(formData, this.receiveSingleConversation)
+  },
   fetchConversations(){
     ConversationApiUtil.fetchConversations(this.receiveConversations);
   },

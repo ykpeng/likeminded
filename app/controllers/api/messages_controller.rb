@@ -7,13 +7,7 @@ class Api::MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.sender_id = current_user.id
-    if !params[:conversation_id]
-      @conversation = Conversation.create!
-      @message.conversation_id = @conversation.id
-    else
-      @message.conversation_id = params[:conversation_id]
-    end
-
+    @message.conversation_id = params[:conversation_id]
     if @message.save
       render 'api/messages/show'
     else

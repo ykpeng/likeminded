@@ -10,23 +10,31 @@ const MessageIndex = React.createClass({
   getInitialState(){
     return { messages: [] };
   },
+
   componentDidMount(){
     this.listener = MessageStore.addListener(this.handleChange);
     MessageActions.fetchMessages(parseInt(this.props.params.conversationId));
   },
+
+  componentWillReceiveProps(newProps) {
+    MessageActions.fetchMessages(parseInt(newProps.params.conversationId));
+  },
+
   handleChange(){
     this.setState({ messages: MessageStore.all() });
   },
+
   componentWillUnmount(){
     this.listener.remove();
   },
+
   render(){
     if (this.state.messages.length === 0) {
       return <div></div>;
     }
-    let other_user = this.state.messages[0].sender;
+    let other_user = this.state.messages["0"].sender;
     if (other_user.id === SessionStore.currentUser().id) {
-      other_user = this.props.messages[0].receiver;
+      other_user = this.state.messages["0"].receiver;
     };
     return(
       <div className="content">
@@ -47,7 +55,7 @@ const MessageIndex = React.createClass({
             {this.state.messages.map((message)=>{
               return <MessageIndexItem message={message} key={message.id}/>
             })}
-            <MessageForm receiver_id={other_user.id} conversation_id={this.state.messages[0].conversation_id}/>
+            <MessageForm receiver_id={other_user.id} conversation_id={this.state.messages["0"].conversation_id}/>
           </ul>
 
         </div>

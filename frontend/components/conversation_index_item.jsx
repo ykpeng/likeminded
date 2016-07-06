@@ -12,10 +12,6 @@ const ConversationIndexItem = React.createClass({
     ConversationActions.deleteConversation(this.props.id)
   },
 
-  // handleClick () {
-  //   this.context.router.push('/conversations/'+ this.props.id);
-  // },
-
   render(){
     let other_user = this.props.last_message.sender;
     if (other_user.id === SessionStore.currentUser().id) {
