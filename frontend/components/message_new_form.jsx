@@ -3,8 +3,13 @@ const MessageActions = require('../actions/message_actions');
 const SessionStore = require('../stores/session_store');
 const Link = require('react-router').Link;
 const ConversationActions = require('../actions/conversation_actions');
+const ConversationStore = require('../stores/conversation_store');
 
 const MessageNewForm = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   getInitialState(){
     return { content: "" };
   },
@@ -15,6 +20,7 @@ const MessageNewForm = React.createClass({
 
   handleSubmit(e){
     e.preventDefault();
+    this.listener = ConversationStore.addListener(this.handleChange);
     const message = { content: this.state.content,
                       receiver_id: this.props.user.id,
                       sender_id: SessionStore.currentUser().id
@@ -25,6 +31,16 @@ const MessageNewForm = React.createClass({
     );
     this.setState({ content: "" });
     this.props.closeModal();
+  },
+
+  handleChange(){
+    let conversations = ConversationStore.all();
+    let conversation_id = conversations[conversations.length - 1].id;
+    this.context.router.push(`/conversations/${conversation_id}`);
+  },
+
+  componentWillUnmount(){
+    this.listener.remove();
   },
 
   render(){

@@ -11,7 +11,6 @@ class Api::ConversationsController < ApplicationController
 
   def create
     @conversation = Conversation.new(conversation_params)
-    debugger
     if @conversation.save
       render 'api/conversations/show'
     else
