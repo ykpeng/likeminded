@@ -3,6 +3,8 @@ const Link = require('react-router').Link;
 
 const MessageIndexItem = React.createClass({
   render(){
+    console.log(this.props.message);
+    // debugger
     let sender = this.props.message.sender;
     return(
       <li className="message">

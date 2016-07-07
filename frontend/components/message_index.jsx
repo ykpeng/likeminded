@@ -47,6 +47,7 @@ const MessageIndex = React.createClass({
     return(
       <div className="content">
         <div className="content-vertical">
+          <Link to={`/conversations`}><h3>Messages</h3></Link>
           <Link to={`/users/${other_user.id}`}><div className="messages-header">
             <div className="messages-header-left">
               <div className="message-photo">

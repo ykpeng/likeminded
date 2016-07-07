@@ -6,6 +6,9 @@ const ConversationActions = {
   createConversation(formData) {
     ConversationApiUtil.createConversation(formData, this.receiveSingleConversation)
   },
+  deleteConversation(id) {
+    ConversationApiUtil.deleteConversation(id, this.removeConversation);
+  },
   fetchConversations(){
     ConversationApiUtil.fetchConversations(this.receiveConversations);
   },
@@ -24,7 +27,7 @@ const ConversationActions = {
       conversation: conversation
     });
   },
-  deleteConversation(conversation){
+  removeConversation(conversation){
     Dispatcher.dispatch({
       actionType: ConversationConstants.CONVERSATION_REMOVED,
       conversation: conversation

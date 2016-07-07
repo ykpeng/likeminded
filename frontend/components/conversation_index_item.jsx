@@ -1,12 +1,8 @@
 const React = require('react');
 const SessionStore = require('../stores/session_store');
-const hashHistory = require('react-router').hashHistory;
+const ConversationActions = require('../actions/conversation_actions');
 
 const ConversationIndexItem = React.createClass({
-  contextTypes: {
-    router: React.PropTypes.object.isRequired
-  },
-
   handleDelete(e){
     e.preventDefault();
     ConversationActions.deleteConversation(this.props.id)
@@ -31,7 +27,7 @@ const ConversationIndexItem = React.createClass({
 
         <div>
           <span>{this.props.last_message.time_ago} ago</span>
-          <button className="trash-icon"><i className="fa fa-trash-o" aria-hidden="true"></i></button>
+          <button className="trash-icon" onClick={this.handleDelete}><i className="fa fa-trash-o" aria-hidden="true"></i></button>
         </div>
       </li>
     );

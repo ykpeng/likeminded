@@ -21,9 +21,9 @@ const ConversationApiUtil = {
     $.ajax({
       url: `api/conversations/${id}`,
       method: "DELETE",
-      data: { id: id },
       dataType: "json",
       success(response){
+        console.log(response);
         cb(response);
       }
     });

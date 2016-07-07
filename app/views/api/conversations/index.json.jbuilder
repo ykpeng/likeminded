@@ -6,6 +6,7 @@ json.array! @conversations do |conversation|
     json.sender last_message.sender
     json.receiver last_message.receiver
     json.content last_message.content
+    json.created_at last_message.created_at
     json.time_ago time_ago_in_words(last_message.created_at)
   end
 end
