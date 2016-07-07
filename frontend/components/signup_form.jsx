@@ -3,6 +3,7 @@ const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
 const ErrorActions = require('../actions/error_actions');
+const GoogleMapsApiUtil = require('../util/google_maps_api_util');
 
 const SignupForm = React.createClass({
   contextTypes: {
@@ -40,18 +41,16 @@ const SignupForm = React.createClass({
 
   _handleLookingFor(e) {
     this.setState({ looking_for: e.target.value });
-    // console.log(this.state.looking_for);
   },
 
   _handleSubmit(e){
     e.preventDefault();
-    SessionActions.signup(this.state);
+    GoogleMapsApiUtil.fetchLocation(this.state, SessionActions.signup)
   },
 
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this))
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
-    // ErrorActions.clearErrors();
   },
 
   componentWillUnmount(){

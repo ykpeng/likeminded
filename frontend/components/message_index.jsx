@@ -55,7 +55,7 @@ const MessageIndex = React.createClass({
               </div>
               <div>
                 <h3>{other_user.username}</h3>
-                <div>{other_user.age} | {other_user.zipcode}</div>
+                <div>{other_user.age} | {other_user.city}, {other_user.state}</div>
               </div>
             </div>
           </div></Link>

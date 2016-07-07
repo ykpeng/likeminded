@@ -19,8 +19,12 @@ demo = User.create!({
         username: "samanthajones",
         password: "password",
         email: Faker::Internet.email,
-        zipcode: 94609,
-        birthday: Faker::Date.between(40.years.ago, 20.years.ago),
+        zipcode: 94109,
+        city: "San Francisco",
+        state: "CA",
+        lat: 37.7929789,
+        lng: -122.4212424,
+        birthday: 27,
         looking_for: ["Friendship", "Collaboration"].sample,
         img_url: "http://res.cloudinary.com/ddm1q6utc/image/upload/c_scale,w_600/v1467700747/photo-1438761681033-6461ffad8d80_bqbh5d.jpg"
         })
@@ -28,7 +32,7 @@ demo = User.create!({
 young_urls.each do |young_url|
   User.create!({
     username: Faker::Internet.user_name,
-    password: Faker::Internet.password,
+    password: "password",
     email: Faker::Internet.email,
     zipcode: Faker::Address.zip_code.to_i,
     birthday: Faker::Date.between(40.years.ago, 20.years.ago),
@@ -41,7 +45,7 @@ end
 old_urls.each do |old_url|
   User.create!({
     username: Faker::Internet.user_name,
-    password: Faker::Internet.password,
+    password: "password",
     email: Faker::Internet.email,
     zipcode: Faker::Address.zip_code.to_i,
     birthday: Faker::Date.between(60.years.ago, 40.years.ago),

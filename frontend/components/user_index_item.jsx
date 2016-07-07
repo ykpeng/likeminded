@@ -19,7 +19,7 @@ const UserIndexItem = React.createClass({
         <div className="user-index-description">
           <h3 onClick={this.handleClick}>{this.props.user.username}</h3>
           <p>{this.props.user.age}</p>
-          <p>Zipcode: {this.props.user.zipcode}</p>
+          <p>{this.props.user.city}, {this.props.user.state}</p>
           <p>{this.props.user.match_percentage}% Match</p>
         </div>
       </li>

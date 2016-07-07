@@ -1,7 +1,8 @@
 json.id @user.id
 json.username @user.username
 json.age @user.age(@user.birthday)
-json.zipcode @user.zipcode
+json.city @user.city
+json.state @user.state
 json.img_url @user.img_url || "http://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png"
 json.looking_for @user.looking_for
 json.dim_scores @user.dim_scores

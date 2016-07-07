@@ -17,6 +17,17 @@ const UserApiUtil = {
         cb(response);
       }
     })
+  },
+
+  updateUser(id, formData, cb){
+    $.ajax({
+      url: `api/users/${id}`,
+      method: "PATCH",
+      data: { user: formData },
+      success(response){
+        cb(response);
+      }
+    })
   }
 };
 

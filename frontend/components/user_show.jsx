@@ -49,6 +49,10 @@ const UserShow = React.createClass({
     this.setState({ modalOpen: true })
   },
 
+  addImage(url){
+    UserActions.updateUser({ img_url: url });
+  },
+
   render(){
     if(this.state.user.profile_sections === undefined) { return <div></div>; }
 
@@ -64,7 +68,7 @@ const UserShow = React.createClass({
           <section className="user-summary">
             <h3>{this.state.user.username}</h3>
             <p>{this.state.user.age}</p>
-            <p>Zipcode: {this.state.user.zipcode}</p>
+            <p>{this.state.user.city}, {this.state.user.state}</p>
             <p>Looking for: {this.state.user.looking_for}</p>
           </section>
 
