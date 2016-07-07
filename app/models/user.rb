@@ -104,6 +104,7 @@ class User < ActiveRecord::Base
 
   def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64
+    ensure_session_token_uniqueness
     self.save!
     self.session_token
   end
@@ -114,7 +115,8 @@ class User < ActiveRecord::Base
   end
 
   def ensure_session_token_uniqueness
-    while User.find_by(session_token: self.session_token)
+    user = User.find_by(session_token: self.session_token)
+    if user && user.username != self.username
       self.session_token = SecureRandom.urlsafe_base64
     end
   end
