@@ -3,7 +3,7 @@ const SessionActions = require('../actions/session_actions');
 const GoogleMapsApiUtil = {
   fetchLocation(formData, cb){
     $.ajax({
-      url: `http://maps.googleapis.com/maps/api/geocode/json?address=${formData.zipcode}&sensor=false`,
+      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${formData.zipcode}&sensor=false`,
       method: "GET",
       success(response){
         let city = response.results[0].address_components[1].short_name;
