@@ -26,6 +26,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker'
 
+gem 'figaro'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

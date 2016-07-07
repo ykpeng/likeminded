@@ -32,22 +32,18 @@ const MessageIndex = React.createClass({
     this.listener.remove();
   },
 
-  redirectIfNotCurrentUser(){
-    if (this.state.messages.length > 0) {
-      if (SessionStore.currentUser().id !== this.state.messages["0"].sender.id && SessionStore.currentUser().id !== this.state.messages["0"].receiver.id){
-        this.context.router.push("/conversations");
-      }
-    }
-  },
-
   render(){
     if (this.state.messages.length === 0) {
       return <div></div>;
     }
-    let other_user = this.state.messages["0"].sender;
+    let firstMessage = this.state.messages["0"]
+    let other_user = firstMessage.sender;
     if (other_user.id === SessionStore.currentUser().id) {
-      other_user = this.state.messages["0"].receiver;
+      other_user = firstMessage.receiver;
     };
+    if (firstMessage.sender.id !== SessionStore.currentUser().id && firstMessage.receiver.id !== SessionStore.currentUser().id) {
+      return <div></div>;
+    }
     return(
       <div className="content">
         <div className="content-vertical">
@@ -58,7 +54,7 @@ const MessageIndex = React.createClass({
               </div>
               <div>
                 <h3>{other_user.username}</h3>
-                <div>{other_user.birthday} | {other_user.zipcode}</div>
+                <div>{other_user.age} | {other_user.zipcode}</div>
               </div>
             </div>
           </div></Link>
@@ -67,7 +63,7 @@ const MessageIndex = React.createClass({
             {this.state.messages.map((message)=>{
               return <MessageIndexItem message={message} key={message.id}/>
             })}
-            <MessageForm receiver_id={other_user.id} conversation_id={this.state.messages["0"].conversation_id}/>
+            <MessageForm receiver_id={other_user.id} conversation_id={firstMessage.conversation_id}/>
           </ul>
 
         </div>
