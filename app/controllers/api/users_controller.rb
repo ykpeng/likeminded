@@ -33,23 +33,19 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-    render 'api/users/edit'
-  end
-
   def update
     @user = User.find(params[:id])
 
     if @user.update_attributes(user_params)
       render 'api/users/show'
     else
+      Rails.logger.info(@user.errors.inspect)
       render json: @user.errors, status: 422
     end
   end
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :email, :birthday, :zipcode, :looking_for, :city, :state, :lat, :lng)
+    params.require(:user).permit(:username, :password, :email, :birthday, :zipcode, :img_url, :looking_for, :city, :state, :lat, :lng)
   end
 end

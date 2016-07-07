@@ -7,6 +7,7 @@ const SessionStore = require('../stores/session_store');
 const Modal = require('react-modal');
 const ModalStyle = require('../modal_style');
 const MessageNewForm = require('./message_new_form');
+const UploadButton = require('./upload_button');
 
 const DIM_MAPPING = {
   0: "Realistic",
@@ -50,7 +51,7 @@ const UserShow = React.createClass({
   },
 
   addImage(url){
-    UserActions.updateUser({ img_url: url });
+    UserActions.updateUser(this.state.user.id, { img_url: url });
   },
 
   render(){
@@ -61,8 +62,12 @@ const UserShow = React.createClass({
         <section className="user-sidebar">
 
           <section className="user-photo">
+
             <img src={this.state.user.img_url} alt={this.state.user.username} />
-            {(SessionStore.currentUser().id === this.state.user.id) ? <div></div> : <button onClick={this.openModal}>MESSAGE</button> }
+
+            <UploadButton addImage={this.addImage}/>
+
+            { (SessionStore.currentUser().id === this.state.user.id) ? <div></div> : <button onClick={this.openModal}>MESSAGE</button> }
           </section>
 
           <section className="user-summary">
