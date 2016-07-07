@@ -60,18 +60,31 @@ class User < ActiveRecord::Base
   end
 
   def distance(other_user)
-    distance = 0
-    6.times do |i|
-      distance += (self.dim_scores[i] - other_user.dim_scores[i]).abs
-    end
-    distance
+    (self.sum - other_user.sum).abs
   end
+
+  def sum
+    sum = 0
+    self.answers.each do |answer|
+      sum += answer.answer_choice
+    end
+    sum
+  end
+
+  # def distance(other_user)
+  #   distance = 0
+  #   6.times do |i|
+  #     distance += (self.dim_scores[i] - other_user.dim_scores[i]).abs
+  #   end
+  #   distance
+  # end
 
   def dim_scores
     @dim_scores = (1..6).map { |i| calc_dim_score(i) }
   end
 
   def calc_dim_score(dim_id)
+    # answers = self.answers.where(dimension_id: dim_id)
     answers = Dimension.find(dim_id).answers.where(user_id: self.id)
     score = 0
     answers.each do |answer|

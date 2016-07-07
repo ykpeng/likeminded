@@ -3,7 +3,6 @@ const LoginForm = require('./login_form');
 const SignupForm = require('./signup_form');
 
 const LoginPage = React.createClass({
-
   render(){
     return(
       <main className="content">

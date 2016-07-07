@@ -26,15 +26,21 @@ const _ensureLoggedIn = function(nextState, replace){
   }
 };
 
+const _redirectIfLoggedIn = function(nextState, replace){
+  if (SessionStore.isUserLoggedIn()){
+    replace("/");
+  }
+};
+
 const router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={UserIndex} onEnter={_ensureLoggedIn}/>
-      <Route path="/login" component={LoginPage}/>
+      <Route path="/login" component={LoginPage} onEnter={_redirectIfLoggedIn}/>
       <Route path='/users/:userId' component={UserShow} onEnter={_ensureLoggedIn}/>
       <Route path="/test" component={QuestionIndex} onEnter={_ensureLoggedIn}/>
-      <Route path='/conversations' component={ConversationIndex}/>
-      <Route path='/conversations/:conversationId' component={MessageIndex}/>
+      <Route path='/conversations' component={ConversationIndex} onEnter={_ensureLoggedIn}/>
+      <Route path='/conversations/:conversationId' component={MessageIndex} onEnter={_ensureLoggedIn}/>
     </Route>
   </Router>
 );

@@ -7,6 +7,10 @@ const MessageForm = require('./message_form');
 const Link = require('react-router').Link;
 
 const MessageIndex = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   getInitialState(){
     return { messages: [] };
   },
@@ -26,6 +30,14 @@ const MessageIndex = React.createClass({
 
   componentWillUnmount(){
     this.listener.remove();
+  },
+
+  redirectIfNotCurrentUser(){
+    if (this.state.messages.length > 0) {
+      if (SessionStore.currentUser().id !== this.state.messages["0"].sender.id && SessionStore.currentUser().id !== this.state.messages["0"].receiver.id){
+        this.context.router.push("/conversations");
+      }
+    }
   },
 
   render(){
