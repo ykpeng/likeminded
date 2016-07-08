@@ -3,24 +3,22 @@ class Api::UsersController < ApplicationController
 
   def index
     looking_for = params[:lookingFor]
-    # debugger
     if looking_for != "Either"
       @users = User.where(looking_for: looking_for).where.not(id: current_user.id)
     else
       @users = User.where.not(id: current_user.id)
     end
-    # @users = current_user.filter_by_looking_for
-    # @users = @users.select { |user| user.answers.length >= 60 }
 
     min_age = params[:minAge].to_i
     max_age = params[:maxAge].to_i
     if min_age && max_age
       @users = @users.where(birthday: birthday_range)
     end
-    # max_distance = params[:user][:max_distance]
-    # if max_distance
-    #   @users = @users.select { |user| user.distance(current_user) <= max_distance }
-    # end
+
+    max_distance = params[:maxDistance].to_i
+    if max_distance
+      @users = @users.select { |user| current_user.distance(user) <= max_distance }
+    end
 
     render 'api/users/index'
   end
@@ -36,11 +34,6 @@ class Api::UsersController < ApplicationController
       SECTIONS.each do |section|
         ProfileSection.create!({ user_id: @user.id, section: section, content: ""})
       end
-
-      # @questions = Question.all
-      # @questions.each do |question|
-      #   Answer.create!({ user_id: @user.id, question_id: question.id, answer_choice: 0 })
-      # end
 
       login!(@user)
       render 'api/users/show'

@@ -30,11 +30,6 @@ function setMaxDistance(max){
   FilterParamsStore.__emitChange();
 }
 
-// function setBounds(bounds){
-//   _params.bounds = bounds;
-//   FilterParamsStore.__emitChange();
-// }
-
 FilterParamsStore.__onDispatch = function(payload) {
   switch(payload.actionType){
     case FilterConstants.UPDATE_MAX_AGE:

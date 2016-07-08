@@ -10,6 +10,10 @@ const Filters = React.createClass({
     FilterActions.updateMinAge(e.target.value);
   },
 
+  handleMaxDistanceChange(e) {
+    FilterActions.updateMaxDistance(e.target.value);
+  },
+
   handleLookingForChange(e) {
     FilterActions.updateLookingFor(e.target.value);
   },
@@ -22,15 +26,13 @@ const Filters = React.createClass({
     return this.props.filterParams.minAge;
   },
 
+  currentMaxDistance() {
+    return this.props.filterParams.maxDistance;
+  },
+
   currentLookingFor() {
     return this.props.filterParams.lookingFor;
   },
-
-  // updateAge(min, max) {
-  //   FilterActions.updateParams({
-  //     age: { min, max }
-  //   });
-  // },
 
   render(){
     return(
@@ -48,6 +50,13 @@ const Filters = React.createClass({
           max="100"
           onChange={this.handleMaxAgeChange}
           value={this.currentMaxAge()}/>
+        <br/>
+        <label>Maximum Distance</label>
+        <input type="number"
+          min="0"
+          max="500"
+          onChange={this.handleMaxDistanceChange}
+          value={this.currentMaxDistance()}/>
         <br/>
         <label>People who are looking for</label>
         <select value={this.currentLookingFor()} onChange={this.handleLookingForChange}>

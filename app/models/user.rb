@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token_uniqueness
 
   attr_reader :password
-  # attr_reader :dim_scores
 
   has_many :profile_sections
   has_many :answers
@@ -33,9 +32,6 @@ class User < ActiveRecord::Base
   through: :received_messages,
   source: :conversation
 
-  # has_many :looking_for_joins, dependent: :destroy, inverse_of: :user
-  # has_many :looking_fors, through: :looking_for_joins
-
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
 
@@ -51,16 +47,11 @@ class User < ActiveRecord::Base
     now.year - self.birthday.year - ((now.month > self.birthday.month || (now.month == self.birthday.month && now.day >= self.birthday.day)) ? 0 : 1)
   end
 
-  # def distance(other_user)
-  #   self.lat
-  # end
-
   def distance(other_user)
     rad_per_deg = Math::PI/180  # PI / 180
-    rad_miles = 3,959                  # Earth radius in miles
-    # rm = rkm * 1000             # Radius in meters
+    rad_miles = 3959            # Earth radius in miles
 
-    dlat_rad = (other_user.lat -self.lat) * rad_per_deg  # Delta, converted to rad
+    dlat_rad = (other_user.lat - self.lat) * rad_per_deg  # Delta, converted to rad
     dlng_rad = (other_user.lng - self.lng) * rad_per_deg
 
     lat1_rad, lng1_rad = self.lat * rad_per_deg, self.lng * rad_per_deg
@@ -69,11 +60,7 @@ class User < ActiveRecord::Base
     a = Math.sin(dlat_rad/2)**2 + Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(dlng_rad/2)**2
     c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
 
-    rad_miles * c # Delta in meters
-  end
-
-  def filter_by_looking_for
-    User.where(looking_for: self.looking_for).where.not(id: self.id)
+    rad_miles * c # Delta in miles
   end
 
   def match_percentage(other_user)
@@ -92,20 +79,11 @@ class User < ActiveRecord::Base
     sum
   end
 
-  # def distance(other_user)
-  #   distance = 0
-  #   6.times do |i|
-  #     distance += (self.dim_scores[i] - other_user.dim_scores[i]).abs
-  #   end
-  #   distance
-  # end
-
   def dim_scores
     @dim_scores = (1..6).map { |i| calc_dim_score(i) }
   end
 
   def calc_dim_score(dim_id)
-    # answers = self.answers.where(dimension_id: dim_id)
     answers = Dimension.find(dim_id).answers.where(user_id: self.id)
     score = 0
     answers.each do |answer|
