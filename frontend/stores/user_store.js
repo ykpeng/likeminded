@@ -24,7 +24,10 @@ UserStore.all = function(){
       users.push(_users[id]);
     }
   }
-  return users;
+  let sortedUsers = users.sort((a, b)=>{
+    return b.match_percentage - a.match_percentage;
+  })
+  return sortedUsers;
 };
 
 UserStore.find = function(id){

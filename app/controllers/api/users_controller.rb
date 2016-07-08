@@ -2,25 +2,25 @@ class Api::UsersController < ApplicationController
   SECTIONS = ["self summary", "doing with life", "good at", "favorites", "thinking about", "friday night", "message if"]
 
   def index
-    @users = User.where.not(id: current_user.id)
+    looking_for = params[:lookingFor]
+    # debugger
+    if looking_for != "Either"
+      @users = User.where(looking_for: looking_for).where.not(id: current_user.id)
+    else
+      @users = User.where.not(id: current_user.id)
+    end
     # @users = current_user.filter_by_looking_for
-    @users = @users.select { |user| user.answers.length >= 60 }
+    # @users = @users.select { |user| user.answers.length >= 60 }
 
-    min_age = params[:user][:max_age]
-    max_age = params[:user][:min_age]
+    min_age = params[:minAge].to_i
+    max_age = params[:maxAge].to_i
     if min_age && max_age
-      @users = @users.select { |user| user.age.between(min_age, max_age) }
+      @users = @users.where(birthday: birthday_range)
     end
-
-    max_distance = params[:max_distance]
-    if max_distance
-      @users = @users.select { |user| user.distance(current_user) <= max_distance }
-    end
-
-    looking_for = params[:looking_for]
-    if looking_for
-      @users.where(looking_for: looking_for)
-    end
+    # max_distance = params[:user][:max_distance]
+    # if max_distance
+    #   @users = @users.select { |user| user.distance(current_user) <= max_distance }
+    # end
 
     render 'api/users/index'
   end
@@ -62,7 +62,13 @@ class Api::UsersController < ApplicationController
   end
 
   private
+  def birthday_range
+    start_date = Date.today - 365 * params[:maxAge].to_i
+    end_date = Date.today - 365 * params[:minAge].to_i
+    (start_date..end_date)
+  end
+
   def user_params
-    params.require(:user).permit(:username, :password, :email, :birthday, :zipcode, :img_url, :looking_for, :city, :state, :lat, :lng, :max_age, :min_age)
+    params.require(:user).permit(:username, :password, :email, :birthday, :zipcode, :img_url, :looking_for, :city, :state, :lat, :lng)
   end
 end

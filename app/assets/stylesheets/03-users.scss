@@ -128,18 +128,30 @@
   margin-bottom: 20px;
 }
 
+// .user-photo {
+//   height: auto;
+//   padding: 0 20px 0 0;
+//   width: 250px;
+// }
 
-.user-photo {
-  height: auto;
-  width: 250px;
-}
-
-.user-photo img {
+.profile-photo {
+  height: 267px;
+  width: 267px;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
   margin-bottom: 15px;
+  border-radius: 0.25rem;
 }
 
-.user-photo {
-  padding: 0 20px 0 0;
+.profile-photo img {
+  // max-width: 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  -ms-interpolation-mode: bicubic;
+  cursor: pointer;
 }
 
 .user-summary {

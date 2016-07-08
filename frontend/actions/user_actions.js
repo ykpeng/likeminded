@@ -3,8 +3,8 @@ const Dispatcher = require('../dispatcher/dispatcher');
 const UserConstants = require('../constants/user_constants');
 
 const UserActions = {
-  fetchUsers(){
-    UserApiUtil.fetchUsers(this.receiveUsers);
+  fetchUsers(params){
+    UserApiUtil.fetchUsers(params, this.receiveUsers);
   },
 
   fetchSingleUser(id){

@@ -63,11 +63,9 @@ const UserShow = React.createClass({
 
           <section className="user-photo">
 
-            <img src={this.state.user.img_url} alt={this.state.user.username} />
+            <div className="profile-photo"><img src={this.state.user.img_url} alt={this.state.user.username} /></div>
 
-            <UploadButton addImage={this.addImage}/>
-
-            { (SessionStore.currentUser().id === this.state.user.id) ? <div></div> : <button onClick={this.openModal}>MESSAGE</button> }
+            { (SessionStore.currentUser().id === this.state.user.id) ? <UploadButton addImage={this.addImage}/> : <button onClick={this.openModal}>MESSAGE</button> }
           </section>
 
           <section className="user-summary">

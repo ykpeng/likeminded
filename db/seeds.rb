@@ -24,17 +24,26 @@ demo = User.create!({
         state: "CA",
         lat: 37.7929789,
         lng: -122.4212424,
-        birthday: 27,
+        birthday: Faker::Date.between(28.years.ago, 26.years.ago),
         looking_for: ["Friendship", "Collaboration"].sample,
         img_url: "http://res.cloudinary.com/ddm1q6utc/image/upload/c_scale,w_600/v1467700747/photo-1438761681033-6461ffad8d80_bqbh5d.jpg"
         })
 
-young_urls.each do |young_url|
+zipcodes = [94110, 94703, 94607, 94901, 94402, 94301, 95050, 94501, 94945, 94559]
+cities = ["San Francisco", "Berkeley", "Oakland", "San Rafael", "San Mateo", "Palo Alto", "Santa Clara", "Alameda", "Novato", "Napa"]
+lats = [37.7485824, 37.85247409999999, 37.8134679, 37.9650627, 37.5245965, 37.4457966, 37.3539663, 37.7712165, 38.1218145, 38.22965]
+lngs = [-122.4184108, -122.2738958, -122.307917, -122.503327, -122.3390936, -122.1575745, -121.9529992, -122.2824021, -122.5485873, -122.3220894]
+
+young_urls.each_with_index do |young_url, idx|
   User.create!({
     username: Faker::Internet.user_name,
     password: "password",
     email: Faker::Internet.email,
-    zipcode: Faker::Address.zip_code.to_i,
+    zipcode: zipcodes[idx % 10],
+    city: cities[idx % 10],
+    state: "CA",
+    lat: lats[idx % 10],
+    lng: lngs[idx % 10],
     birthday: Faker::Date.between(40.years.ago, 20.years.ago),
     looking_for: ["Friendship", "Collaboration"].sample,
     img_url: young_url
@@ -42,12 +51,17 @@ young_urls.each do |young_url|
 end
 
 
-old_urls.each do |old_url|
+old_urls.each_with_index do |old_url, idx|
   User.create!({
     username: Faker::Internet.user_name,
     password: "password",
     email: Faker::Internet.email,
     zipcode: Faker::Address.zip_code.to_i,
+    zipcode: zipcodes[idx % 10],
+    city: cities[idx % 10],
+    state: "CA",
+    lat: lats[idx % 10],
+    lng: lngs[idx % 10],
     birthday: Faker::Date.between(60.years.ago, 40.years.ago),
     looking_for: ["Friendship", "Collaboration"].sample,
     img_url: old_url
@@ -381,7 +395,19 @@ User.all.each do |user|
   i = (i + 1) % 6
 end
 
-conversation = Conversation.create!
-Message.create!({ conversation_id: conversation.id, receiver_id: demo.id, sender_id: 10, content: "Hi!"})
+10.times do
+  conversation = Conversation.create!
+  other_user_id = rand(50) + 2
 
-Message.create!({ conversation_id: conversation.id, receiver_id: 10, sender_id: demo.id, content: "Hey there!"})
+  Message.create!({ conversation_id: conversation.id, receiver_id: demo.id, sender_id: other_user_id, content: Faker::Hacker.say_something_smart })
+
+  Message.create!({ conversation_id: conversation.id, receiver_id: other_user_id, sender_id: demo.id, content: Faker::Hacker.say_something_smart })
+
+  Message.create!({ conversation_id: conversation.id, receiver_id: demo.id, sender_id: other_user_id, content: Faker::Hacker.say_something_smart })
+
+  Message.create!({ conversation_id: conversation.id, receiver_id: other_user_id, sender_id: demo.id, content: Faker::Hacker.say_something_smart })
+
+  Message.create!({ conversation_id: conversation.id, receiver_id: demo.id, sender_id: other_user_id, content: Faker::Hacker.say_something_smart })
+
+  Message.create!({ conversation_id: conversation.id, receiver_id: other_user_id, sender_id: demo.id, content: Faker::Hacker.say_something_smart })
+end

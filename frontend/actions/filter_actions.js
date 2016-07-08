@@ -7,7 +7,7 @@ const FilterActions = {
       actionType: FilterConstants.UPDATE_LOOKING_FOR,
       lookingFor: value
     });
-  }
+  },
   updateMaxDistance(value) {
     Dispatcher.dispatch({
       actionType: FilterConstants.UPDATE_MAX_DISTANCE,

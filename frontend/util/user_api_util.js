@@ -1,8 +1,9 @@
 const UserApiUtil = {
-  fetchUsers(cb){
+  fetchUsers(params, cb){
     $.ajax({
       url: `api/users`,
       dataType: "json",
+      data: params,
       success(response){
         cb(response);
       }

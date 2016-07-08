@@ -18,6 +18,7 @@ const UserShow = require('./components/user_show');
 const QuestionIndex = require('./components/question_index');
 const ConversationIndex = require('./components/conversation_index');
 const MessageIndex = require('./components/message_index');
+const Search = require('./components/search');
 const Modal = require('react-modal');
 
 const _ensureLoggedIn = function(nextState, replace){
@@ -35,7 +36,7 @@ const _redirectIfLoggedIn = function(nextState, replace){
 const router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
-      <IndexRoute component={UserIndex} onEnter={_ensureLoggedIn}/>
+      <IndexRoute component={Search} onEnter={_ensureLoggedIn}/>
       <Route path="/login" component={LoginPage} onEnter={_redirectIfLoggedIn}/>
       <Route path='/users/:userId' component={UserShow} onEnter={_ensureLoggedIn}/>
       <Route path="/test" component={QuestionIndex} onEnter={_ensureLoggedIn}/>
