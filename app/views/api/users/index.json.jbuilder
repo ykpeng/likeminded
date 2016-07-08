@@ -1,7 +1,7 @@
 json.array! @users do |user|
   json.id user.id
   json.username user.username
-  json.age user.age(user.birthday)
+  json.age user.age
   json.city user.city
   json.state user.state
   json.img_url user.img_url || "http://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png"

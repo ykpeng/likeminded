@@ -2,9 +2,26 @@ class Api::UsersController < ApplicationController
   SECTIONS = ["self summary", "doing with life", "good at", "favorites", "thinking about", "friday night", "message if"]
 
   def index
-    @users = current_user.filter_by_looking_for
-    # @users = @users.sort_by { |user| current_user.distance(user) }
+    @users = User.where.not(id: current_user.id)
+    # @users = current_user.filter_by_looking_for
     @users = @users.select { |user| user.answers.length >= 60 }
+
+    min_age = params[:user][:max_age]
+    max_age = params[:user][:min_age]
+    if min_age && max_age
+      @users = @users.select { |user| user.age.between(min_age, max_age) }
+    end
+
+    max_distance = params[:max_distance]
+    if max_distance
+      @users = @users.select { |user| user.distance(current_user) <= max_distance }
+    end
+
+    looking_for = params[:looking_for]
+    if looking_for
+      @users.where(looking_for: looking_for)
+    end
+
     render 'api/users/index'
   end
 
@@ -46,6 +63,6 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :email, :birthday, :zipcode, :img_url, :looking_for, :city, :state, :lat, :lng)
+    params.require(:user).permit(:username, :password, :email, :birthday, :zipcode, :img_url, :looking_for, :city, :state, :lat, :lng, :max_age, :min_age)
   end
 end

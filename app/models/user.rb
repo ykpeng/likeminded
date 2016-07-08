@@ -46,20 +46,24 @@ class User < ActiveRecord::Base
     end
   end
 
-  def age(dob)
+  def age
     now = Date.today
-    now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+    now.year - self.birthday.year - ((now.month > self.birthday.month || (now.month == self.birthday.month && now.day >= self.birthday.day)) ? 0 : 1)
   end
+
+  # def distance(other_user)
+  #   self.lat
+  # end
 
   def filter_by_looking_for
     User.where(looking_for: self.looking_for).where.not(id: self.id)
   end
 
   def match_percentage(other_user)
-    ((1 - distance(other_user)/ 240.00) * 100).to_i
+    ((1 - score_distance(other_user)/ 240.00) * 100).to_i
   end
 
-  def distance(other_user)
+  def score_distance(other_user)
     (self.sum - other_user.sum).abs
   end
 
