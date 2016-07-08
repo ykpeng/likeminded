@@ -110,10 +110,10 @@ const SignupForm = React.createClass({
 
           <div className="input">
             <label>I am looking for</label>
-              <select value={this.state.looking_for} onChange={this._handleLookingFor}>
-                <option value="Friendship">Friendship</option>
-                <option value="Collaboration">Collaboration</option>
-              </select>
+            <select value={this.state.looking_for} onChange={this._handleLookingFor}>
+              <option value="Friendship">Friendship</option>
+              <option value="Collaboration">Collaboration</option>
+            </select>
 
           </div>
 

@@ -15,14 +15,14 @@ json.messages do
       json.username message.sender.username
       json.age message.sender.age
       json.zipcode message.sender.zipcode
-      json.img_url message.sender.img_url || "http://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png"
+      json.img_url message.sender.img_url || "https://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png"
     end
     json.receiver do
       json.id message.receiver.id
       json.username message.receiver.username
       json.age message.receiver.age
       json.zipcode message.receiver.zipcode
-      json.img_url message.receiver.img_url || "http://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png"
+      json.img_url message.receiver.img_url || "https://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png"
     end
     json.content message.content
     json.create_at message.created_at

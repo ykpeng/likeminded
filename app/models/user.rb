@@ -55,21 +55,21 @@ class User < ActiveRecord::Base
   #   self.lat
   # end
 
-  def distance(loc1, loc2)
+  def distance(other_user)
     rad_per_deg = Math::PI/180  # PI / 180
-    rkm = 6371                  # Earth radius in kilometers
-    rm = rkm * 1000             # Radius in meters
+    rad_miles = 3,959                  # Earth radius in miles
+    # rm = rkm * 1000             # Radius in meters
 
-    dlat_rad = (loc2[0]-loc1[0]) * rad_per_deg  # Delta, converted to rad
-    dlon_rad = (loc2[1]-loc1[1]) * rad_per_deg
+    dlat_rad = (other_user.lat -self.lat) * rad_per_deg  # Delta, converted to rad
+    dlng_rad = (other_user.lng - self.lng) * rad_per_deg
 
-    lat1_rad, lon1_rad = loc1.map {|i| i * rad_per_deg }
-    lat2_rad, lon2_rad = loc2.map {|i| i * rad_per_deg }
+    lat1_rad, lng1_rad = self.lat * rad_per_deg, self.lng * rad_per_deg
+    lat2_rad, lng2_rad = other_user.lat * rad_per_deg, other_user.lng * rad_per_deg
 
-    a = Math.sin(dlat_rad/2)**2 + Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(dlon_rad/2)**2
+    a = Math.sin(dlat_rad/2)**2 + Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(dlng_rad/2)**2
     c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
 
-    rm * c # Delta in meters
+    rad_miles * c # Delta in meters
   end
 
   def filter_by_looking_for
