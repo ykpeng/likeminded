@@ -1,125 +1,80 @@
 # LikeMinded
 
-[Heroku link][heroku]
-[heroku]: http://simpatico.herokuapp.com
+[LikeMinded live][heroku] **NB:** This should be a link to your production site
 
-## Minimum Viable Product
+[heroku]: https://simpatico.herokuapp.com/
 
-LikeMinded is a web application inspired by OKCupid that will be build using Ruby on Rails and React.js. The app will help people find friends and collaborators using established psychometric tests. By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+LikeMinded is a full-stack web application that helps people find friends and collaborators using a personality test. It uses Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] A production README, replacing this README (**NB**: check out the [sample production README](docs/production_readme.md) -- you'll write this later)
-- [ ] Filter users by ‘looking for’
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Messaging
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Personality questions
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Match percentage based on question answers
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+## Features & Implementation
 
-## Design Docs
-* [View Wireframes][views]
-* [React Components][components]
-* [Flux Cycles][flux-cycles]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
+### Profiles
 
-[views]: docs/views.md
-[components]: docs/components.md
-[flux-cycles]: docs/flux-cycles.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+  Upon sign in, user information is stored in the `users` table in the database. Users can edit the essay questions on their profile. These essays are saved in a separate `profile_sections` table with an `user_id` column pointing the user they belong to. On the frontend, users are stored in a `UserStore`.
+  ![userShow]
 
-## Implementation Timeline
+### Matching by personality
 
-### Phase 1: Backend setup, Flux Architecture and Router, Front End User Authentication (1 days, W1 T 6pm)
+  Users complete a personality test to access their scores on six personality dimensions and determine their percentage match to other users. The `dimensions` table in the backend holds `id` and `name`, the `questions` table holds `content` and `dimension_id`, the `answers` table holds `user_id`, `question_id`, and `answer_choice`. On the frontend, `QuestionStore` holds all the questions fetched from the backend. `QuestionIndex` iterates through all the questions and passes each one to `QuestionIndexItem`. Answers are held in `AnswerStore` and displayed in `AnswerIndex`, which passes individual answers as props to `AnswerIndexItem`.
 
-**Objective:** Functioning rails project with Authentication
+  Percentage matches of the current user against all other users are calculated in the `UsersController` and send to `UserStore`, which sorts the users in order of decreasing percentage match.
+  ![questions]
 
-- [x] create new project
-- [x] create `User` model, controller
-- [x] jBuilder views for Users
-- [x] authentication
-- [x] setup React Router
-- [x] `LoginPage` component
-    - [x] `SignupForm` component
-    - [x] `LoginForm` component
-- [x] `UserIndex`, `UserIndexItem`, `UserShow` components
-- [x] began styling login page
-- [x] hosted on Heroku
+### Filtering
 
-### Phase 2: ProfileSections, LookingFor/LookingForJoins Models, CRUD API for Profile Sections (1 days, W1 W 6pm)
+  In the `onSubmit` handler of the submit button of the sign-up form, an AJAX request is made to the Google Maps API to fetch the `city`, `state`, `lat`, and `lng` of the user based on the zipcode they entered. The geographic information is send along with the rest of the form data as params to the `UsersController`. This allows for displaying the users' location and filtering by location. The latitude and longitude coordinates are stored in the `users` table so that distance calculations can be made in the backend, without further AJAX calls.
 
-**Objective:** Profiles can be created, read, and edited wth the user interface.
+  The `Search` component holds `Filters` and `UserIndex` as subcomponents. `Filters` calls `FilterActions` methods to update `filterParams` upon user input. The `Search` component listens to the `UserStore` and `FilterParamsStore` and passes `users` and `filterParams` as props to `UserIndex` and `Filters`, respectively, so that the search page live updates as users change their filter inputs.
+  In the backend, the `UsersController` checks for `maxAge`, `minAge`, `maxDistance`, and `lookingFor` params to determine which users to return.
 
-- [x] create `ProfileSections` model and controller
-- implement each profile component, building out the flux loop as needed.
-  - [x] CRUD API for `ProfileSectionIndex`
-    - [x] `ProfileSectionIndexItem`
-    - [x] `ProfileSectionForm`
-      - [x] Users can only edit their own page
-- [x] write `User` model method to filter matches based on `LookingFor`; Users shouldn't see themselves as matches
+![userIndex]
 
-### Phase 3: Start Styling (1 day, W1 Thu 6pm)
+### Messaging
 
-**Objective:** Existing pages (including signup/signin) will look good.
+  The `conversations` table holds `id`. The `messages` table hold `conversation_id`, `sender_id`, `receiver_id`, and `content`. `ConversationController` sends all the conversations of the current user along with the last message in the conversation, and its associated users' information, to the frontend, which are held in `ConversationStore`. `ConversationIndex` listens to `ConversationStore` and passes individual conversations to `ConversationIndexItem`, which displays each conversation.
 
-- [x] decided on color palette
-- [x] position elements on the page
-- [x] add basic colors & styles to existing pages
-- [x] build and style `Navbar`
-- [x] seed the database with a small amount of test data
+  ![conversationIndex]
 
+  Clicking on a conversation leads to the display of `MessageIndex`, which listens to `MessageStore`. `MessageStore` holds messages that belong to the given conversation, fetched from the `MessagesController`. `MessageIndex` has `MessageIndexItem`s as subcomponents and `MessageForm`, which allows users to add new messages to the conversation.
 
-### Phase 4: PersonalityTest (2 days, W2 M 6pm)
+  ![messageIndex]
 
-**Objective:** Implement personality test
+  Users can start new conversations by clicking on the "message" button on a match's profile. This leads to the display of a `MessageNewForm` component inside a modal.
 
-- [x] create `Dimensions`, `Questions`, and `Answers` Models
-- [x] create `Questions` and `Answers` controllers
-- seed database with Questions and AnswerChoices
-- [x] build flux loop for questions and answers
-- [x] write `User` model methods for calculating % matches and showing sorted users
+  ![messaging]
 
-### Phase 5: Conversations (2 days, W2 Tu 6pm)
+  On submission of the new message, the message attributes are send to the `ConversationsController`, which creates a new conversation along with a new message. The `ConversationModel` is set up to accept nested attributes.
 
-**Objective:** Users can view conversations they're a part of.
+```ruby
+class Conversation < ActiveRecord::Base
+  has_many :messages, dependent: :destroy, inverse_of: :conversation
+  accepts_nested_attributes_for :messages
+end
 
-- [x] create `Conversation` and `Message` models
-- build out API, Flux loop, and components for:
-  - [x] `ConversationsIndex`
-  - [x] `ConversationIndexItem`
-  - [ ] Users can only view conversations they're a part of
-- build out API, Flux loop, and components for:
-  - [x] `MessagesIndex`
-  - [x] `MessageIndexItems`
-  - [x] `MessageForm`
-  - [x] `MessageNewForm` modal
-- [x] Style new elements
+class Message < ActiveRecord::Base
+  validates :content, :sender_id, :receiver_id, presence: true
+  validates :conversation, presence: true
+end
 
-### Phase 8: Styling Cleanup and Seeding (1 day, W2 Thu 6pm)
+class Api::ConversationsController < ApplicationController
+  def create
+    @conversation = Conversation.new(conversation_params)
+    if @conversation.save
+      render 'api/conversations/show'
+    else
+      render json: @conversation.errors, status: 422
+    end
+  end
 
-**objective:** Make the site feel more cohesive and awesome.
+  def conversation_params
+    params.require(:conversation).permit(messages_attributes: [:sender_id, :receiver_id, :content])
+  end
+end
+  ```
 
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
-  - [ ] Sidebar transition
+## Future Directions for the Project
 
-### Bonus Features (TBD)
-- [ ] implement image upload
-- [ ] Filter by location, age range
-- [ ] Allow bookmarking of other users
+- [ ] Allow users to bookmark other users
 - [ ] Add more user fields (gender, education, languages, smoking/drugs, offspring, pets, etc.)
 - [ ] Filter by new fields
 - [ ] Pagination / infinite scroll for ProfilesIndex
@@ -127,8 +82,9 @@ LikeMinded is a web application inspired by OKCupid that will be build using Rub
 - [ ] Disable/delete account
 - [ ] Multiple sessions
 
-[phase-one]: docs/phases/phase1.md
-[phase-two]: docs/phases/phase2.md
-[phase-three]: docs/phases/phase3.md
-[phase-four]: docs/phases/phase4.md
-[phase-five]: docs/phases/phase5.md
+[userIndex]: ./docs/screenshots/userIndex.png
+[userShow]: ./docs/screenshots/userShow.png
+[messaging]: ./docs/screenshots/messaging.png
+[conversationIndex]: ./docs/screenshots/conversationIndex.png
+[messageIndex]: ./docs/screenshots/messageIndex.png
+[questions]: ./docs/screenshots/questions.png
