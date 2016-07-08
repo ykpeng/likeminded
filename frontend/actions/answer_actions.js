@@ -5,7 +5,6 @@ const AnswerConstants = require('../constants/answer_constants');
 
 const AnswerActions = {
   fetchAnswers() {
-    console.log("inside answer action fetch answers");
     AnswerApiUtil.fetchAnswers(this.receiveAnswers);
   },
 
@@ -22,7 +21,6 @@ const AnswerActions = {
   },
 
   receiveAnswers(answers) {
-    // console.log(answers);
     Dispatcher.dispatch({
       actionType: AnswerConstants.ANSWERS_RECEIVED,
       answers: answers

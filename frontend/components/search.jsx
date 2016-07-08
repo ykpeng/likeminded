@@ -36,7 +36,7 @@ const Search = React.createClass({
 
   render(){
     return(
-      <div className="content">
+      <div className="content-main">
         <Filters filterParams={this.state.filterParams}/>
         <UserIndex users={this.state.users}/>
       </div>

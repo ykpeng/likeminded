@@ -8,15 +8,13 @@ const UserIndex = React.createClass({
   // }
   render(){
     return (
-      <div className="content">
-        <ul className="user-index">
-          {
-            this.props.users.map((user)=>{
-              return <UserIndexItem user={user} key={user.id} />
-            })
-          }
-        </ul>
-      </div>
+      <ul className="user-index">
+        {
+          this.props.users.map((user)=>{
+            return <UserIndexItem user={user} key={user.id} />
+          })
+        }
+      </ul>
     )
   }
 })

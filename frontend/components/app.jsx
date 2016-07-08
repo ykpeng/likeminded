@@ -39,7 +39,6 @@ const App = React.createClass({
         <div>
           <header className="header">
             <ul className="header-list1">
-              <li className="icon"><i className="fa fa-sliders" aria-hidden="true"></i></li>
               <li><Link to="/" className="link">Browse Matches</Link></li>
               <li><Link to="/test" className="link">Personality Test</Link></li>
             </ul>

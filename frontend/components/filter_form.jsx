@@ -36,29 +36,27 @@ const Filters = React.createClass({
 
   render(){
     return(
-      <div>
-        <label>Minimum Age</label>
+      <div className="filter">
+        Matches
+        <label> between</label>
         <input type="number"
           min="16"
           max="100"
           onChange={this.handleMinAgeChange}
           value={this.currentMinAge()}/>
-        <br/>
-        <label>Maximum Age</label>
+        <label>and</label>
         <input type="number"
           min="16"
           max="100"
           onChange={this.handleMaxAgeChange}
-          value={this.currentMaxAge()}/>
-        <br/>
-        <label>Maximum Distance</label>
+          value={this.currentMaxAge()}/> years old,
+        <label> who are within </label>
         <input type="number"
           min="0"
-          max="500"
+          max="50"
           onChange={this.handleMaxDistanceChange}
-          value={this.currentMaxDistance()}/>
-        <br/>
-        <label>People who are looking for</label>
+          value={this.currentMaxDistance()}/> miles of me,
+        <label> who are looking for </label>
         <select value={this.currentLookingFor()} onChange={this.handleLookingForChange}>
           <option value="Friendship">Friendship</option>
           <option value="Collaboration">Collaboration</option>

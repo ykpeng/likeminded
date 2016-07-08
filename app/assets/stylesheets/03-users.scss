@@ -1,16 +1,44 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .content-center {
-  margin-top: 70px;
+  margin-top: 50px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-.user-index {
+.content-main {
+  margin-top: 25px;
+}
+
+.filter {
+  // position: fixed;
+  // left: 0;
+  // top: 0;
+  // bottom: 0;
   width: 100%;
+  // height: 25px;
+  // background: #EFEFEF;
+  color: rgba( 0, 0, 0, 0.63 );
+  font-size: 12px;
+  font-weight: 600;
+  // margin-top: 65px;
+  padding: 50px 0px 35px 0px;
+  opacity: 1;
+  text-align: center;
+}
+
+.filter input {
+  text-align: center;
+}
+
+.user-index {
+  margin-top: 0;
+  // margin-left: 268px;
+  // width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;;
@@ -164,6 +192,7 @@
   overflow: hidden;
   background-position: center center;
   background-repeat: no-repeat;
+  margin-bottom: 10px;
 }
 
 .user-index-photo img {
@@ -177,5 +206,5 @@
 }
 
 .user-index-description {
-  padding: 10px 20px 50px 20px;
+  padding: 10px 20px 30px 20px;
 }
