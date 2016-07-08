@@ -16,7 +16,7 @@ const AnswerEdit = React.createClass({
     this.props.closeForm();
   },
   handleClick(e){
-    this.setState({ answerChoice: e.target.value});
+    this.setState({ answerChoice: parseInt(e.target.value)});
   },
   render(){
     let answers = ["Strongly Dislike", "Dislike", "Unsure", "Like", "Strongly Like"];
