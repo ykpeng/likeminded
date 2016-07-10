@@ -15,7 +15,7 @@ const UploadButton = React.createClass({
   },
   render(){
     return(
-      <button onClick={this.upload}>UPDATE PHOTO</button>
+      <button className="profile-button" onClick={this.upload}>UPDATE PHOTO</button>
     )
   }
 })

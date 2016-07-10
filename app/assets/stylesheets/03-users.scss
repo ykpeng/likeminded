@@ -15,17 +15,10 @@
 }
 
 .filter {
-  // position: fixed;
-  // left: 0;
-  // top: 0;
-  // bottom: 0;
   width: 100%;
-  // height: 25px;
-  // background: #EFEFEF;
   color: rgba( 0, 0, 0, 0.63 );
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
-  // margin-top: 65px;
   padding: 50px 0px 35px 0px;
   opacity: 1;
   text-align: center;
@@ -33,12 +26,11 @@
 
 .filter input {
   text-align: center;
+  font-weight: 600;
 }
 
 .user-index {
   margin-top: 0;
-  // margin-left: 268px;
-  // width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;;
@@ -47,9 +39,7 @@
 
 .user-index-item {
   width: 267px;
-  // height: 316.328px;
   text-align: center;
-  // padding: 5px;
 }
 
 .user-index-item {
@@ -66,21 +56,34 @@
   font-weight: 800;
 }
 
+.user-index-item p {
+  margin-bottom: 2px;
+}
+
+.user-index-item h5 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .user-main {
-  // flex-grow: 2;
   padding: 50px 50px 50px 0;
   font-size: 14px;
 }
 
 .user-sidebar {
-  // flex-grow: 1;
   padding: 50px;
   display: flex;
   flex-direction: column;
-  // padding: 10px;
   font-size: 14px;
 }
 
+.chart {
+  color: #777;
+}
+
+.user-index-item p {
+  margin-bottom: 2px;
+}
 
 .chart h4{
   font-size: 16px;
@@ -126,8 +129,6 @@
 .user-main h4 {
   color: black;
   font-size: 14px;
-  // margin-bottom: 20px 0;
-  // padding: 10px;
 }
 
 .user-main textarea {
@@ -144,10 +145,7 @@
   margin: 10px 0 20px 0;
 }
 .user-index-item {
-  // padding: 50px;
-  // background: #e8e8e8;
   color: #777;
-  // border: 1px solid #D8D8D8;
   box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
   border-width: 1px;
   border-style: solid;
@@ -156,11 +154,10 @@
   margin-bottom: 20px;
 }
 
-// .user-photo {
-//   height: auto;
-//   padding: 0 20px 0 0;
-//   width: 250px;
-// }
+.profile-button {
+  width: 225px;
+  height: 25px;
+}
 
 .profile-photo {
   height: 267px;
@@ -169,11 +166,9 @@
   background-position: center center;
   background-repeat: no-repeat;
   margin-bottom: 15px;
-  border-radius: 0.25rem;
 }
 
 .profile-photo img {
-  // max-width: 100%;
   width: 100%;
   height: 100%;
   display: block;
@@ -183,7 +178,13 @@
 }
 
 .user-summary {
-  padding: 20px 20px 0 0;
+  font-size: 16px;
+  color: #777;
+  padding: 20px 0 5px 0;
+}
+
+.user-summary p {
+  padding-bottom: 2px;
 }
 
 .user-index-photo {
@@ -196,7 +197,6 @@
 }
 
 .user-index-photo img {
-  // max-width: 100%;
   width: 100%;
   height: 100%;
   display: block;

@@ -16,8 +16,9 @@
 }
 
 .questions-main h5 {
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .questions-main input[type="submit"], .questions-main button {
@@ -65,7 +66,7 @@
 }
 
 .answer {
-  padding: 50px;
+  padding: 30px 50px;
   box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
   border-width: 1px;
   border-style: solid;

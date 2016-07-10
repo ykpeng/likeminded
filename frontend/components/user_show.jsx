@@ -65,13 +65,12 @@ const UserShow = React.createClass({
 
             <div className="profile-photo"><img src={this.state.user.img_url} alt={this.state.user.username} /></div>
 
-            { (SessionStore.currentUser().id === this.state.user.id) ? <UploadButton addImage={this.addImage}/> : <button onClick={this.openModal}>MESSAGE</button> }
+            { (SessionStore.currentUser().id === this.state.user.id) ? <UploadButton addImage={this.addImage}/> : <button className="profile-button" onClick={this.openModal}>MESSAGE</button> }
           </section>
 
           <section className="user-summary">
             <h3>{this.state.user.username}</h3>
-            <p>{this.state.user.age}</p>
-            <p>{this.state.user.city}, {this.state.user.state}</p>
+            <p>{this.state.user.age} ・ {this.state.user.city}, {this.state.user.state}</p>
             <p>Looking for: {this.state.user.looking_for}</p>
           </section>
 
@@ -79,7 +78,7 @@ const UserShow = React.createClass({
             <h4>Personality Profile</h4>
             <ul>
               {this.state.user.dim_scores.map((dim_score, i)=>{
-                return <li key={i}>{DIM_MAPPING[i]}:{dim_score}</li>
+                return <li key={i}>{DIM_MAPPING[i]}: {dim_score}</li>
               })}
             </ul>
           </section>

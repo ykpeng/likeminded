@@ -467,14 +467,14 @@ end
 conversation1 = Conversation.create!
 other_user_id1 = rand(40) + 2
 
-Message.create!({ conversation_id: conversation1.id, receiver_id: demo.id, sender_id: other_user_id1, content: "omg can you teach me how to fold fitted sheets?" })
+Message.create!({ conversation_id: conversation1.id, receiver_id: demo.id, sender_id: other_user_id1, content: "Can you teach me how to fold fitted sheets?" })
 
 conversation2 = Conversation.create!
 other_user_id2 = rand(40) + 2
 
 Message.create!({ conversation_id: conversation2.id, receiver_id: demo.id, sender_id: other_user_id2, content: "Hi! Love your profile. I just moved to the area recently. Are you from the city?" })
 
-Message.create!({ conversation_id: conversation2.id, receiver_id: other_user_id2, sender_id: demo.id, content: "Hey! I'm originally from Seatle, but I've been here for the past three years." })
+Message.create!({ conversation_id: conversation2.id, receiver_id: other_user_id2, sender_id: demo.id, content: "Hey! I'm originally from Seattle, but I've been here for the past three years." })
 
 conversation3 = Conversation.create!
 other_user_id3 = rand(40) + 2
