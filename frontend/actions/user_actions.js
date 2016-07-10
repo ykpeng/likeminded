@@ -12,7 +12,7 @@ const UserActions = {
   },
 
   updateUser(id, formData){
-    UserApiUtil.updateUser(id, formData, this.receiveSingleUser);
+    UserApiUtil.updateUser(id, formData, this.receiveUpdatedUser);
   },
 
   receiveUsers(users){
@@ -25,6 +25,13 @@ const UserActions = {
   receiveSingleUser(user){
     Dispatcher.dispatch({
       actionType: UserConstants.USER_RECEIVED,
+      user: user
+    })
+  },
+
+  receiveUpdatedUser(user){
+    Dispatcher.dispatch({
+      actionType: UserConstants.USER_UPDATED,
       user: user
     })
   }

@@ -1,6 +1,7 @@
 const Store = require('flux/utils').Store;
 const Dispatcher = require('../dispatcher/dispatcher');
 const SessionConstants = require('../constants/session_constants');
+const UserConstants = require('../constants/user_constants');
 
 const SessionStore = new Store(Dispatcher);
 
@@ -13,6 +14,10 @@ const _login = function(currentUser){
 const _logout = function(){
   _currentUser = {};
 };
+
+const _updateCurrentUser = function(currentUser){
+  _currentUser = currentUser;
+}
 
 SessionStore.currentUser = function(){
   return Object.assign({}, _currentUser);
@@ -30,6 +35,10 @@ SessionStore.__onDispatch = function(payload){
       break;
     case SessionConstants.LOGOUT:
       _logout();
+      SessionStore.__emitChange();
+      break;
+    case UserConstants.USER_UPDATED:
+      _updateCurrentUser(payload.user);
       SessionStore.__emitChange();
       break;
   }

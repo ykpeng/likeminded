@@ -10,10 +10,6 @@ const GoogleMapsApiUtil = {
         let state = response.results[0].address_components[3].short_name;
         let lat = response.results[0].geometry.location.lat;
         let lng = response.results[0].geometry.location.lng;
-        console.log(city);
-        console.log(state);
-        console.log(lat);
-        console.log(lng);
         const user = {
           username: formData.username,
           email: formData.email,

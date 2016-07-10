@@ -4,8 +4,6 @@
   z-index: 498;
   padding-top: 12px;
   padding-bottom: 12px;
-  // padding-left: 34px;
-  // padding-right: 34px;
   background-color: #FFFFFF;
   // display: none;
   left: 0px;
@@ -45,7 +43,6 @@
 }
 
 .form {
-  // background: orange;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,7 +112,7 @@
   background: #EE3440;
   color: white;
   padding: 5px 20px;
-  border-radius: 5px;
+  border-radius: 0.25rem;
   border: 1px solid #EE3440;
   letter-spacing: 0.1em;
   text-align: center;

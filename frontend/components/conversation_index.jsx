@@ -35,7 +35,7 @@ const ConversationIndex = React.createClass({
     return(
       <div className="content">
         <div className="content-vertical">
-          <h3>Messages</h3>
+          <Link to={`/conversations`}><h3 className="message-nav">Messages</h3></Link>
           <ul className="conversation-index">
             {sortedConvos.map((conversation)=>{
               return <Link to={`/conversations/${conversation.id}`} key={conversation.id}><ConversationIndexItem last_message={conversation.last_message} id={conversation.id}/></Link>

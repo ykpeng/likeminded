@@ -5,6 +5,7 @@ const UserIndex = require('./user_index');
 const SessionStore = require('../stores/session_store');
 const FilterParamsStore = require('../stores/filter_params_store');
 const Filters = require('./filter_form');
+const Link = require('react-router').Link;
 
 const Search = React.createClass({
   getInitialState(){
@@ -38,6 +39,7 @@ const Search = React.createClass({
     return(
       <div className="content-main">
         <Filters filterParams={this.state.filterParams}/>
+        {(SessionStore.currentUser().answers.length < 60) ? <div className="users-message">Complete the <Link to="/test"><span>personality test</span></Link> to improve your matches</div> : <div></div>}
         <UserIndex users={this.state.users}/>
       </div>
     )

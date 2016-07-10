@@ -1,5 +1,5 @@
 const SessionConstants = {
   LOGIN: "LOGIN",
-  LOGOUT: "LOGOUT"
+  LOGOUT: "LOGOUT",
 };
 module.exports = SessionConstants;

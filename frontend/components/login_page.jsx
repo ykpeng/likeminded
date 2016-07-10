@@ -5,15 +5,20 @@ const SignupForm = require('./signup_form');
 const LoginPage = React.createClass({
   render(){
     return(
-      <main className="content">
-        <section className="signup-section">
-          <figure className="logo-large"></figure>
-          <h1>LikeMinded</h1>
-          <h2>Discover people</h2>
-          <h2>who share your interest profile</h2>
-          <SignupForm />
-        </section>
-      </main>
+      <div>
+        <header className="header">
+          <LoginForm />
+        </header>
+        <main className="content">
+          <section className="signup-section">
+            <figure className="logo-large"></figure>
+            <h1>LikeMinded</h1>
+            <h2>Discover people</h2>
+            <h2>who share your interest profile</h2>
+            <SignupForm />
+          </section>
+        </main>
+      </div>
     )
   }
 })

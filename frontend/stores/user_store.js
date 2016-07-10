@@ -44,6 +44,10 @@ UserStore.__onDispatch = function(payload){
       setUser(payload.user);
       this.__emitChange();
       break;
+    case UserConstants.USER_UPDATED:
+      setUser(payload.user);
+      this.__emitChange();
+      break;
   }
 }
 module.exports = UserStore;

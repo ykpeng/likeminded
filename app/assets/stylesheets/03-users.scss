@@ -14,12 +14,27 @@
   margin-top: 25px;
 }
 
+.users-message {
+  text-align: center;
+  color: #EE3440;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.users-message span {
+  font-weight: 600;
+}
+
+.users-message span:hover {
+  color: #ca2637;
+}
+
 .filter {
   width: 100%;
   color: rgba( 0, 0, 0, 0.63 );
   font-size: 14px;
   font-weight: 600;
-  padding: 50px 0px 35px 0px;
+  padding: 50px 0px 0px 0px;
   opacity: 1;
   text-align: center;
 }
@@ -30,7 +45,7 @@
 }
 
 .user-index {
-  margin-top: 0;
+  margin-top: 35px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;;
@@ -180,7 +195,7 @@
 .user-summary {
   font-size: 16px;
   color: #777;
-  padding: 20px 0 5px 0;
+  padding: 0px 0 5px 0;
 }
 
 .user-summary p {

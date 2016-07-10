@@ -4,7 +4,7 @@ const FilterConstants = require('../constants/filter_constants');
 
 const FilterParamsStore = new Store(Dispatcher);
 
-let _params = { minAge: 16, maxAge: 100, maxDistance: 500, lookingFor: "Either" };
+let _params = { minAge: 16, maxAge: 100, maxDistance: 50, lookingFor: "Either" };
 
 FilterParamsStore.params = function() {
   return Object.assign({}, _params);

@@ -1,6 +1,5 @@
 const SessionApiUtil = {
   signup(user, success, error){
-    console.log(user);
     $.ajax({
       url: 'api/users',
       method: "POST",

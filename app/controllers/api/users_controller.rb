@@ -30,6 +30,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.img_url = "http://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png"
     if @user.save
       SECTIONS.each do |section|
         ProfileSection.create!({ user_id: @user.id, section: section, content: ""})

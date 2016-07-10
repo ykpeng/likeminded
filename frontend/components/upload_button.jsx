@@ -7,7 +7,6 @@ const UploadButton = React.createClass({
       window.cloudinary_options,
       function(error, results) {
         if (!error) {
-          console.log(results);
           this.props.addImage(results[0].url);
         }
       }.bind(this)
