@@ -118,31 +118,31 @@ message_me = [
 SECTIONS = ["self summary", "doing with life", "good at", "favorites", "thinking about", "friday night", "message if"]
 
 User.all.each_with_index do |user, idx|
-  ProfileSection.create!({ user_id: user.id, section: SECTIONS[0], content: self_summaries[idx % 5]})
+  ProfileSection.create!({ user_id: user.id, section: SECTIONS[0], content: self_summaries.sample})
 end
 
 User.all.each_with_index do |user, idx|
-  ProfileSection.create!({ user_id: user.id, section: SECTIONS[1], content: doing_with_life[idx % 5]})
+  ProfileSection.create!({ user_id: user.id, section: SECTIONS[1], content: doing_with_life.sample})
 end
 
 User.all.each_with_index do |user, idx|
-  ProfileSection.create!({ user_id: user.id, section: SECTIONS[2], content: good_at[idx % 5]})
+  ProfileSection.create!({ user_id: user.id, section: SECTIONS[2], content: good_at.sample})
 end
 
 User.all.each_with_index do |user, idx|
-  ProfileSection.create!({ user_id: user.id, section: SECTIONS[3], content: favorites[idx % 5]})
+  ProfileSection.create!({ user_id: user.id, section: SECTIONS[3], content: favorites.sample})
 end
 
 User.all.each_with_index do |user, idx|
-  ProfileSection.create!({ user_id: user.id, section: SECTIONS[4], content: thinking_about[idx % 5]})
+  ProfileSection.create!({ user_id: user.id, section: SECTIONS[4], content: thinking_about.sample})
 end
 
 User.all.each_with_index do |user, idx|
-  ProfileSection.create!({ user_id: user.id, section: SECTIONS[5], content: friday_night[idx % 5]})
+  ProfileSection.create!({ user_id: user.id, section: SECTIONS[5], content: friday_night.sample})
 end
 
 User.all.each_with_index do |user, idx|
-  ProfileSection.create!({ user_id: user.id, section: SECTIONS[6], content: message_me[idx % 5]})
+  ProfileSection.create!({ user_id: user.id, section: SECTIONS[6], content: message_me.sample})
 end
 
 DIMENSIONS = ["Realistic", "Investigative", "Artistic", "Social", "Enterprising", "Conventional"]
@@ -456,12 +456,45 @@ Question.create!({
   content: "Stamp, sort, and distribute mail for an organization"
   })
 
-i = 1
-User.all.each do |user|
-  Question.all.each do |question|
-    Answer.create!({ user_id: user.id, question_id: question.id, answer_choice: i })
+# i = 1
+# User.all.each do |user|
+#   Question.all.each do |question|
+#     Answer.create!({ user_id: user.id, question_id: question.id, answer_choice: i })
+#   end
+#   i = (i + 1) % 6
+# end
+
+def binom(n, p)
+  res = 0
+  n.times do
+    if rand() < p
+      res += 1
+    end
   end
-  i = (i + 1) % 6
+  res
+end
+
+class AnswerGenerator
+  def initialize(dimensions)
+    @dimensions = dimensions
+  end
+
+  def self.random(ndim = 6)
+    dimensions = (0...ndim).map { |dim_id| rand(41) + 10 }
+    self.new(dimensions)
+  end
+
+  def answer(dim_id)
+    param = @dimensions[dim_id]
+    answer = binom(4, (param - 10)/(4 * 10).to_f) + 1
+  end
+end
+
+User.all.each do |user|
+  generator = AnswerGenerator.random
+  Question.all.each do |question|
+    Answer.create!({ user_id: user.id, question_id: question.id, answer_choice: generator.answer(question.dimension_id - 1) })
+  end
 end
 
 conversation1 = Conversation.create!

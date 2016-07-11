@@ -45,11 +45,6 @@ const App = React.createClass({
             </li>
 
             <li >
-              <Link to="/" className="icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i>
-              </Link>
-            </li>
-
-            <li >
               <Link to="/conversations" className="icon"><i className="fa fa-envelope-o" aria-hidden="true"></i>
               </Link>
             </li>
