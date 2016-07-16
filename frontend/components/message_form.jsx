@@ -13,7 +13,6 @@ const MessageForm = React.createClass({
   },
 
   handleSubmit(e){
-    console.log(this.props.conversation_id);
     e.preventDefault();
     const formData = {
       conversation_id: this.props.conversation_id,

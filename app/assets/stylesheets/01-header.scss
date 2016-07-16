@@ -5,13 +5,8 @@
   padding-top: 12px;
   padding-bottom: 12px;
   background-color: #FFFFFF;
-  // display: none;
   left: 0px;
   top: 0px;
-  // -webkit-transform: translateZ(0);
-  // -webkit-backface-visibility: hidden;
-  // -moz-transform: translateZ(0);
-  // -moz-backface-visibility: hidden;
   transform: translateZ(0);
   backface-visibility: hidden;
   box-shadow: 1px 0 0 1px rgba(0, 0, 0, 0.05);
@@ -91,21 +86,6 @@
 .form-section {
   margin-right: 10px;
 }
-// .login-form .submit{
-//   font-weight: 800;
-//   background: #EE3440;
-//   color: white;
-//   padding: 10px 20px;
-//   border-radius: 0.25rem;
-//   border: 1px solid #EE3440;
-//   letter-spacing: 0.1em;
-//   width: 100%;
-// }
-//
-// .login-form .submit:hover{
-//   background: #ca2637;
-//   border: 1px solid #ca2637;
-// }
 
 .login-form input[type="submit"], .login-form button {
   font-weight: 800;
@@ -116,7 +96,6 @@
   border: 1px solid #EE3440;
   letter-spacing: 0.1em;
   text-align: center;
-  // background: blue;
 }
 
 .login-form input[type="submit"]:hover, .login-form button:hover{
@@ -133,7 +112,3 @@
   color: #333;
   font-size: 16px;
 }
-
-// .login-form input, textarea, select {
-//   margin:0;
-// }

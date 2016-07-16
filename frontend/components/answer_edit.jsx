@@ -21,9 +21,7 @@ const AnswerEdit = React.createClass({
   render(){
     let answers = ["Strongly Dislike", "Dislike", "Unsure", "Like", "Strongly Like"];
     let radioButtons = answers.map((answer, idx) => {
-      console.log(answer, idx);
       if (idx + 1 === this.state.answerChoice) {
-        console.log("checked");
         return (<div className="answer-option"><input type="radio" value={idx + 1} checked="checked" onClick={this.handleClick}/> {answer}<br/></div>);
       } else {
         return (<div className="answer-option"><input type="radio" value={idx + 1} onClick={this.handleClick}/> {answer}<br/></div>);

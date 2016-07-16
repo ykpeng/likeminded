@@ -1,5 +1,3 @@
-# json.extract! @message, :id, :conversation_id, :sender, :receiver, :content, :created_at
-
 json.id @message.id
 json.conversation_id @message.conversation_id
 json.sender do

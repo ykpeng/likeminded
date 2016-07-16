@@ -20,7 +20,6 @@ const AnswerIndexItem = React.createClass({
     this.setState({ editing: false});
   },
   render(){
-    // console.log(this.props.answer);
     return(
       <div className="answer">
         <h4>{this.props.answer.question.content}</h4>

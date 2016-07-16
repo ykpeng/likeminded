@@ -7,7 +7,6 @@ span, article, footer, time, small {
   padding: 0;
   border: 0;
   outline: 0;
-  /*font-family: 'Maison Neue', sans-serif;*/
   font-family: "Montserrat", sans-serif;
   text-align: inherit;
   text-decoration: inherit;
@@ -20,7 +19,6 @@ a {
 }
 
 body {
-  /*background: #EFEFEF;*/
   color: #333;
 }
 
@@ -40,10 +38,6 @@ input[type="text"],
 input[type="submit"],
 textarea,
 button {
-  /*
-  Get rid of native styling. Read more here:
-  http://css-tricks.com/almanac/properties/a/appearance/
-  */
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -56,8 +50,6 @@ button,
 input[type="submit"], a {
   cursor: pointer;
 }
-
-/* Clearfix */
 
 .group:after {
   content: "";

@@ -23,7 +23,6 @@ const ConversationApiUtil = {
       method: "DELETE",
       dataType: "json",
       success(response){
-        console.log(response);
         cb(response);
       }
     });

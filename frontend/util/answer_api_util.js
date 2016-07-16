@@ -5,22 +5,10 @@ const AnswerApiUtil = {
       dataType: "json",
       method: "GET",
       success(response){
-        // console.log("inside success");
-        // console.log(response);
         cb(response);
       }
     })
   },
-  //
-  // fetchSingleAnswers(id, cb){
-  //   $.ajax({
-  //     url: `api/answers/`,
-  //     dataType: "json",
-  //     success(response){
-  //       cb(response);
-  //     }
-  //   })
-  // },
 
   createAnswer(answer, cb) {
     $.ajax({
