@@ -1,6 +1,5 @@
 const React = require('react');
 const AnswerActions = require('../actions/answer_actions');
-const TestResult = require('../components/test_result');
 
 const QuestionIndexItem = React.createClass({
   getInitialState(){

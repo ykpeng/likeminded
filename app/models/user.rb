@@ -68,15 +68,11 @@ class User < ActiveRecord::Base
   end
 
   def score_distance(other_user)
-    (self.sum - other_user.sum).abs
-  end
-
-  def sum
-    sum = 0
-    self.answers.each do |answer|
-      sum += answer.answer_choice
+    diff = 0
+    (0..5).each do |i|
+      diff += (dim_scores[i] - other_user.dim_scores[i]).abs
     end
-    sum
+    diff
   end
 
   def dim_scores
@@ -84,12 +80,9 @@ class User < ActiveRecord::Base
   end
 
   def calc_dim_score(dim_id)
-    answers = Dimension.find(dim_id).answers.where(user_id: self.id)
-    score = 0
-    answers.each do |answer|
-      score += answer.answer_choice
-    end
-    score
+    score = Answer.joins(:question).where("answers.user_id = ? AND questions.dimension_id = ?", self.id, dim_id).sum("answer_choice")
+
+    score || 0
   end
 
   def password=(password)

@@ -1,9 +1,7 @@
 const React = require('react');
 const QuestionStore = require('../stores/question_store');
 const QuestionActions = require('../actions/question_actions');
-const TestResult = require("./test_result");
 const QuestionIndexItem = require('./question_index_item');
-// const QuestionIndexItemEdit = require('./question_index_item_edit');
 const SessionStore = require('../stores/session_store');
 const UserStore = require('../stores/user_store');
 
