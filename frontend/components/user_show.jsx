@@ -10,12 +10,12 @@ const MessageNewForm = require('./message_new_form');
 const UploadButton = require('./upload_button');
 
 const DIM_MAPPING = {
-  0: "Realistic",
-  1: "Investigative",
-  2: "Artistic",
-  3: "Social",
-  4: "Enterprising",
-  5: "Conventional"
+  1: "Realistic",
+  2: "Investigative",
+  3: "Artistic",
+  4: "Social",
+  5: "Enterprising",
+  6: "Conventional"
 };
 
 const UserShow = React.createClass({
@@ -77,8 +77,8 @@ const UserShow = React.createClass({
           <section className="chart">
             <h4>Personality Profile</h4>
             <ul>
-              {this.state.user.dim_scores.map((dim_score, i)=>{
-                return <li key={i}>{DIM_MAPPING[i]}: {dim_score}</li>
+              {Object.keys(this.state.user.dim_scores).map((key)=>{
+                return <li key={key}>{DIM_MAPPING[key]}: {this.state.user.dim_scores[key]}</li>
               })}
             </ul>
           </section>

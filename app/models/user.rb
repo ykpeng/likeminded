@@ -68,21 +68,22 @@ class User < ActiveRecord::Base
   end
 
   def score_distance(other_user)
+    my_dim_scores = dim_scores
+    other_dim_scores = other_user.dim_scores
     diff = 0
-    (0..5).each do |i|
-      diff += (dim_scores[i] - other_user.dim_scores[i]).abs
+    (1..6).each do |i|
+      diff += (my_dim_scores[i] - other_dim_scores[i]).abs
     end
     diff
   end
 
   def dim_scores
-    @dim_scores = (1..6).map { |i| calc_dim_score(i) }
-  end
-
-  def calc_dim_score(dim_id)
-    score = Answer.joins(:question).where("answers.user_id = ? AND questions.dimension_id = ?", self.id, dim_id).sum("answer_choice")
-
-    score || 0
+    @dim_scores = Hash.new
+    (1..6).each do |i|
+      @dim_scores[i] = 0
+    end
+    scores = Answer.joins(:question).where("answers.user_id = ?", self.id).group("questions.dimension_id").sum("answers.answer_choice")
+    @dim_scores.merge!(scores)
   end
 
   def password=(password)
