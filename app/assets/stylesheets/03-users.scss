@@ -62,13 +62,10 @@
 }
 
 .user-index-item {
-  width: 267px;
-  text-align: center;
-}
-
-.user-index-item {
   font-size: 14px;
   font-weight: 400;
+  width: 267px;
+  text-align: center;
 }
 
 .user-index-item h3 {
@@ -78,6 +75,10 @@
   cursor: pointer;
   font-size: 20px;
   font-weight: 800;
+}
+
+.user-index-item h3:hover {
+  color: #ca2637;
 }
 
 .user-index-item p {
@@ -168,6 +169,7 @@
 .section-content {
   margin: 10px 0 20px 0;
 }
+
 .user-index-item {
   color: #777;
   box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
@@ -227,6 +229,13 @@
   object-fit: cover;
   -ms-interpolation-mode: bicubic;
   cursor: pointer;
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.user-index-photo:hover img {
+  opacity: .75;
 }
 
 .user-index-description {

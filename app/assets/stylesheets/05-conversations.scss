@@ -11,7 +11,7 @@
 }
 
 .message-nav:hover {
-  color: #777;
+  opacity: 0.75;
 }
 .conversation-index {
   display: flex;
@@ -31,6 +31,10 @@
   align-items: center;
   color: #777;
   font-size: 14px;
+}
+
+.conversation:hover {
+  opacity: 0.75;
 }
 
 .conversation h3 {

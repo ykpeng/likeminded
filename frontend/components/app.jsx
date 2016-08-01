@@ -34,6 +34,7 @@ const App = React.createClass({
       <div>
         <header className="header">
           <ul className="header-list1">
+            <li><Link to="/" className="link"><img src="http://res.cloudinary.com/ddm1q6utc/image/upload/c_scale,h_30,w_30/v1469564965/LikeMinded-logo_hetqkc.png"/></Link></li>
             <li><Link to="/" className="link">Browse Matches</Link></li>
             <li><Link to="/test" className="link">Personality Test</Link></li>
           </ul>
@@ -57,6 +58,13 @@ const App = React.createClass({
         </header>
 
         {this.props.children}
+        <footer className="footer">
+          <p>Copyright <i className="fa fa-copyright" aria-hidden="true"></i> 2016 Yi-Ke Peng</p>
+          <div className="about-icons">
+            <a href="https://github.com/ykpeng"><i className="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://linkedin.com/in/ykpeng89"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+          </div>
+        </footer>
       </div>
     )
   }
