@@ -1,18 +1,17 @@
-// const chart = document.getElementByClassName('chart')[0];
 const margin = {top: 50, right: 50, bottom: 50, left: 50};
 const width = 200;
 const height = 200;
 
 const color = d3.scale.ordinal()
-    .range(["#EDC951","#CC333F","#00A0B0"]);
+    .range(["rgba(179,181,198,1)","#EE3440"]);
 
 const chartOptions = {
   w: width,
   h: height,
   margin: margin,
-  maxValue: 0.5,
+  maxValue: 1,
   levels: 5,
-  roundStrokes: true,
+  roundStrokes: false,
   color: color
 };
 
@@ -26,7 +25,7 @@ module.exports = {
   	 maxValue: 0, 			//What is the value that the biggest circle will represent
   	 labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
   	 wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
-  	 opacityArea: 0.35, 	//The opacity of the area of the blob
+  	 opacityArea: 0.2, 	//The opacity of the area of the blob
   	 dotRadius: 4, 			//The size of the colored circles of each blog
   	 opacityCircles: 0.1, 	//The opacity of the circles of each blob
   	 strokeWidth: 2, 		//The width of the stroke around each blob
@@ -41,9 +40,7 @@ module.exports = {
   	  }//for i
   	}//if
 
-  	//If the supplied maxValue is smaller than the actual one, replace by the max in the data
-  	var maxValue = 1;
-    // Math.max(cfg.maxValue, d3.max(data, function(i){return d3.max(i.map(function(o){return o.value;}))}));
+    var maxValue = 1;
 
   	var allAxis = (data[0].map(function(i, j){return i.axis})),	//Names of each axis
   		total = allAxis.length,					//The number of different axes
@@ -73,17 +70,6 @@ module.exports = {
   			.attr("transform", "translate(" + (cfg.w/2 + cfg.margin.left) + "," + (cfg.h/2 + cfg.margin.top) + ")");
 
   	/////////////////////////////////////////////////////////
-  	////////// Glow filter for some extra pizzazz ///////////
-  	/////////////////////////////////////////////////////////
-
-  	//Filter for the outside glow
-  	var filter = g.append('defs').append('filter').attr('id','glow'),
-  		feGaussianBlur = filter.append('feGaussianBlur').attr('stdDeviation','2.5').attr('result','coloredBlur'),
-  		feMerge = filter.append('feMerge'),
-  		feMergeNode_1 = feMerge.append('feMergeNode').attr('in','coloredBlur'),
-  		feMergeNode_2 = feMerge.append('feMergeNode').attr('in','SourceGraphic');
-
-  	/////////////////////////////////////////////////////////
   	/////////////// Draw the Circular grid //////////////////
   	/////////////////////////////////////////////////////////
 
@@ -97,10 +83,8 @@ module.exports = {
   		.append("circle")
   		.attr("class", "gridCircle")
   		.attr("r", function(d, i){return radius/cfg.levels*d;})
-  		.style("fill", "#CDCDCD")
+      .style("fill", "none")
   		.style("stroke", "#CDCDCD")
-  		.style("fill-opacity", cfg.opacityCircles)
-  		.style("filter" , "url(#glow)");
 
   	//Text indicating at what % each level is
   	axisGrid.selectAll(".axisLabel")
@@ -128,16 +112,17 @@ module.exports = {
   	axis.append("line")
   		.attr("x1", 0)
   		.attr("y1", 0)
-  		.attr("x2", function(d, i){ return rScale(maxValue*1.1) * Math.cos(angleSlice*i - Math.PI/2); })
-  		.attr("y2", function(d, i){ return rScale(maxValue*1.1) * Math.sin(angleSlice*i - Math.PI/2); })
+  		.attr("x2", function(d, i){ return rScale(maxValue*1) * Math.cos(angleSlice*i - Math.PI/2); })
+  		.attr("y2", function(d, i){ return rScale(maxValue*1) * Math.sin(angleSlice*i - Math.PI/2); })
   		.attr("class", "line")
-  		.style("stroke", "white")
-  		.style("stroke-width", "2px");
+  		.style("stroke", "#CDCDCD")
+  		.style("stroke-width", "1px");
 
   	//Append the labels at each axis
   	axis.append("text")
   		.attr("class", "legend")
   		.style("font-size", "11px")
+      .attr("fill", "#737373")
   		.attr("text-anchor", "middle")
   		.attr("dy", "0.35em")
   		.attr("x", function(d, i){ return rScale(maxValue * cfg.labelFactor) * Math.cos(angleSlice*i - Math.PI/2); })
@@ -196,7 +181,6 @@ module.exports = {
   		.style("stroke-width", cfg.strokeWidth + "px")
   		.style("stroke", function(d,i) { return cfg.color(i); })
   		.style("fill", "none")
-  		.style("filter" , "url(#glow)");
 
   	//Append the circles
   	blobWrapper.selectAll(".radarCircle")

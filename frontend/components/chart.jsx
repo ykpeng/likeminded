@@ -17,7 +17,6 @@ const Chart = React.createClass({
   },
 
   getData(){
-    console.log(SessionStore.currentUser().dim_scores);
     const curr_user_dim_scores = SessionStore.currentUser().dim_scores;
     const otherUser = [];
     const currUser = [];
