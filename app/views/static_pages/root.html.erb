@@ -1,6 +1,6 @@
 <script type="text/javascript">
   <% if logged_in? %>
-    <% user = { username: current_user.username, id: current_user.id, img_url: current_user.img_url || "https://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png", answers: current_user.answers } %>
+    <% user = { username: current_user.username, id: current_user.id, img_url: current_user.img_url || "https://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png", completed: current_user.completed, dim_scores: current_user.dim_scores } %>
     window.currentUser = <%= user.to_json.html_safe %>
   <% end %>
 </script>

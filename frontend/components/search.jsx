@@ -39,7 +39,7 @@ const Search = React.createClass({
     return(
       <div className="content-main">
         <Filters filterParams={this.state.filterParams}/>
-        {(SessionStore.currentUser().answers.length < 60) ? <div className="users-message">Complete the <Link to="/test"><span>personality test</span></Link> to improve your matches</div> : <div></div>}
+        {(!SessionStore.currentUser().completed) ? <div className="users-message">Complete the <Link to="/test"><span>personality test</span></Link> to improve your matches</div> : <div></div>}
         <UserIndex users={this.state.users}/>
       </div>
     )

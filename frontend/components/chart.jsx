@@ -1,5 +1,6 @@
 const React = require('react');
 const RadarChart = require('../radar_chart');
+const SessionStore = require('../stores/session_store');
 
 const DIM_MAPPING = {
   1: "Realistic",
@@ -16,13 +17,15 @@ const Chart = React.createClass({
   },
 
   getData(){
-    const data = [[]];
+    console.log(SessionStore.currentUser().dim_scores);
+    const curr_user_dim_scores = SessionStore.currentUser().dim_scores;
+    const otherUser = [];
+    const currUser = [];
     for (let i = 1; i < 7; i++) {
-      data[0].push({axis: DIM_MAPPING[i], value: this.props.dim_scores[i] / 50 })
-    }
-    // for (let i = 1; i < 7; i++) {
-    //   data[1].push({axis: DIM_MAPPING[i], value: this.props.curr_user_dim_scores[i]})
-    // }
+      otherUser.push({axis: DIM_MAPPING[i], value: this.props.dim_scores[i] / 50 })
+      currUser.push({axis: DIM_MAPPING[i], value: curr_user_dim_scores[i] / 50 })
+    };
+    const data = [otherUser, currUser];
     return data;
   },
 
