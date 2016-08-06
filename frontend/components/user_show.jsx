@@ -8,6 +8,7 @@ const Modal = require('react-modal');
 const ModalStyle = require('../modal_style');
 const MessageNewForm = require('./message_new_form');
 const UploadButton = require('./upload_button');
+const Chart = require('./chart');
 
 const DIM_MAPPING = {
   1: "Realistic",
@@ -75,12 +76,7 @@ const UserShow = React.createClass({
           </section>
 
           <section className="chart">
-            <h4>Personality Profile</h4>
-            <ul>
-              {Object.keys(this.state.user.dim_scores).map((key)=>{
-                return <li key={key}>{DIM_MAPPING[key]}: {this.state.user.dim_scores[key]}</li>
-              })}
-            </ul>
+            <Chart dim_scores={this.state.user.dim_scores} />
           </section>
 
         </section>
