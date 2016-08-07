@@ -16,7 +16,7 @@ const ProfileSectionIndex = React.createClass({
     const profileSections =
       this.props.profileSections.map( profileSection => {
         return (<li key={profileSection.id}>
-          <h4>{SECTION_MAPPING[profileSection.section]}</h4>
+          <h5>{SECTION_MAPPING[profileSection.section]}</h5>
           <ProfileSectionIndexItem profileSection={profileSection} />
         </li>);
       });

@@ -24,11 +24,16 @@ const Chart = React.createClass({
       otherUser.push({axis: DIM_MAPPING[i], value: this.props.dim_scores[i] / 50 })
       currUser.push({axis: DIM_MAPPING[i], value: curr_user_dim_scores[i] / 50 })
     };
-    const data = [otherUser, currUser];
-    return data;
+    if (this.props.id === SessionStore.currentUser().id) {
+      return [currUser];
+    } else {
+      return [currUser, otherUser];
+    }
   },
 
   render(){
+    RadarChart.draw(".chart", this.getData());
+
     return(
       <div className="chart"></div>
     );

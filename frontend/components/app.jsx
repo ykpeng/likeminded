@@ -34,9 +34,10 @@ const App = React.createClass({
       <div>
         <header className="header">
           <ul className="header-list1">
-            <li><Link to="/" className="link"><img src="https://res.cloudinary.com/ddm1q6utc/image/upload/c_scale,h_30,w_30/v1469564965/LikeMinded-logo_hetqkc.png"/></Link></li>
-            <li><Link to="/" className="link">Browse Matches</Link></li>
-            <li><Link to="/test" className="link">Personality Test</Link></li>
+            <li><Link to="/" className="icon"><i className="fa fa-users" aria-hidden="true"></i>
+</Link></li>
+            <li><Link to="/test" className="icon"><i className="fa fa-flask" aria-hidden="true"></i>
+</Link></li>
             <li><a className="link" href="https://www.linkedin.com/in/ykpeng89">About</a></li>
           </ul>
 
@@ -52,8 +53,7 @@ const App = React.createClass({
             </li>
 
             <li>
-              <button onClick={ this.handleLogOut } className="icon"><i className="fa fa-sign-out" aria-hidden="true"></i>
-              </button>
+              <button onClick={ this.handleLogOut } className="link">Log out</button>
             </li>
           </ul>
         </header>

@@ -4,7 +4,7 @@
 .questions-main {
   font-size: 14px;
   font-weight: 400;
-  width: 80%;
+  max-width: 600px;
 }
 
 .questions-main h3 {
@@ -22,20 +22,21 @@
 }
 
 .questions-main input[type="submit"], .questions-main button {
-  font-weight: 800px;
-  background: #EE3440;
-  color: white;
-  padding: 5px 20px;
-  border-radius: 0.25rem;
-  border: 1px solid #EE3440;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  background: white;
+  color: #EE3440;
+  padding: 10px 20px;
+  border: 4px solid #EE3440;
   letter-spacing: 0.1em;
   text-align: center;
 }
 
 .questions-main input[type="submit"]:hover, .questions-main button:hover {
-  background: #ca2637;
-  border-radius: 0.25rem;
-  border: 1px solid #ca2637;
+  background: #EE3440;
+  color: white;
+  border: 4px solid #EE3440;
 }
 
 .questions-instructions {

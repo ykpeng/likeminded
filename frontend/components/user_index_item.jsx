@@ -17,9 +17,9 @@ const UserIndexItem = React.createClass({
           <img src={this.props.user.img_url} alt={this.props.user.username} onClick={this.handleClick}/>
         </div>
         <div className="user-index-description">
-          <h3 onClick={this.handleClick}>{this.props.user.username}</h3>
+          <h5 onClick={this.handleClick}>{this.props.user.username}</h5>
           <p>{this.props.user.age} ・ {this.props.user.city}, {this.props.user.state}</p>
-          <h5>{this.props.user.match_percentage}% Match</h5>
+          <h3>{this.props.user.match_percentage}% match</h3>
         </div>
       </li>
     )

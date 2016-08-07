@@ -1,9 +1,16 @@
+body {
+  // background: url("http://res.cloudinary.com/ddm1q6utc/image/upload/c_scale,w_1300/v1470525575/splash_gjzple.jpg");
+  // background-position: center;
+}
+
 .content {
   margin-top: 65px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  letter-spacing: 0.04em;
+  line-height: 1.8em;
 }
 
 .signup-section {
@@ -27,15 +34,15 @@
 }
 
 .signup-section h1 {
-  font-size: 30px;
-  font-weight: 800px;
-  letter-spacing: 0.1em;
-  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 900;
+  // letter-spacing: 0.1em;
+  margin: 10px 0px;
 }
 
 .signup-section h2 {
-  font-size: 12px;
-  font-weight: 400px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .logo-large {
@@ -43,8 +50,6 @@
   margin-right: auto;
   height: 100px;
   width: 100px;
-  // background-image: image-url('LikeMinded-logo.png');
-  // background-size: cover;
 }
 
 .signup-form input, .signup-form select {
@@ -58,32 +63,29 @@
   font-size: 14px;
   appearance: none;
   box-shadow: none;
-  border-radius: 0.25rem;
-  padding: 5px;
-  border-radius: 0.25rem;
+  padding: 8px;
   border: solid 1px #333;
   transition: box-shadow 0.3s, border 0.3s;
 }
 
 .signup-form input:focus, .signup-form select:focus {
   outline: none;
-  border-radius: 0.25rem;
   border: solid 1px #333;
   box-shadow: 0 0 2px 1px #333;
 }
 
 .signup-form .submit input{
-  font-weight: 800px;
-  background: #EE3440;
-  color: white;
+  font-weight: 900;
+  background: none;
+  color: #EE3440;
   padding: 10px 20px;
-  border-radius: 0.25rem;
-  border: 1px solid #EE3440;
+  border: 4px solid #EE3440;
   letter-spacing: 0.1em;
   width: 100%;
 }
 
 .signup-form .submit input:hover{
-  background: #ca2637;
-  border: 1px solid #ca2637;
+  background: #EE3440;
+  color: white;
+  border: 4px solid #EE3440;
 }

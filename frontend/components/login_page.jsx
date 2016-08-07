@@ -14,7 +14,7 @@ const LoginPage = React.createClass({
             <img className="logo-large" src="http://res.cloudinary.com/ddm1q6utc/image/upload/v1469564965/LikeMinded-logo_hetqkc.png"/>
             <h1>LikeMinded</h1>
             <h2>Discover people</h2>
-            <h2>who share your interest profile</h2>
+            <h2>who think the way you do</h2>
             <SignupForm />
           </section>
         </main>

@@ -3,7 +3,7 @@ const width = 200;
 const height = 200;
 
 const color = d3.scale.ordinal()
-    .range(["rgba(179,181,198,1)","#EE3440"]);
+    .range(["#EE3440", "rgba(179,181,198,1)"]);
 
 const chartOptions = {
   w: width,
@@ -28,7 +28,7 @@ module.exports = {
   	 opacityArea: 0.2, 	//The opacity of the area of the blob
   	 dotRadius: 4, 			//The size of the colored circles of each blog
   	 opacityCircles: 0.1, 	//The opacity of the circles of each blob
-  	 strokeWidth: 2, 		//The width of the stroke around each blob
+  	 strokeWidth: 4, 		//The width of the stroke around each blob
   	 roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
   	 color: d3.scale.category10()	//Color function
   	};

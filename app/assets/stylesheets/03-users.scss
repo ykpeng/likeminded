@@ -12,27 +12,27 @@
 
 .content-main {
   margin-top: 25px;
+  line-height: 1.8em;
 }
 
-.users-message {
-  text-align: center;
-  color: #EE3440;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-.users-message span {
-  font-weight: 600;
-}
-
-.users-message span:hover {
-  color: #ca2637;
-}
+// .users-message {
+//   text-align: center;
+//   color: #EE3440;
+//   font-size: 14px;
+//   margin-top: 5px;
+// }
+//
+// .users-message span {
+//   font-weight: 600;
+// }
+//
+// .users-message span:hover {
+//   color: #ca2637;
+// }
 
 .filter {
   width: 100%;
   color: rgba( 0, 0, 0, 0.63 );
-  font-size: 14px;
   font-weight: 600;
   padding: 50px 0px 0px 0px;
   opacity: 1;
@@ -41,20 +41,19 @@
 
 .filter input {
   text-align: center;
-  font-size: 14px;
   font-weight: 600;
   border-bottom: 1px solid #777;
 }
 
 .filter select {
-  font-size: 14px;
-  // font-weight: 600;
   appearance: none;
   border: solid 1px #777;
 }
 
 .user-index {
-  margin-top: 35px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;;
@@ -68,106 +67,27 @@
   text-align: center;
 }
 
-.user-index-item h3 {
+.user-index-item h5 {
   letter-spacing: 0.1em;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   cursor: pointer;
   font-size: 20px;
   font-weight: 800;
 }
 
-.user-index-item h3:hover {
-  color: #ca2637;
-}
-
 .user-index-item p {
   margin-bottom: 2px;
 }
 
-.user-index-item h5 {
-  font-size: 16px;
+.user-index-item h3 {
+  margin-top: 5px;
+  font-size: 20px;
   font-weight: 400;
 }
 
-.user-main {
-  padding: 50px 50px 50px 0;
-  font-size: 14px;
-}
-
-.user-sidebar {
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-}
-
-.chart {
-  color: #777;
-}
-
 .user-index-item p {
   margin-bottom: 2px;
-}
-
-.chart h4{
-  font-size: 16px;
-  color: black;
-  margin: 10px 0;
-}
-
-.edit-icon {
-  background: transparent;
-  color: #EE3440;
-  font-weight: 800;
-  font-size: 16px;
-}
-
-.edit-icon:hover {
-  color: #ca2637;
-}
-
-.profile-section-form input[type="submit"], .user-sidebar button {
-  font-weight: 800px;
-  background: #EE3440;
-  color: white;
-  padding: 5px 20px;
-  border-radius: 0.25rem;
-  border: 1px solid #EE3440;
-  letter-spacing: 0.1em;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.profile-section-form input[type="submit"]:hover, .user-sidebar button:hover {
-  background: #ca2637;
-  border-radius: 0.25rem;
-  border: 1px solid #ca2637;
-}
-
-.user-summary h3 {
-  font-size: 24px;
-  color: black;
-  margin-bottom: 10px;
-}
-
-.user-main h4 {
-  color: black;
-  font-size: 14px;
-}
-
-.user-main textarea {
-  font-size: 12px;
-  width: 498px;
-  height: 90px;
-  padding: 9px;
-  border-radius: 0.25rem;
-  border: 1px solid #ccc;
-  margin: 10px 0;
-}
-
-.section-content {
-  margin: 10px 0 20px 0;
 }
 
 .user-index-item {
@@ -177,46 +97,15 @@
   border-style: solid;
   border-color: #EEE #DDD #BBB;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 4px solid black;
   margin-bottom: 20px;
-}
-
-.profile-button {
-  width: 225px;
-  height: 25px;
-}
-
-.profile-photo {
-  height: 267px;
-  width: 267px;
-  overflow: hidden;
-  background-position: center center;
-  background-repeat: no-repeat;
-  margin-bottom: 15px;
-}
-
-.profile-photo img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  -ms-interpolation-mode: bicubic;
-  cursor: pointer;
-}
-
-.user-summary {
-  font-size: 16px;
-  color: #777;
-  padding: 0px 0 5px 0;
-}
-
-.user-summary p {
-  padding-bottom: 2px;
 }
 
 .user-index-photo {
   height: 267px;
   width: 267px;
   overflow: hidden;
+  background: black;
   background-position: center center;
   background-repeat: no-repeat;
   margin-bottom: 10px;

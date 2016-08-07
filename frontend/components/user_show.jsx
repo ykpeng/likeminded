@@ -59,29 +59,25 @@ const UserShow = React.createClass({
     if(this.state.user.profile_sections === undefined) { return <div></div>; }
 
     return (
-      <div className="content-center">
+      <div className="content-around">
         <section className="user-sidebar">
-
           <section className="user-photo">
-
             <div className="profile-photo"><img src={this.state.user.img_url} alt={this.state.user.username} /></div>
 
             { (SessionStore.currentUser().id === this.state.user.id) ? <UploadButton addImage={this.addImage}/> : <button className="profile-button" onClick={this.openModal}>MESSAGE</button> }
           </section>
 
-          <section className="user-summary">
-            <h3>{this.state.user.username}</h3>
-            <p>{this.state.user.age} ・ {this.state.user.city}, {this.state.user.state}</p>
-            <p>Looking for: {this.state.user.looking_for}</p>
-          </section>
-
-          <section className="chart">
-            <Chart dim_scores={this.state.user.dim_scores} />
+          <section className="user-chart">
+            <Chart dim_scores={this.state.user.dim_scores} id={this.state.user.id}/>
           </section>
 
         </section>
 
         <section className="user-main">
+          <section className="user-summary">
+            <h1>{this.state.user.username}</h1>
+            <span>{this.state.user.age} ・ {this.state.user.city}, {this.state.user.state} ・ Looking for {this.state.user.looking_for.toLowerCase()}</span>
+          </section>
           <ProfileSectionIndex profileSections={this.state.user.profile_sections}/>
         </section>
 

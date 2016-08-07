@@ -7,7 +7,10 @@ span, article, footer, time, small {
   padding: 0;
   border: 0;
   outline: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "sofia-pro", sans-serif;
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 0.04em;
   text-align: inherit;
   text-decoration: inherit;
   vertical-align: inherit;
@@ -40,6 +43,7 @@ textarea,
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
+  border-radius: 0;
 }
 
 textarea {
@@ -49,6 +53,15 @@ textarea {
 button,
 input[type="submit"], a {
   cursor: pointer;
+}
+
+button {
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
 }
 
 .group:after {

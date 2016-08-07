@@ -44,7 +44,6 @@
   border-style: solid;
   border-color: #EEE #DDD #BBB;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
-  border-radius: 0.25rem;
 }
 
 .message-left {
@@ -98,7 +97,6 @@
   width: 100%;
   height: 90px;
   padding: 9px;
-  border-radius: 0.25rem;
   border: 1px solid #ccc;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -110,7 +108,6 @@
   width: 100%;
   height: 240px;
   padding: 9px;
-  border-radius: 0.25rem;
   border: 1px solid #ccc;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -118,12 +115,13 @@
 }
 
 .message-right input[type="submit"], .new-message-bottom input[type="submit"] {
-  font-weight: 800;
-  background: #EE3440;
-  color: white;
-  padding: 8px 25px;
-  border-radius: 0.25rem;
-  border: 1px solid #EE3440;
+  font-weight: 900;
+  font-size: 14;
+  letter-spacing: 0.1em;
+  background: white;
+  color: #EE3440;
+  padding: 10px 20px;
+  border: 4px solid #EE3440;
   letter-spacing: 0.1em;
   text-align: center;
   margin: 10px 0;
@@ -135,8 +133,9 @@
 }
 
 .message-right input[type="submit"]:hover, .new-message-bottom input[type="submit"]:hover {
-  background: #ca2637;
-  border: 1px solid #ca2637;
+  background: #EE3440;
+  color: white;
+  border: 4px solid #EE3440;
 }
 
 .new-message-top {
