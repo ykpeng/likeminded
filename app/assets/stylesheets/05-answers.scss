@@ -1,26 +1,54 @@
 // Place all the styles related to the answers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.questions-main {
-  font-weight: 400;
-  max-width: 600px;
+.content-questions {
+  padding-top: 75px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.questions-main h3 {
-  font-size: 20px;
+.content-questions h3 {
+ font-size: 16px;
+ font-weight: 900;
 }
 
-.questions-main h4{
-  font-size: 16px;
-}
-
-.questions-main.h5 {
+.content-questions h5 {
   font-size: 14px;
-  margin-bottom: 50px;
-  text-align: center;
+  font-weight: 900;
 }
 
-.questions-main input[type="submit"], .questions-main button {
+.questions-completed {
+  color: white;
+  background: #EE3440;
+  padding: 10px 40px;
+  border: 4px solid #EE3440;
+}
+
+.questions-main {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.answers-main {
+  width: 700px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.questions-heading {
+  padding-bottom: 20px;
+  border-bottom: 4px solid black;
+}
+
+.answers-heading {
+  padding-bottom: 20px;
+  border-bottom: 4px solid black;
+}
+
+.content-questions input[type="submit"], .content-questions button {
   font-weight: 900;
   font-size: 14px;
   letter-spacing: 0.1em;
@@ -30,9 +58,10 @@
   border: 4px solid #EE3440;
   letter-spacing: 0.1em;
   text-align: center;
+  margin-top: 10px;
 }
 
-.questions-main input[type="submit"]:hover, .questions-main button:hover {
+.content-questions input[type="submit"]:hover, .content-questions button:hover {
   background: #EE3440;
   color: white;
   border: 4px solid #EE3440;
@@ -45,7 +74,13 @@
   border-style: solid;
   border-color: #EEE #DDD #BBB;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
-  margin-bottom: 20px;
+}
+
+.question-number {
+  color: white;
+  background: #EE3440;
+  padding: 10px 40px;
+  border: 4px solid #EE3440;
 }
 
 .question-form {
@@ -55,11 +90,6 @@
   border-style: solid;
   border-color: #EEE #DDD #BBB;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
-  margin: 20px 0 50px 0;
-}
-
-.answer-options {
-  margin-top: 15px;
 }
 
 .answer {
@@ -69,17 +99,11 @@
   border-style: solid;
   border-color: #EEE #DDD #BBB;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
-  margin: 20px 0 0 0;
-}
-
-.answer.h5 {
-  font-size: 13px;
-  font-weight: 600;
 }
 
 .check-icon {
   background: transparent;
-  color: #ca2637;
+  color: #EE3440;
   font-weight: 800;
   font-size: 16px;
 }
@@ -87,8 +111,4 @@
 .answer-index {
   display: flex;
   flex-direction: column-reverse;
-}
-
-.answered-answer {
-  margin: 15px 0 10px 0;
 }

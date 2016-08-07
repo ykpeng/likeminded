@@ -28,14 +28,16 @@ const QuestionIndexItem = React.createClass({
       }
     });
     return(
-      <form onSubmit={this.handleSubmit} className="question-form">
-        <p>Question {this.props.question.id}/60: </p><br/>
-        <h4>{this.props.question.content}</h4><br/>
-        <div className="answer_options">
-          {radioButtons}
-        </div>
-        <input type="submit" value="ANSWER"/>
-      </form>
+      <div className="question">
+        <h5 className="question-number">QUESTION {this.props.question.id} / 60</h5>
+        <form onSubmit={this.handleSubmit} className="question-form">
+          <h5>{this.props.question.content}</h5>
+          <div className="answer_options">
+            {radioButtons}
+          </div>
+          <input type="submit" value="ANSWER"/>
+        </form>
+      </div>
     )
   }
 })

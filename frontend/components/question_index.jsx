@@ -47,18 +47,25 @@ const QuestionIndex = React.createClass({
       return <div></div>;
     }
     return(
-      <div className="content">
+      <div className="content-questions">
+
         <div className="questions-main">
+          <div className="questions-heading">
+            <h3>QUESTIONS</h3>
+          </div>
           <div className="questions-instructions">
-            Read each question carefully and decide how you would feel about doing each type of work.Try not to think about if you have enough education or training to do the work, or how much money you would make doing the work. Just think about if you would like or dislike doing the work.
+            Read each question carefully and decide how you would feel about doing each type of work. Try not to think about if you have enough education or training to do the work, or how much money you would make doing the work. Just think about if you would like or dislike doing the work.
           </div>
           <div>
             {(this.state.currIdx === this.state.questions.length) ?
-              <h5>You've completed the personality test!</h5> :
+              <h3 className="questions-completed">COMPLETED</h3> :
               <QuestionIndexItem question={this.state.questions[this.state.currIdx]} incrementCurrIdx={this.incrementCurrIdx} key={this.state.currIdx}/> }
           </div>
+        </div>
+
+        <div className="answers-main">
           <div className="answers-heading">
-            <h4>ANSWERED QUESTIONS</h4>
+            <h3>ANSWERS</h3>
           </div>
           <AnswerIndex answers={this.state.answers}/>
         </div>
