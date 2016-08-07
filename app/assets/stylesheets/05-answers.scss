@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .questions-main {
-  font-size: 14px;
   font-weight: 400;
   max-width: 600px;
 }
@@ -15,7 +14,7 @@
   font-size: 16px;
 }
 
-.questions-main h5 {
+.questions-main.h5 {
   font-size: 14px;
   margin-bottom: 50px;
   text-align: center;
@@ -40,7 +39,7 @@
 }
 
 .questions-instructions {
-  padding: 50px;
+  padding: 25px 40px;
   box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
   border-width: 1px;
   border-style: solid;
@@ -48,8 +47,9 @@
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
   margin-bottom: 20px;
 }
+
 .question-form {
-  padding: 50px;
+  padding: 25px 40px;
   box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
   border-width: 1px;
   border-style: solid;
@@ -62,18 +62,19 @@
   margin-top: 15px;
 }
 
-.answer-option {
-  margin-bottom: 10px;
-}
-
 .answer {
-  padding: 30px 50px;
+  padding: 25px 40px;
   box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
   border-width: 1px;
   border-style: solid;
   border-color: #EEE #DDD #BBB;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
   margin: 20px 0 0 0;
+}
+
+.answer.h5 {
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .check-icon {

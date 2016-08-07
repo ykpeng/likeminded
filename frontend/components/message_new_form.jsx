@@ -49,9 +49,9 @@ const MessageNewForm = React.createClass({
             <div className="new-message-photo">
               <Link to={`/users/${this.props.user.id}`}><img src={this.props.user.img_url} alt={this.props.user.username}/></Link>
             </div>
-            <div>
+            <h5>
               {this.props.user.username}
-            </div>
+            </h5>
           </div>
 
           <button onClick={this.props.closeModal} className="exit-icon new-message-top-right">

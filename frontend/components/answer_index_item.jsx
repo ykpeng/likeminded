@@ -22,7 +22,7 @@ const AnswerIndexItem = React.createClass({
   render(){
     return(
       <div className="answer">
-        <h4>{this.props.answer.question.content}</h4>
+        <h5>{this.props.answer.question.content}</h5>
 
         {(this.state.editing) ?
 

@@ -8,8 +8,8 @@ span, article, footer, time, small {
   border: 0;
   outline: 0;
   font-family: "sofia-pro", sans-serif;
-  font-style: normal;
-  font-size: 13px;
+  font-style: inherit;
+  font-size: inherit;
   line-height: 1.8em;
   letter-spacing: 0.04em;
   text-align: inherit;
@@ -24,6 +24,8 @@ a {
 
 body {
   color: #333;
+  font-size: 13px;
+  font-size: normal;
 }
 
 ul {

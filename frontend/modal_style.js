@@ -20,7 +20,7 @@ module.exports = {
     borderRadius               : '0px',
     outline                    : 'none',
     padding                    : '20px',
-    width                      : '330px',
-    height                     : '330px'
+    width                      : '400px',
+    height                     : '350px'
   }
 }
