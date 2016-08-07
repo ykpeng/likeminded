@@ -49,6 +49,7 @@ const UserShow = React.createClass({
   render(){
     if(this.state.user.profile_sections === undefined) { return <div></div>; }
 
+    let currentUser = SessionStore.currentUser();
     return (
       <div className="content-profile">
         <section className="user-sidebar">
@@ -56,12 +57,12 @@ const UserShow = React.createClass({
             <div className="profile-photo"><img src={this.state.user.img_url} alt={this.state.user.username} /></div>
           </section>
 
-          { (SessionStore.currentUser().id === this.state.user.id) ? <UploadButton addImage={this.addImage}/> : <button className="profile-button" onClick={this.openModal}>MESSAGE</button> }
+          { (currentUser.id === this.state.user.id) ? <UploadButton addImage={this.addImage}/> : <button className="profile-button" onClick={this.openModal}>MESSAGE</button> }
 
 
           <section className="user-legend">
-            <div className="user-legend-item"><div className="square red"></div><span>{SessionStore.currentUser().username}</span></div>
-            { (SessionStore.currentUser().id === this.state.user.id) ? <div></div> :
+            <div className="user-legend-item"><div className="square red"></div><span>{currentUser.username}</span></div>
+            { (currentUser.id === this.state.user.id) ? <div></div> :
             <div className="user-legend-item"><div className="square blue"></div><span>{this.state.user.username}</span></div> }
           </section>
 
@@ -74,7 +75,7 @@ const UserShow = React.createClass({
         <section className="user-main">
           <section className="user-summary">
             <h1>{this.state.user.username}</h1>
-            <span>{this.state.user.age} ・ {this.state.user.city}, {this.state.user.state} ・ Looking for {this.state.user.looking_for.toLowerCase()}</span>
+            <span>{this.state.user.age} ・ {this.state.user.city}, {this.state.user.state} ・ Looking for {this.state.user.looking_for.toLowerCase()}{ (currentUser.id === this.state.user.id) ? <p></p> : <span> ・  {this.state.user.match_percentage}% Match</span>}</span>
           </section>
           <ProfileSectionIndex profileSections={this.state.user.profile_sections}/>
         </section>

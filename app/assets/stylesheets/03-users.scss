@@ -41,8 +41,9 @@
 }
 
 .filter input {
+  padding: 0 5px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 900;
   border-bottom: 1px solid #777;
 }
 
@@ -77,8 +78,9 @@
 }
 
 .user-index-item h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
+  // color: #EE3440;
 }
 
 .user-index-item {

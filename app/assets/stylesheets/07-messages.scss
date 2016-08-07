@@ -12,7 +12,7 @@
   border-color: #EEE #DDD #BBB;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
   border-bottom: 4px solid black;
-  margin: 5px 15px;
+  margin: 5px 15px 15px 15px;
   align-items: center;
   color: #777;
   background: white;
@@ -28,16 +28,11 @@
   justify-content: flex-start;
 }
 
-.messages-right {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .message {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 10px 15px;
+  margin: 0px 15px;
 }
 
 .message-left {
@@ -61,7 +56,6 @@
   width: 65px;
   border-radius: 50%;
   overflow: hidden;
-  // background: black;
   background-position: center center;
   background-repeat: no-repeat;
   margin-right: 20px;
@@ -104,6 +98,12 @@
 .messages-header h5{
   font-size: 20px;
   color: black;
+}
+
+.messages-name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .message-right textarea {

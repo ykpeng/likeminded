@@ -6,5 +6,8 @@ json.array! @users do |user|
   json.state user.state
   json.img_url user.img_url || "https://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png"
   json.looking_for user.looking_for
-  json.match_percentage current_user.match_percentage(user)
+
+  if current_user
+    json.match_percentage current_user.match_percentage(user)
+  end
 end

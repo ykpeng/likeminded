@@ -8,6 +8,10 @@ json.looking_for @user.looking_for
 json.dim_scores @user.dim_scores
 json.completed @user.completed
 
+if current_user
+  json.match_percentage current_user.match_percentage(@user)
+end
+
 json.profile_sections do
   json.array! (@user.profile_sections.order(:id)) do |profile_section|
     json.extract! profile_section, :id, :user_id, :section, :content

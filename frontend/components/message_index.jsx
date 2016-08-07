@@ -54,7 +54,7 @@ const MessageIndex = React.createClass({
             </div>
             <div>
               <h5>{other_user.username}</h5>
-              <div>{other_user.age} ・ {other_user.city}, {other_user.state}</div>
+              <div>{other_user.age} ・ {other_user.city}, {other_user.state}  ・ Looking for {other_user.looking_for.toLowerCase()} ・ {other_user.match_percentage}% Match</div>
             </div>
           </div>
         </div></Link>
