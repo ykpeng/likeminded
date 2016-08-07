@@ -11,10 +11,15 @@
   border-style: solid;
   border-color: #EEE #DDD #BBB;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
-  margin-top: 10px;
+  border-bottom: 4px solid black;
+  margin: 5px 15px;
   align-items: center;
   color: #777;
-  font-size: 14px;
+  background: white;
+}
+
+.messages-header:hover {
+  border-bottom: 4px solid #EE3440;
 }
 
 .messages-header-left {
@@ -32,7 +37,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 10px 0;
+  margin: 10px 15px;
+}
+
+.message-left {
+  margin-left: 41px;
 }
 
 .message-right {
@@ -44,10 +53,7 @@
   border-style: solid;
   border-color: #EEE #DDD #BBB;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
-}
-
-.message-left {
-  margin-left: 41px;
+  background: white;
 }
 
 .message-photo {
@@ -55,6 +61,7 @@
   width: 65px;
   border-radius: 50%;
   overflow: hidden;
+  background: black;
   background-position: center center;
   background-repeat: no-repeat;
   margin-right: 20px;
@@ -68,11 +75,16 @@
   -ms-interpolation-mode: bicubic;
 }
 
+.message-photo:hover img {
+  opacity: 0.75;
+}
+
 .new-message-photo {
   height: 40px;
   width: 40px;
   border-radius: 50%;
   overflow: hidden;
+  background: black;
   background-position: center center;
   background-repeat: no-repeat;
   margin-right: 10px;
@@ -86,10 +98,13 @@
   -ms-interpolation-mode: bicubic;
 }
 
-.messages-header h3{
-  font-size: 18px;
+.new-message-photo:hover img{
+  opacity: 0.75;
+}
+
+.messages-header h5{
+  font-size: 20px;
   color: black;
-  margin-bottom: 10px;
 }
 
 .message-right textarea {
@@ -112,6 +127,7 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  background: white;
 }
 
 .message-right input[type="submit"], .new-message-bottom input[type="submit"] {

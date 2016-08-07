@@ -45,29 +45,27 @@ const MessageIndex = React.createClass({
       return <div></div>;
     }
     return(
-      <div className="content">
-        <div className="content-vertical">
-          <Link to={`/conversations`}><h3 className="message-nav">Messages</h3></Link>
-          <Link to={`/users/${other_user.id}`}><div className="messages-header">
-            <div className="messages-header-left">
-              <div className="message-photo">
-                <img src={other_user.img_url} alt={other_user.username} onClick={this.goToOther}/>
-              </div>
-              <div>
-                <h3>{other_user.username}</h3>
-                <div>{other_user.age} ・ {other_user.city}, {other_user.state}</div>
-              </div>
+      <div className="content-vertical">
+        <Link to={`/conversations`}><h5 className="message-nav">MESSAGES</h5></Link>
+        <Link to={`/users/${other_user.id}`}><div className="messages-header">
+          <div className="messages-header-left">
+            <div className="message-photo">
+              <img src={other_user.img_url} alt={other_user.username} onClick={this.goToOther}/>
             </div>
-          </div></Link>
+            <div>
+              <h5>{other_user.username}</h5>
+              <div>{other_user.age} ・ {other_user.city}, {other_user.state}</div>
+            </div>
+          </div>
+        </div></Link>
 
-          <ul className="messages">
-            {this.state.messages.map((message)=>{
-              return <MessageIndexItem message={message} key={message.id}/>
-            })}
-            <MessageForm receiver_id={other_user.id} conversation_id={firstMessage.conversation_id}/>
-          </ul>
+        <ul className="messages">
+          {this.state.messages.map((message)=>{
+            return <MessageIndexItem message={message} key={message.id}/>
+          })}
+          <MessageForm receiver_id={other_user.id} conversation_id={firstMessage.conversation_id}/>
+        </ul>
 
-        </div>
       </div>
     );
   }

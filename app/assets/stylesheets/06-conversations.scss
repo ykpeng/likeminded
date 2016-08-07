@@ -2,17 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .content-vertical{
-  width: 80%;
-  margin-top: 25px;
+  padding-top: 75px;
+  width: 100%;
 }
 
-.content-vertical h3 {
-  font-size: 16px;
+.content-vertical h5 {
+  font-size: 20px;
+}
+
+.message-nav {
+  margin-left: 15px;
+  color: #777;
 }
 
 .message-nav:hover {
-  opacity: 0.75;
+  color: black;
 }
+
 .conversation-index {
   display: flex;
   flex-direction: column;
@@ -25,35 +31,35 @@
   border-style: solid;
   border-color: #EEE #DDD #BBB;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05);
-  margin: 10px 0 0 0;
+  border-bottom: 4px solid black;
+  margin: 5px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #777;
-  font-size: 14px;
+}
+
+.conversation h5 {
+  color: black;
+  padding: 0;
 }
 
 .conversation:hover {
-  opacity: 0.75;
-}
-
-.conversation h3 {
-  color: black;
-  margin-bottom: 10px;
-  padding: 0;
+  border-bottom: 4px solid #EE3440;
 }
 
 .convo-left {
   display: flex;
   justify-content: flex-start;
-  padding-right: 10px;
+  align-items: center;
+  margin-right: 15px;
 }
 
 .convo-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .convo-photo {
@@ -78,10 +84,10 @@
   background: transparent;
   color: #ccc;
   font-weight: 800;
-  font-size: 28px;
+  font-size: 24px;
   margin-left: 10px;
 }
 
 .trash-icon:hover {
-  color: #ca2637;
+  color: #EE3440;
 }

@@ -20,8 +20,8 @@ const ConversationIndexItem = React.createClass({
             <img src={other_user.img_url} alt={other_user.username}/>
           </div>
           <div>
-            <h3>{other_user.username}</h3>
-            {this.props.last_message.content}
+            <h5>{other_user.username}</h5>
+            <p>{this.props.last_message.content}</p>
           </div>
         </div>
 

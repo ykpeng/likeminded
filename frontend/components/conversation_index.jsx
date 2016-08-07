@@ -33,15 +33,13 @@ const ConversationIndex = React.createClass({
       }
     })
     return(
-      <div className="content">
-        <div className="content-vertical">
-          <Link to={`/conversations`}><h3 className="message-nav">Messages</h3></Link>
-          <ul className="conversation-index">
-            {sortedConvos.map((conversation)=>{
-              return <Link to={`/conversations/${conversation.id}`} key={conversation.id}><ConversationIndexItem last_message={conversation.last_message} id={conversation.id}/></Link>
-            })}
-          </ul>
-        </div>
+      <div className="content-vertical">
+        <Link to={`/conversations`}><h5 className="message-nav">MESSAGES</h5></Link>
+        <ul className="conversation-index">
+          {sortedConvos.map((conversation)=>{
+            return <Link to={`/conversations/${conversation.id}`} key={conversation.id}><ConversationIndexItem last_message={conversation.last_message} id={conversation.id}/></Link>
+          })}
+        </ul>
       </div>
     )
   }

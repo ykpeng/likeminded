@@ -70,7 +70,6 @@
 .user-index-item h5 {
   letter-spacing: 0.1em;
   color: black;
-  margin-bottom: 5px;
   cursor: pointer;
   font-size: 20px;
   font-weight: 800;
@@ -81,13 +80,8 @@
 }
 
 .user-index-item h3 {
-  margin-top: 5px;
   font-size: 20px;
   font-weight: 400;
-}
-
-.user-index-item p {
-  margin-bottom: 2px;
 }
 
 .user-index-item {
@@ -123,6 +117,10 @@
 
 .user-index-photo:hover img {
   opacity: .75;
+}
+
+.user-index-item:hover {
+  border-bottom: 4px solid #EE3440;
 }
 
 .user-index-description {

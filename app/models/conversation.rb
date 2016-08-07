@@ -10,4 +10,8 @@ class Conversation < ActiveRecord::Base
   has_many :senders,
     through: :messages,
     source: :sender
+
+  def last_message
+    self.messages.order(created_at: :desc).limit(1)[0]
+  end
 end

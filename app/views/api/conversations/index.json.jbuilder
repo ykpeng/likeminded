@@ -1,6 +1,6 @@
 json.array! @conversations do |conversation|
   json.extract! conversation, :id
-  last_message = conversation.messages.order(:created_at).last
+  last_message = conversation.last_message
   json.last_message do
     json.id last_message.id
     json.sender last_message.sender
