@@ -6,6 +6,7 @@ json.state @user.state
 json.img_url @user.img_url || "https://res.cloudinary.com/ddm1q6utc/image/upload/v1467682125/default-profile-photo_w9qswu.png"
 json.looking_for @user.looking_for
 json.dim_scores @user.dim_scores
+json.completed @user.completed
 
 json.profile_sections do
   json.array! (@user.profile_sections.order(:id)) do |profile_section|

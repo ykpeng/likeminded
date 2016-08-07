@@ -10,15 +10,6 @@ const MessageNewForm = require('./message_new_form');
 const UploadButton = require('./upload_button');
 const Chart = require('./chart');
 
-const DIM_MAPPING = {
-  1: "Realistic",
-  2: "Investigative",
-  3: "Artistic",
-  4: "Social",
-  5: "Enterprising",
-  6: "Conventional"
-};
-
 const UserShow = React.createClass({
   getInitialState(){
     const potentialUser = UserStore.find(parseInt(this.props.params.userId));
@@ -59,12 +50,19 @@ const UserShow = React.createClass({
     if(this.state.user.profile_sections === undefined) { return <div></div>; }
 
     return (
-      <div className="content-around">
+      <div className="content-profile">
         <section className="user-sidebar">
           <section className="user-photo">
             <div className="profile-photo"><img src={this.state.user.img_url} alt={this.state.user.username} /></div>
+          </section>
 
-            { (SessionStore.currentUser().id === this.state.user.id) ? <UploadButton addImage={this.addImage}/> : <button className="profile-button" onClick={this.openModal}>MESSAGE</button> }
+          { (SessionStore.currentUser().id === this.state.user.id) ? <UploadButton addImage={this.addImage}/> : <button className="profile-button" onClick={this.openModal}>MESSAGE</button> }
+
+
+          <section className="user-legend">
+            <div className="user-legend-item"><div className="square red"></div><span>{SessionStore.currentUser().username}</span></div>
+            { (SessionStore.currentUser().id === this.state.user.id) ? <div></div> :
+            <div className="user-legend-item"><div className="square blue"></div><span>{this.state.user.username}</span></div> }
           </section>
 
           <section className="user-chart">

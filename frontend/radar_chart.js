@@ -3,7 +3,7 @@ const width = 200;
 const height = 200;
 
 const color = d3.scale.ordinal()
-    .range(["#EE3440", "rgba(179,181,198,1)"]);
+    .range(["#EE3440", "#B3B5C6"]);
 
 const chartOptions = {
   w: width,
@@ -16,7 +16,7 @@ const chartOptions = {
 };
 
 module.exports = {
-  draw(id, data, options = chartOptions) {
+  draw(id, data, currUser, otherUser, options = chartOptions) {
   	var cfg = {
   	 w: 600,				//Width of the circle
   	 h: 600,				//Height of the circle

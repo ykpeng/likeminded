@@ -54,6 +54,7 @@
   width: 30px;
   border-radius: 50%;
   overflow: hidden;
+  background: black;
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -66,7 +67,7 @@
   -ms-interpolation-mode: bicubic;
 }
 
-.user-icon:hover {
+.user-icon:hover img{
   opacity: 0.75;
 }
 
