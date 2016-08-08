@@ -4,7 +4,9 @@
 
 [heroku]: https://simpatico.herokuapp.com/
 
-LikeMinded is a full-stack web application that helps people find friends and collaborators using a personality test. It uses Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
+LikeMinded is a full-stack web application that helps people find friends and collaborators using a personality test. It uses Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.
+
+![login]
 
 ## Features & Implementation
 
@@ -17,8 +19,39 @@ LikeMinded is a full-stack web application that helps people find friends and co
 
   Users can complete a personality test to access their scores on six personality dimensions and determine their percentage match to other users. The `dimensions` table in the backend holds `id` and `name`, the `questions` table holds `content` and `dimension_id`, the `answers` table holds `user_id`, `question_id`, and `answer_choice`. On the frontend, `QuestionStore` holds all the questions fetched from the backend. `QuestionIndex` iterates through all the questions and passes each one to `QuestionIndexItem`. Answers are held in `AnswerStore` and displayed in `AnswerIndex`, which passes individual answers as props to `AnswerIndexItem`.
 
-  Percentage matches of the current user against all other users are calculated in the `UsersController` and sent to `UserStore`, which sorts the users in order of decreasing percentage match.
   ![questions]
+
+  Percentage matches of the current user against all other users are calculated in the `UsersController` and sent to `UserStore`, which sorts the users in order of decreasing percentage match.
+
+```ruby
+class User < ActiveRecord::Base
+  def match_percentage(other_user)
+    ((1 - score_distance(other_user)/ 240.00) * 100).to_i
+  end
+
+  def score_distance(other_user)
+    my_dim_scores = dim_scores
+    other_dim_scores = other_user.dim_scores
+    diff = 0
+    (1..6).each do |i|
+      diff += (my_dim_scores[i] - other_dim_scores[i]).abs
+    end
+    diff
+  end
+
+  def dim_scores
+    @dim_scores = Hash.new
+    (1..6).each do |i|
+      @dim_scores[i] = 0
+    end
+    scores = Answer.joins(:question).where("answers.user_id = ?", self.id).group("questions.dimension_id").sum("answers.answer_choice")
+    @dim_scores.merge!(scores)
+  end
+end
+```
+
+  On the each user's profile page, a D3.js radar chart is drawn comparing the dimension scores of that user against the current user.
+  ![userShow2]
 
 ### Filtering
 
@@ -82,8 +115,10 @@ end
 - [ ] Disable/delete account
 - [ ] Multiple sessions
 
+[login]: ./docs/screenshots/login.png
 [userIndex]: ./docs/screenshots/userIndex.png
 [userShow]: ./docs/screenshots/userShow.png
+[userShow2]: ./docs/screenshots/userShow2.png
 [messaging]: ./docs/screenshots/messaging.png
 [conversationIndex]: ./docs/screenshots/conversationIndex.png
 [messageIndex]: ./docs/screenshots/messageIndex.png

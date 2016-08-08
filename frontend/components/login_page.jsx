@@ -1,19 +1,20 @@
 const React = require('react');
 const LoginForm = require('./login_form');
 const SignupForm = require('./signup_form');
-{/*<figure className="logo-large"></figure>*/}
+
 const LoginPage = React.createClass({
   render(){
     return(
-      <div>
+      <div className="background">
         <header className="header">
-          <LoginForm />
+          <div className="header-left"><span>LIKE</span>MINDED</div>
+          <div className="header-right"><LoginForm /></div>
         </header>
-        <main className="content">
+        <main className="content-landing">
+          <section className="logo-section">
+            <h2>DISCOVER PEOPLE WHO THINK THE WAY YOU DO</h2>
+          </section>
           <section className="signup-section">
-            <h1>LikeMinded</h1>
-            <h2>Discover people</h2>
-            <h2>who think the way you do</h2>
             <SignupForm />
           </section>
         </main>

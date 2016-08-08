@@ -1,14 +1,22 @@
-body {
-  // background: url("http://res.cloudinary.com/ddm1q6utc/image/upload/c_scale,w_1300/v1470525575/splash_gjzple.jpg");
-  // background-position: center;
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("http://res.cloudinary.com/ddm1q6utc/image/upload/c_scale,w_1500/v1470626831/friends_cropped_lightened_e48fmx.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.content {
-  margin-top: 75px;
+.content-landing {
+  margin-top: 150px;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   letter-spacing: 0.04em;
   line-height: 1.8em;
 }
@@ -16,6 +24,11 @@ body {
 .signup-section {
   width: 250px;
   text-align: center;
+  margin-left: 30px;
+  margin-right: 15px;
+  background: white;
+  opacity: 0.95;
+  padding: 30px 50px;
 }
 
 .signup-form{
@@ -31,24 +44,20 @@ body {
 
 .signup-form input {
   display: block;
+  font-size: 13px;
 }
 
-.signup-section h1 {
-  font-size: 32px;
+.logo-section {
+  margin-left: 15px;
+}
+
+.logo-section h2{
+  font-size: 50px;
   font-weight: 900;
-  // letter-spacing: 0.1em;
-}
-
-.signup-section h2 {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.logo-large {
-  margin-left: auto;
-  margin-right: auto;
-  height: 100px;
-  width: 100px;
+  color: black;
+  line-height: 1.5em;
+  max-width: 600px;
+  letter-spacing: 0.3em;
 }
 
 .signup-form input, .signup-form select {
@@ -59,18 +68,17 @@ body {
   display: block;
   margin: 0 0 10px 0;
   width: 100%;
-  font-size: 14px;
   appearance: none;
   box-shadow: none;
-  padding: 8px;
-  border: solid 1px #333;
+  padding: 9px;
+  border: solid 1px #ccc;
   transition: box-shadow 0.3s, border 0.3s;
 }
 
 .signup-form input:focus, .signup-form select:focus {
   outline: none;
-  border: solid 1px #333;
-  box-shadow: 0 0 2px 1px #333;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 2px 1px #ccc;
 }
 
 .signup-form .submit input{
@@ -81,6 +89,7 @@ body {
   border: 4px solid #EE3440;
   letter-spacing: 0.1em;
   width: 100%;
+  font-size: 14px;
 }
 
 .signup-form .submit input:hover{
@@ -89,6 +98,10 @@ body {
   border: 4px solid #EE3440;
 }
 
+// .signup-form label {
+//   color: black;
+//   font-weight: 900;
+// }
 .errors {
   margin: 0 auto;
   text-align: center;

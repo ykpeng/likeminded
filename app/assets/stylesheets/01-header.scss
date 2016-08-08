@@ -1,4 +1,5 @@
 .header {
+  opacity: 0.97;
   position: fixed;
   line-height: 1.8em;
   z-index: 498;
@@ -13,6 +14,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   color: #777;
   font-family: "sofia-pro", sans-serif;
@@ -21,17 +23,33 @@
   letter-spacing: 0.04em;
 }
 
+.header-left {
+  margin-left: 15px;
+  font-size: 16px;
+  color: black;
+  letter-spacing: 0.5em;
+}
+
+.header-left span {
+  color: #EE3440;
+  letter-spacing: 0.5em;
+}
+
+.header-right {
+  margin-right: 15px;
+}
+
 .login-form {
-  margin: 0 auto;
-  margin-bottom: 5px;
-  width: 800px;
+  // margin: 0 auto;
+  // margin-bottom: 5px;
+  // width: 800px;
 }
 
 .header-list1 {
   padding-left: 15px;
   display: flex;
   align-items: center;
-  justify-content: space-between;;
+  justify-content: space-between;
   width: 100px;
 }
 
@@ -47,7 +65,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
 .user-icon {
@@ -55,7 +72,6 @@
   width: 30px;
   border-radius: 50%;
   overflow: hidden;
-  // background: black;
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -80,19 +96,19 @@
   font-size: 12px;
   appearance: none;
   box-shadow: none;
-  padding: 8px;
-  border: solid 1px #333;
+  padding: 9px;
+  border: solid 1px #ccc;
   transition: box-shadow 0.3s, border 0.3s;
 }
 
 .login-form input[type="text"]:focus, .login-form input[type="password"]:focus{
   outline: none;
-  border: solid 1px #333;
-  box-shadow: 0 0 2px 1px #333;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 2px 1px #ccc;
 }
 
 .form-section {
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .login-form input[type="submit"], .login-form button {
