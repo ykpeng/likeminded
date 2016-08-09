@@ -9,7 +9,9 @@ class Api::MessagesController < ApplicationController
     @message.sender_id = current_user.id
     @message.conversation_id = params[:conversation_id]
     if @message.save
-      render 'api/messages/show'
+      #publish an event
+      Pusher.trigger('conversation_' + @message.conversation_id.to_s, 'message_sent', {})
+      render 'api/messages/show' #, include: :sender
     else
       render json: @message.errors, status: 422
     end

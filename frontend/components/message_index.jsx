@@ -18,6 +18,15 @@ const MessageIndex = React.createClass({
   componentDidMount(){
     this.listener = MessageStore.addListener(this.handleChange);
     MessageActions.fetchMessages(parseInt(this.props.params.conversationId));
+    // subscription code
+    this.pusher = new Pusher('367b3c3c9c72c74cbe22', {
+      encrypted: true
+    });
+
+    const channel = this.pusher.subscribe('conversation_' + this.props.params.conversationId);
+    channel.bind('message_sent', function(data) {
+      MessageActions.fetchMessages(parseInt(this.props.params.conversationId));
+    }.bind(this));
   },
 
   componentWillReceiveProps(newProps) {
@@ -30,6 +39,7 @@ const MessageIndex = React.createClass({
 
   componentWillUnmount(){
     this.listener.remove();
+    this.pusher.unsubscribe('conversation_' + this.props.params.conversationId);
   },
 
   render(){
@@ -54,7 +64,7 @@ const MessageIndex = React.createClass({
             </div>
             <div>
               <h5>{other_user.username}</h5>
-              <div>{other_user.age} ・ {other_user.city}, {other_user.state}  ・ Looking for {other_user.looking_for.toLowerCase()} ・ {other_user.match_percentage}% Match</div>
+              <div>{other_user.age} ・ {other_user.city}, {other_user.state} ・ Looking for {other_user.looking_for.toLowerCase()} ・ {other_user.match_percentage}% Match</div>
             </div>
           </div>
         </div></Link>

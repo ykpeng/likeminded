@@ -24,9 +24,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'distribution'
+
 gem 'faker'
 
 gem 'figaro'
+
+gem 'pusher'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

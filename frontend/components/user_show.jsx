@@ -61,7 +61,7 @@ const UserShow = React.createClass({
 
 
           <section className="user-legend">
-            <div className="user-legend-item"><div className="square red"></div><span>{currentUser.username}</span></div>
+            <div className="user-legend-item"><div className="square red"></div><span>you</span></div>
             { (currentUser.id === this.state.user.id) ? <div></div> :
             <div className="user-legend-item"><div className="square blue"></div><span>{this.state.user.username}</span></div> }
           </section>

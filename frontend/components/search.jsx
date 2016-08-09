@@ -43,7 +43,7 @@ const Search = React.createClass({
         {(!SessionStore.currentUser().completed) ? <Link to="/test"><div className="users-message">COMPLETE THE PERSONALITY TEST TO IMPROVE YOUR MATCHES</div></Link> : <div></div>}
 
         {(this.state.users.length === 0) ? <div className="no-users">Looks like there aren't any users matching your search criteria. Try broadening your search!</div> : <UserIndex users={this.state.users}/>}
-        
+
       </div>
     )
   }
