@@ -18,7 +18,7 @@ old_urls = [
 "https://res.cloudinary.com/ddm1q6utc/image/upload/c_scale,w_600/v1467700778/photo-1445127891637-6884935d9a02_f4zxsy.jpg" ]
 
 demo = User.create!({
-        username: "samanthajones",
+        username: "jane_jones",
         password: "password",
         email: Faker::Internet.email,
         zipcode: 94109,
