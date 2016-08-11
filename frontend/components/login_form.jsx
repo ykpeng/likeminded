@@ -28,7 +28,7 @@ const LoginForm = React.createClass({
 
   _handleDemo(e){
     e.preventDefault()
-    const formData = { username: "samanthajones", password: "password"}
+    const formData = { username: "amysmith", password: "password"}
     SessionActions.login(formData);
   },
 

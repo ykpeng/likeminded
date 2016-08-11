@@ -18,7 +18,7 @@ old_urls = [
 "https://res.cloudinary.com/ddm1q6utc/image/upload/c_scale,w_600/v1467700778/photo-1445127891637-6884935d9a02_f4zxsy.jpg" ]
 
 demo = User.create!({
-        username: "jane_jones",
+        username: "amysmith",
         password: "password",
         email: Faker::Internet.email,
         zipcode: 94109,
@@ -512,4 +512,4 @@ Message.create!({ conversation_id: conversation2.id, receiver_id: other_user_id2
 conversation3 = Conversation.create!
 other_user_id3 = rand(40) + 2
 
-Message.create!({ conversation_id: conversation3.id, receiver_id: demo.id, sender_id: other_user_id3, content: "Hi Samantha, how many cats have you rescued? :)" })
+Message.create!({ conversation_id: conversation3.id, receiver_id: demo.id, sender_id: other_user_id3, content: "Hi Amy, how many cats have you rescued? :)" })
