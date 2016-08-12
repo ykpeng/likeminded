@@ -12,6 +12,6 @@ class Conversation < ActiveRecord::Base
     source: :sender
 
   def last_message
-    self.messages.order(created_at: :desc).limit(1)[0]
+    self.messages.order(created_at: :desc).includes(:sender, :receiver).limit(1)[0]
   end
 end

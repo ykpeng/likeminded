@@ -1,6 +1,6 @@
 class Api::AnswersController < ApplicationController
   def index
-    @answers = current_user.answers
+    @answers = current_user.answers.includes(:question)
     render 'api/answers/index'
   end
 
