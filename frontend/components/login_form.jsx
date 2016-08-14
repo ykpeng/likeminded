@@ -27,8 +27,9 @@ const LoginForm = React.createClass({
   },
 
   _handleDemo(e){
-    e.preventDefault()
-    const formData = { username: "amysmith", password: "password"}
+    e.preventDefault();
+    const formData = { username: "amysmith", password: "password" };
+    this.setState(formData);
     SessionActions.login(formData);
   },
 
@@ -68,11 +69,19 @@ const LoginForm = React.createClass({
         <form onSubmit={this._handleSubmit} className="form">
           <div className="form-section">
             { this.fieldErrors("username") }
-            <input type="text" placeholder="Username" id="username" onChange={this._handleUsername}/>
+            <input type="text"
+                   placeholder="Username"
+                   id="username"
+                   value={this.state.username}
+                   onChange={this._handleUsername}/>
           </div>
           <div className="form-section">
             { this.fieldErrors("password") }
-            <input type="password" placeholder="Password" onChange={this._handlePassword}/>
+            <input type="password"
+                   placeholder="Password"
+                   id="password"
+                   value={this.state.password}
+                   onChange={this._handlePassword}/>
           </div>
           <div className="submit form-section">
             <input type="submit" value="LOG IN"/>
