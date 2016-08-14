@@ -5,6 +5,7 @@ const AnswerEdit = React.createClass({
   getInitialState(){
     return { answerChoice: this.props.answer.answer_choice};
   },
+
   handleSubmit(e){
     e.preventDefault();
     const formData = {
@@ -15,16 +16,23 @@ const AnswerEdit = React.createClass({
     AnswerActions.updateAnswer(formData);
     this.props.closeForm();
   },
+
+
   handleClick(e){
     this.setState({ answerChoice: parseInt(e.target.value)});
   },
+
+  handleCancel(e) {
+    this.props.closeForm();
+  },
+
   render(){
     let answers = ["Strongly Dislike", "Dislike", "Unsure", "Like", "Strongly Like"];
     let radioButtons = answers.map((answer, idx) => {
       if (idx + 1 === this.state.answerChoice) {
-        return (<div className="answer-option"><input type="radio" value={idx + 1} checked="checked" onClick={this.handleClick}/> {answer}<br/></div>);
+        return (<div className="answer-option" key={idx + 1}><input type="radio" value={idx + 1} checked="checked" onClick={this.handleClick}/> {answer}<br/></div>);
       } else {
-        return (<div className="answer-option"><input type="radio" value={idx + 1} onClick={this.handleClick}/> {answer}<br/></div>);
+        return (<div className="answer-option" key={idx + 1}><input type="radio" value={idx + 1} onClick={this.handleClick}/> {answer}<br/></div>);
       }
     });
     return(
@@ -33,6 +41,7 @@ const AnswerEdit = React.createClass({
         {radioButtons}
         </div>
         <input type="submit" value="ANSWER"/>
+        <button className="cancel" onClick={this.handleCancel}>CANCEL</button>
       </form>
     )
   }

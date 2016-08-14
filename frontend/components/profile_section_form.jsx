@@ -22,12 +22,17 @@ const ProfileSectionForm = React.createClass({
     this.props.closeForm();
   },
 
+  handleCancel(e){
+    this.props.closeForm();
+  },
+  
   render(){
     return(
       <div className="profile-section-form">
         <form onSubmit={this.handleSubmit}>
           <textarea onChange={this.handleInput} value={this.state.content} />
           <input className="save" type="submit" value="SAVE"/>
+          <button className="cancel" onClick={this.handleCancel}>CANCEL</button>
         </form>
       </div>
     )

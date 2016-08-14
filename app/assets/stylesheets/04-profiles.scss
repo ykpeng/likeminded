@@ -61,6 +61,25 @@
   border: 4px solid #EE3440;
 }
 
+.cancel {
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  background: white;
+  color: #ccc;
+  padding: 10px 20px;
+  border: 4px solid #ccc;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.cancel:hover {
+  background: #ccc;
+  color: white;
+  border: 4px solid #ccc;
+}
+
 .user-summary {
   color: #777;
   padding-bottom: 20px;

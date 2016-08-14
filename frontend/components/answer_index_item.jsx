@@ -30,7 +30,7 @@ const AnswerIndexItem = React.createClass({
 
           <li>
             <p className="answered-answer"><i className="fa fa-check check-icon" aria-hidden="true"></i> {ANSWER_MAPPING[this.props.answer.answer_choice]}</p>
-            <button onClick={this.handleClick}>RE-ANSWER</button>
+            <button className="reanswer" onClick={this.handleClick}>RE-ANSWER</button>
           </li>}
       </div>
     );

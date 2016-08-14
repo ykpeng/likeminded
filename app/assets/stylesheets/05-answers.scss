@@ -48,7 +48,7 @@
   border-bottom: 4px solid black;
 }
 
-.content-questions input[type="submit"], .content-questions button {
+.content-questions input[type="submit"], .reanswer {
   font-weight: 900;
   font-size: 14px;
   letter-spacing: 0.1em;
@@ -61,7 +61,7 @@
   margin-top: 10px;
 }
 
-.content-questions input[type="submit"]:hover, .content-questions button:hover {
+.content-questions input[type="submit"]:hover, .reanswer:hover {
   background: #EE3440;
   color: white;
   border: 4px solid #EE3440;

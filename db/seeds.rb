@@ -107,7 +107,7 @@ friday_night = [
   "Enjoying a knitting circle",
   "Batman",
   "Wishing the library was byod & open late.",
-  "Probaly sleeping"]
+  "Probably sleeping"]
 message_me = [
   "You can pinpoint misunderstandings and would like to wander around old cemeteries on quiet days",
   "You want to go on an adventure",
