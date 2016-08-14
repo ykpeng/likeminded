@@ -26,6 +26,7 @@
 }
 
 .questions-main {
+  margin-left: 15px;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -34,6 +35,7 @@
 .answers-main {
   width: 700px;
   margin-left: 30px;
+  margin-right: 15px;
   display: flex;
   flex-direction: column;
 }
