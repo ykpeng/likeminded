@@ -23,6 +23,7 @@ const AnswerEdit = React.createClass({
   },
 
   handleCancel(e) {
+    e.preventDefault();
     this.props.closeForm();
   },
 

@@ -11,7 +11,7 @@ const ProfileSectionForm = React.createClass({
   },
 
   handleSubmit(e){
-    e.preventDefault(e);
+    e.preventDefault();
     const formData = {
       id: this.props.profileSection.id,
       user_id: this.props.profileSection.user_id,
@@ -23,9 +23,10 @@ const ProfileSectionForm = React.createClass({
   },
 
   handleCancel(e){
+    e.preventDefault();
     this.props.closeForm();
   },
-  
+
   render(){
     return(
       <div className="profile-section-form">
