@@ -5,15 +5,12 @@ const ReactRouter = require('react-router');
 const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
-const IndexRedirect = ReactRouter.IndexRedirect;
 const hashHistory = ReactRouter.hashHistory;
 
-const SessionApiUtil = require('./util/session_api_util');
 const SessionActions = require('./actions/session_actions');
 const SessionStore = require('./stores/session_store');
 const LoginPage = require('./components/login_page');
 const App = require('./components/app');
-const UserIndex = require('./components/user_index');
 const UserShow = require('./components/user_show');
 const QuestionIndex = require('./components/question_index');
 const ConversationIndex = require('./components/conversation_index');
@@ -34,7 +31,7 @@ const _redirectIfLoggedIn = function(nextState, replace){
 };
 
 const router = (
-  <Router history={hashHistory}>  
+  <Router history={hashHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={Search} onEnter={_ensureLoggedIn}/>
       <Route path='/users/:userId' component={UserShow} onEnter={_ensureLoggedIn}/>
