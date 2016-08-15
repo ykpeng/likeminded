@@ -6,16 +6,19 @@ const Link = require('react-router').Link;
 
 const ConversationIndex = React.createClass({
   getInitialState(){
-    return { conversations: [] }
+    return { conversations: [], loading: true }
   },
 
   componentDidMount(){
     this.listener = ConversationStore.addListener(this.handleChange);
     ConversationActions.fetchConversations();
+    setTimeout(()=>{
+      this.setState({ loading: false });
+    }, 1000);
   },
 
   handleChange(){
-    this.setState({ conversations: ConversationStore.all() })
+    this.setState({ conversations: ConversationStore.all() });
   },
 
   componentWillUnmount(){
@@ -32,14 +35,24 @@ const ConversationIndex = React.createClass({
         return 1;
       }
     })
+
     return(
       <div className="content-vertical">
-        <Link to={`/conversations`}><h5 className="message-nav">MESSAGES</h5></Link>
-        { sortedConvos.length === 0 ? <div className="no-convos">Looks like you don't have any messages yet. Why not message someone you like?</div> : <ul className="conversation-index">
+
+        <Link to={`/conversations`}>
+          <h5 className="message-nav">MESSAGES</h5>
+        </Link>
+
+        { !this.state.loading && sortedConvos.length === 0 ?
+
+          <div className="no-convos">Looks like you don't have any messages yet. Why not message someone you like?</div> :
+
+          <ul className="conversation-index">
           {sortedConvos.map((conversation)=>{
             return <Link to={`/conversations/${conversation.id}`} key={conversation.id}><ConversationIndexItem last_message={conversation.last_message} id={conversation.id}/></Link>
           })}
         </ul> }
+
       </div>
     )
   }
