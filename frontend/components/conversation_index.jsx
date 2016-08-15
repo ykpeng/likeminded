@@ -26,16 +26,6 @@ const ConversationIndex = React.createClass({
   },
 
   render(){
-    // let sortedConvos = this.state.conversations.sort((a, b)=>{
-    //   if (b.last_message.created_at < a.last_message.created_at) {
-    //     return -1;
-    //   } else if (b.last_message.created_at === a.last_message.created_at) {
-    //     return 0;
-    //   } else {
-    //     return 1;
-    //   }
-    // })
-
     return(
       <div className="content-vertical">
 
