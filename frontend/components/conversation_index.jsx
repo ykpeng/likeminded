@@ -14,7 +14,7 @@ const ConversationIndex = React.createClass({
     ConversationActions.fetchConversations();
     setTimeout(()=>{
       this.setState({ loading: false });
-    }, 1000);
+    }, 3000);
   },
 
   handleChange(){

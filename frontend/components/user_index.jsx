@@ -10,7 +10,7 @@ const UserIndex = React.createClass({
   componentDidMount() {
     setTimeout(() => {
       this.setState({ loading: false })
-    }, 1000);
+    }, 3000);
   },
 
   render(){
