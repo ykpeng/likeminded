@@ -33,7 +33,7 @@ const ConversationIndex = React.createClass({
           <h5 className="message-nav">MESSAGES</h5>
         </Link>
 
-        { !this.state.loading && this.state.converstaions.length === 0 ?
+        { !this.state.loading && this.state.conversations.length === 0 ?
 
           <div className="no-convos">Looks like you don't have any messages yet. Why not message someone you like?</div> :
 
